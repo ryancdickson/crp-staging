@@ -13,7 +13,7 @@ Bookmark this page as [https://g.co/chrome/root-policy](https://g.co/chrome/root
 - [Introduction](#introduction)
 - [Change History](#change-history)
 - [Definitions](#definitions)
-- [Minimum Requirements for CAs](#minimum-requirements-for-cas)
+- [Minimum Requirements for CAs included in the Chrome Root Store](#minimum-requirements-for-cas-included-in-the-chrome-root-store)
   - [1. Baseline Requirements](#1-baseline-requirements)
   - [2. Common CA Database](#2-common-ca-database)
   - [3. Chrome Root Program Participant Policies](#3-chrome-root-program-participant-policies)
@@ -41,6 +41,8 @@ Bookmark this page as [https://g.co/chrome/root-policy](https://g.co/chrome/root
   - [7. Timely and Transparent Communications](#7-timely-and-transparent-communications)
     - [7.1. Notification of CA Certificate Issuance](#71-notification-of-ca-certificate-issuance)
     - [7.2. Notification of Procurement, Sale, or other Change Control Events](#72-notification-of-procurement-sale-or-other-change-control-events)
+- [Minimum Requirements for Applicant CAs requesting inclusion into the Chrome Root Store](#minimum-requirements-for-applicant-cas-requesting-inclusion-into-the-chrome-root-store)
+
 
 ## Introduction
 
@@ -50,9 +52,19 @@ When making HTTPS connections, Chrome refers to a list of self-signed root certi
 
 The Chrome Root Program Policy below establishes the minimum requirements for CA certificates to be included as trusted in a default installation of Chrome.
 
+Chrome Root Program Participants MUST satisfy the requirements defined in this policy, including taking responsibility for ensuring the continued compliance of all corresponding subordinate CAs and delegated third parties participating in the PKI.
+
+The requirements included in this policy are effective immediately, unless explicitly stated as otherwise.
+
+Any questions regarding this policy can be directed to chrome-root-program [at] google [dot] com.
+
 ### Apply for Inclusion
 
-CA Owners that satisfy the requirements defined in the policy below may apply for self-signed root CA certificate inclusion in the Chrome Root Store using [these](apply-for-inclusion.md) instructions.
+CA Owners that satisfy the requirements defined in the policy below may apply for self-signed root CA certificate inclusion in the Chrome Root Store using [these]((apply-for-inclusion.md)) instructions.
+
+The Chrome Root Program continuously evolves this policy to enhance the security and resilience of the Internet ecosystem, consistent with Google's ongoing [commitment](#chromes-ongoing-commitment-to-transport-security) to secure and reliable network connections in Chrome. This involves establishing and periodically strengthening minimum requirements for CAs. New requirements, sometimes only for applicants, are introduced to progressively raise the baseline of trust and drive the adoption of modern, agile, and secure PKI practices. This phased approach allows the program to integrate advancements and best practices, ensuring that certificates included in the Chrome Root Store consistently provide value to Chrome end users that exceeds the risk of their continued inclusion, while accounting for the practicalities of ecosystem-wide implementation.
+
+Therefore, applicants are required to continuously adhere to the policies outlined herein, irrespective of their inclusion request submission date. All applicants must satisfy the criteria set forth in both the ["Minimum Requirements for CAs included in the Chrome Root Store"](#minimum-requirements-for-cas-included-in-the-chrome-root-store) and [Minimum Requirements for Applicant CAs Requesting Inclusion into the Chrome Root Store](#minimum-requirements-for-applicant-cas-requesting-inclusion-into-the-chrome-root-store) Sections. Where requirements in these sections differ, the applicant-specific requirements shall take precedence.
 
 ### Chrome's Ongoing Commitment to Transport Security
 
@@ -89,7 +101,7 @@ This policy, along with archived versions, is available in Markdown [here](https
 
 | Version | Date | Note |
 |-------- |----- |----- |
-| 1.8 | 2026-XX-XX | Updates include, but are not limited to: *(1)* add the ARI RFC numerical identifier, *(2)* remove requirements redundant with CCADB Policy Version 2.0
+| 1.8 | 2026-XX-XX | Updates include, but are not limited to: TBD
 | 1.7 | 2025-07-15 | Updates include, but are not limited to: *(1)* add the ARI RFC numerical identifier, *(2)* remove requirements redundant with CCADB Policy Version 2.0
 | 1.6 | 2025-02-15 | Updates include, but are not limited to: *(1)* the future phase-out of non-TLS server authentication dedicated hierarchies from the Chrome Root Store, *(2)* requirements for future Applicants related to automation support, promoting simplicity of policy documents, and the definition of a dedicated TLS server authentication PKI hierarchy, *(3)* improved alignment with the TLS Baseline Requirements following Ballot SC-077, *(4)* addition of subsection numbers and major reorganization of normative and non-normative requirements|
 | 1.5 | 2024-01-16 | Updates include, but are not limited to: *(1)* incorporated CA Owner feedback in response to policy Version 1.4 (clean-ups and clarifications throughout the policy), *(2)* added new subsections for Root CA Key Material Freshness, Automation Support, and the Root CA Term-Limit, *(3)* aligned incident reporting format and timelines with CCADB.org |
@@ -119,21 +131,17 @@ This policy uses the term "Externally-operated CA" to describe a subordinate CA 
 
 This policy considers a PKI hierarchy as "dedicated" if it is intended to serve one specific use case, for example, the issuance of TLS server authentication certificates.
 
-## Minimum Requirements for CAs
+## 1. Minimum Requirements for CAs included in the Chrome Root Store
 
-Chrome Root Program Participants MUST satisfy the requirements defined in this policy, including taking responsibility for ensuring the continued compliance of all corresponding subordinate CAs and delegated third parties participating in the PKI.
+### 1.1. PKI Policy Governance and Requirements
 
-The requirements included in this policy are effective immediately, unless explicitly stated as otherwise.
-
-Any questions regarding this policy can be directed to chrome-root-program [at] google [dot] com.
-
-### 1. Baseline Requirements
+#### Baseline Requirements
 
 Chrome Root Program Participants that issue TLS server authentication certificates trusted by Chrome MUST adhere to the latest version of the ["Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates"](https://cabforum.org/baseline-requirements-documents/) ("Baseline Requirements"). The Baseline Requirements are consensus-driven requirements owned by a community of participants represented in the [CA/Browser Forum](https://cabforum.org/) [Server Certificate Working Group](https://cabforum.org/working-groups/server/). No single organization, including Google, has the authority to grant exceptions to the Baseline Requirements.
 
 In some cases, this policy strengthens requirements described in the Baseline Requirements.
 
-### 2. Common CA Database
+#### Common CA Database
 
 The Chrome Root Program relies on the [CCADB](https://ccadb.org/) to identify and maintain up-to-date information for Chrome Root Program Participants and the corresponding PKI hierarchies.
 
@@ -141,11 +149,9 @@ Chrome Root Program Participants MUST adhere to the latest version of the [CCADB
 
 In some cases, this policy strengthens requirements described in the CCADB Policy.
 
-### 3. Chrome Root Program Participant Policies
+#### Chrome Root Program Participant Policies
 
-#### 3.1 Applicant PKI Hierarchies
-
-Applicants MUST accurately describe the policies and practices of their CA(s) within a single CA policy document that is:
+Effective [FUTURE DATED: MONTH, DD, YYYY], Chrome Root Program Participants MUST accurately describe the policies and practices of their CA(s) within a single CA policy document that is:
 
 - in the form of a combined CP/CPS.
 - freely publicly available for examination.
@@ -157,7 +163,28 @@ Applicants MUST accurately describe the policies and practices of their CA(s) wi
 
 The immediately above requirements do not prohibit Applicants from maintaining additional policy documents, which may also be considered authoritative by other stakeholders. However, the consolidated policy document made available to the Chrome Root Program MUST NOT conflict with any additional policy documents that might exist for the corresponding PKI hierarchy.
 
-### 4. Modern Infrastructures
+## 2. Minimum Requirements for Applicant CAs Requesting Inclusion into the Chrome Root Store
+
+### 2.1. PKI Policy Governance and Requirements
+
+[NOTE: THE FOLLOWING REQUIREMENT IS REMOVED UPON THE EFFECTIVE DATE SET ABOVE]
+
+1. Applicants MUST accurately describe the policies and practices of their CA(s) within a single CA policy document that is:
+
+- in the form of a combined CP/CPS.
+- freely publicly available for examination.
+- available in an authoritative English language version.
+- available in either Markdown or AsciiDoc at a location disclosed to the CCADB ([GitHub-Flavored Markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/about-writing-and-formatting-on-github) is preferred).
+- except for Externally-operated CAs, authoritative for all CAs included in the corresponding PKI hierarchy.
+- focused only on the specific PKI use case of issuing TLS server authentication certificates to websites.
+- sufficiently detailed to assess the operations of the CA(s) and the compliance with these expectations and those of the Baseline Requirements, and MUST NOT conflict with either of these requirements.
+
+The immediately above requirements do not prohibit Applicants from maintaining additional policy documents, which may also be considered authoritative by other stakeholders. However, the consolidated policy document made available to the Chrome Root Program MUST NOT conflict with any additional policy documents that might exist for the corresponding PKI hierarchy.
+
+--------------------------
+--------------------------
+
+
 
 #### 4.1 Promote use of Modern PKI Hierarchies
 
