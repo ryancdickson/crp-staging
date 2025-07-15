@@ -189,7 +189,15 @@ To achieve these goals, all Subordinate CA Certificates that validate to a certi
 - Subordinate CA Certificates SHOULD have a maximum validity period of three (3) years.
 - CA Owners SHOULD create and deploy new Subordinate CA Certifictates at least once every six (6) months. CA Owners SHOULD actively transition subscriber certificate issuance to these newly deployed CAs.
 
-#### 1.2.2 Promote use of Dedicated TLS Server Authentication PKI Hierarchies
+#### 1.2.2 Reducing Attack Surface of the Chrome Root Store
+
+Effective [SOONER FUTURE DATED: MONTH, DD, YYYY], CA Owners with more than two (2) self-signed root CA certificates included in the Chrome Root Store MUST submit a plan to the Chrome Root Program describing a future consolidation of their PKI hierarchies, including the identification of certificates for graceful removal using the SCTNotAfter feature.
+
+Effective [FUTURE DATED: MONTH, DD, YYYY], except during temporary periods of transition, the Chrome Root Store will only include a maximum of two self-signed root CA certificates per CA Owner. 
+
+To further reduce negative impact to the ecosystem, the Chrome Root Store may temporarily continue to include more than two root CA certificates past the specified consolidation timeline on a case-by-case basis, but only if the corresponding CA Owner has submitted and is actively executing an approved consolidation plan to reduce their roots to the mandated limit.
+
+#### 1.2.3 Promote use of Dedicated TLS Server Authentication PKI Hierarchies
 
 The Chrome Root Store is solely relied upon for TLS server authentication in Chrome; it is not used for any other PKI use case (e.g., TLS client authentication, secure email, code-signing, etc.).
 
@@ -217,9 +225,9 @@ The subsequently constrained multi-purpose root CA certificate(s) will be schedu
 
 To reduce negative impact to the ecosystem, the Chrome Root Store may temporarily continue to include a multi-purpose root CA certificate in the Chrome Root Store without an SCTNotAfter constraint on a case-by-case basis, but only if the corresponding CA Owner has submitted a Root Inclusion Request to the CCADB for a replacement root CA certificate **before June 15, 2026**.
 
-#### 1.2.3 Promote Cryptographic Agility and Resilience
+#### 1.2.4 Promote Cryptographic Agility and Resilience
 
-##### 1.2.3.1 Automation Support
+##### 1.2.4.1 Automation Support
 
 Until [FUTURE DATED: MONTH, DD, YYYY], all CAs that validate to a certificate included in the Chrome Root Store SHOULD satisfy the following requirements.
 
@@ -237,7 +245,7 @@ For each Baseline Requirements certificate policy OID appearing in a TLS server 
 
 Beginning [FUTURE DATED: MONTH, DD, YYYY], the Chrome Root Program will set an SCTNotAfter constraint on root CA certificates included in the Chrome Root Store for any PKI hierarchy lacking sufficient automation solutions for CAs repsonsible for issuing unexpired and unrevoked TLS server authentication certificates. Once the constraint is applied, Chrome will no longer trust any certificate chaining to the root by default if it is issued more than 90 calendar days following the violation's detection.
 
-###### 1.2.3.1.1 ACME Solutions
+###### 1.2.4.1.1 ACME Solutions
 
 PKI hierarchies SHOULD support the Automatic Certificate Management Environment (ACME) protocol. If ACME is supported:
 
@@ -253,7 +261,7 @@ PKI hierarchies SHOULD support the Automatic Certificate Management Environment 
 - ACME endpoints SHOULD be publicly accessible.
 - Each endpoint SHOULD be hosted using an appropriate and readily accessible online means that is available on a 24x7 basis.
 
-###### 1.2.3.1.2 Non-ACME Solutions
+###### 1.2.4.1.2 Non-ACME Solutions
 
 While ACME support is encouraged, PKI hierarchies MAY support other automated solutions so long as the following characteristics are verifiably demonstrated to the Chrome Root Program. The CA Owner MUST disclose to the CCADB publicly available information that describes the other automated solution capability for each Baseline Requirements certificate policy OID that the corresponding CA issues and how a Subscriber can leverage its benefits.
 
@@ -271,7 +279,7 @@ While ACME support is encouraged, PKI hierarchies MAY support other automated so
 - The automated solution SHOULD:
     - support automated deployment (i.e., installation and configuration) of the issued certificate without "hands-on" input from humans (comparable to how ACME clients function).
 
-##### 1.2.3.2 Encouraging use of Automation Solutions
+##### 1.2.4.2 Encouraging use of Automation Solutions
 
 The following requirements are intended to promote use of automation solutions to increase agility and improve the [security](https://zanema.com/papers/imc23_stale_certs.pdf) and resilience of the Internet ecosystem, while recognizing that at the moment, not all subscriber use cases can be addressed using automation.
 
@@ -290,13 +298,13 @@ Beginning [FUTURE DATED: MONTH, DD, YYYY]:
 
 In cases where the above requirements cannot be met, CA Owners are encouraged to collect and share the corresponding subscriber use cases and affected technologies with chrome-root-program [at] google [dot] com on a quarterly basis in a format of their choosing to support the Chrome Root Program in better understanding blockers and opportunities for ecosystem improvement.
 
-##### 1.2.3.3 Promote Increased Transparency
+#### 1.2.5 Promote Increased Transparency
 
 Within 24 hours of issuance, Chrome Root Program Participants SHOULD log final certificates to at least one CT log [usable](https://googlechrome.github.io/CertificateTransparency/log_list.html) in Chrome at the time of issuance.
 
 **TODO:** Something about supporting or running logs.
 
-##### 1.2.3.4 Recommended Practices
+##### 1.2.5.6 Recommended Practices
 
 **TODO:** write 'em
 
