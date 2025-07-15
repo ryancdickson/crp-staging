@@ -176,6 +176,15 @@ To further reduce negative impact to the ecosystem, the Chrome Root Store may te
 
 Other circumstances may lead to the removal of a root CA certificate included in the Chrome Root Store before the completion of its term.
 
+##### 1.2.1.3 Subordinate CA Certificate Lifecycle Management
+
+The lifecycle management of Subordinate CA Certificates plays a crucial role in promoting agility and resilience within the PKI ecosystem. By setting clear expectations for their validity and renewal, the Chrome Root Program aims to encourage more robust operational practices, align certificate profiles with modern best practices, reduce reliance on specific subordinate CA certificates that could be single points of failure, and discourage potentially harmful practices. This approach allows the ecosystem to benefit from continuous improvement efforts.
+
+To achieve these goals, all Subordinate CA Certificates that validate to a certificate included in the Chrome Root Store SHOULD satisfy the following requirements:
+
+- Subordinate CA Certificates SHOULD have a maximum validity period of three (3) years.
+- CA Owners SHOULD create and deploy new Subordinate CA Certifictates at least once every six (6) months. CA Owners SHOULD actively transition subscriber certificate issuance to these newly deployed CAs.
+
 #### 1.2.2 Promote use of Dedicated TLS Server Authentication PKI Hierarchies
 
 The Chrome Root Store is solely relied upon for TLS server authentication in Chrome; it is not used for any other PKI use case (e.g., TLS client authentication, secure email, code-signing, etc.).
@@ -280,6 +289,10 @@ In cases where the above requirements cannot be met, CA Owners are encouraged to
 Within 24 hours of issuance, Chrome Root Program Participants SHOULD log final certificates to at least one CT log [usable](https://googlechrome.github.io/CertificateTransparency/log_list.html) in Chrome at the time of issuance.
 
 **TODO:** Something about supporting or running logs.
+
+##### 1.2.3.4 Recommended Practices
+
+**TODO:** write 'em
 
 #### 1.2.4 Audits
 
