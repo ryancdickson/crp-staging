@@ -134,7 +134,11 @@ Effective [FUTURE DATED: MONTH, DD, YYYY], Chrome Root Program Participants MUST
 - focused only on the specific PKI use case of issuing TLS server authentication certificates to websites.
 - sufficiently detailed to assess the operations of the CA(s) and the compliance with these expectations and those of the Baseline Requirements, and MUST NOT conflict with either of these requirements.
 
-The immediately above requirements do not prohibit Applicants from maintaining additional policy documents, which may also be considered authoritative by other stakeholders. However, the consolidated policy document made available to the Chrome Root Program MUST NOT conflict with any additional policy documents that might exist for the corresponding PKI hierarchy.
+These requirements do not prohibit CA Owners from maintaining additional policy documents, which may also be considered authoritative by other stakeholders. However, the consolidated policy document made available to the Chrome Root Program MUST NOT conflict with any additional policy documents that might exist for the corresponding PKI hierarchy.
+
+The consolidated policy:
+- MUST expicitly state adherance to the latest published version of the TLS BRs, the CCADB Policy, and this policy.
+- MAY explicitly state aderhance to other policies.
 
 ### 1.2. Modern Infrastructures
 
@@ -198,8 +202,10 @@ To align all PKI hierarchies included in the Chrome Root Store on the principle 
         -  **prior to June 15, 2026,** include the extendedKeyUsage extension and (1) only assert an extendedKeyUsage purpose of id-kp-serverAuth OR (2) only assert extendedKeyUsage purposes of id-kp-serverAuth and id-kp-clientAuth.
         -  **on or after June 15, 2026,** include the extendedKeyUsage extension and only assert an extendedKeyUsage purpose of id-kp-serverAuth.
     -  NOT contain a public key corresponding to any other unexpired or unrevoked certificate that asserts different extendedKeyUsage values.
-2. All corresponding unexpired and unrevoked subscriber certificates issued on or after **June 15, 2026** MUST include the extendedKeyUsage extension and only assert an extendedKeyUsage purpose of id-kp-serverAuth.
-
+2. All corresponding unexpired and unrevoked subscriber certificates issued on or after **June 15, 2026** MUST include:
+     -  the extendedKeyUsage extension and only assert an extendedKeyUsage purpose of id-kp-serverAuth.
+     -  the certificatePolicies extension and only assert the appropriate [CA/Browser Forum Reserved Certificate Policy Identifiers](https://cabforum.org/working-groups/server/baseline-requirements/requirements/#7161-reserved-certificate-policy-identifiers).
+       
 **Before** **June 15, 2026**, CA Owners with a CA included in the Chrome Root Store whose corresponding PKI hierarchy does not adhere to the above requirements MAY, at their own discretion:
 
 1. Apply with a new dedicated TLS server authentication PKI hierarchy (recommended to be completed **before** **September 15, 2025**).
