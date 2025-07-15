@@ -135,13 +135,13 @@ This policy considers a PKI hierarchy as "dedicated" if it is intended to serve 
 
 ### 1.1. PKI Policy Governance and Requirements
 
-#### Baseline Requirements
+#### 1.1.1. Baseline Requirements
 
 Chrome Root Program Participants that issue TLS server authentication certificates trusted by Chrome MUST adhere to the latest version of the ["Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates"](https://cabforum.org/baseline-requirements-documents/) ("Baseline Requirements"). The Baseline Requirements are consensus-driven requirements owned by a community of participants represented in the [CA/Browser Forum](https://cabforum.org/) [Server Certificate Working Group](https://cabforum.org/working-groups/server/). No single organization, including Google, has the authority to grant exceptions to the Baseline Requirements.
 
 In some cases, this policy strengthens requirements described in the Baseline Requirements.
 
-#### Common CA Database
+#### 1.1.2. Common CA Database
 
 The Chrome Root Program relies on the [CCADB](https://ccadb.org/) to identify and maintain up-to-date information for Chrome Root Program Participants and the corresponding PKI hierarchies.
 
@@ -149,7 +149,9 @@ Chrome Root Program Participants MUST adhere to the latest version of the [CCADB
 
 In some cases, this policy strengthens requirements described in the CCADB Policy.
 
-#### Chrome Root Program Participant Policies
+#### 1.1.3. Chrome Root Program Participant Policies
+
+Until [FUTURE DATED: MONTH, DD, YYYY], CA Owners with either (1) a certificate included in the Chrome Root Store or (2) a CA certificate that validates to a certificate included in the Chrome Root Store MUST minimally adhere to [Section 4 ("Policy Disclosures")](https://www.ccadb.org/policy#4-policy-disclosures) of the CCADB Policy and MAY adhere to the future dated requirements immediately below.
 
 Effective [FUTURE DATED: MONTH, DD, YYYY], Chrome Root Program Participants MUST accurately describe the policies and practices of their CA(s) within a single CA policy document that is:
 
@@ -162,6 +164,12 @@ Effective [FUTURE DATED: MONTH, DD, YYYY], Chrome Root Program Participants MUST
 - sufficiently detailed to assess the operations of the CA(s) and the compliance with these expectations and those of the Baseline Requirements, and MUST NOT conflict with either of these requirements.
 
 The immediately above requirements do not prohibit Applicants from maintaining additional policy documents, which may also be considered authoritative by other stakeholders. However, the consolidated policy document made available to the Chrome Root Program MUST NOT conflict with any additional policy documents that might exist for the corresponding PKI hierarchy.
+
+### 1.2. Modern and Dedicated Infrastructures
+
+#### 1.2.1. [TODO START HERE]
+
+
 
 ## 2. Minimum Requirements for Applicant CAs Requesting Inclusion into the Chrome Root Store
 
