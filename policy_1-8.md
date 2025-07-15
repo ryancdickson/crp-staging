@@ -191,11 +191,11 @@ To achieve these goals, all Subordinate CA Certificates that validate to a certi
 
 #### 1.2.2 Reducing Attack Surface of the Chrome Root Store
 
-Effective [SOONER FUTURE DATED: MONTH, DD, YYYY], CA Owners with more than two (2) self-signed root CA certificates included in the Chrome Root Store MUST submit a plan to the Chrome Root Program describing a future consolidation of their PKI hierarchies, including the identification of certificates for graceful removal using the SCTNotAfter feature.
+Effective [SOONER FUTURE DATED: MONTH, DD, YYYY], CA Owners with more than two (2) self-signed root CA certificates included in the Chrome Root Store MUST submit a plan to the Chrome Root Program describing a future consolidation of their PKI hierarchies, including the identification of certificates planned for graceful removal using the SCTNotAfter feature.
 
 Effective [FUTURE DATED: MONTH, DD, YYYY], except during temporary periods of transition, the Chrome Root Store will only include a maximum of two self-signed root CA certificates per CA Owner. 
 
-To further reduce negative impact to the ecosystem, the Chrome Root Store may temporarily continue to include more than two root CA certificates past the specified consolidation timeline on a case-by-case basis, but only if the corresponding CA Owner has submitted and is actively executing an approved consolidation plan to reduce their roots to the mandated limit.
+To further reduce negative impact to the ecosystem, the Chrome Root Store may temporarily continue to include more than two root CA certificates past the specified consolidation timeline on a case-by-case basis.
 
 #### 1.2.3 Promote use of Dedicated TLS Server Authentication PKI Hierarchies
 
