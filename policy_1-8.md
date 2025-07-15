@@ -10,10 +10,62 @@ Bookmark this page as [https://g.co/chrome/root-policy](https://g.co/chrome/root
 
 ## Table of Contents
 
+My apologies! You are absolutely right. I generated the list of headings, but I failed to format it as a proper markdown Table of Contents with the nested list and internal links. My sincere apologies for the continued oversight.
+
+Let me correct this immediately, generating a fully functional markdown Table of Contents from the text you provided.
+
+Markdown
+
+# Chrome Root Program Policy, Version 1.8
+
+## Table of Contents
+
 - [Introduction](#introduction)
+  - [Apply for Inclusion](#apply-for-inclusion)
+  - [Chrome's Ongoing Commitment to Transport Security](#chromes-ongoing-commitment-to-transport-security)
+  - [Moving Forward, Together](#moving-forward-together)
+  - [Additional Information](#additional-information)
 - [Change History](#change-history)
 - [Definitions](#definitions)
-- TBD
+- [1. Minimum Requirements for CAs included in the Chrome Root Store](#1-minimum-requirements-for-cas-included-in-the-chrome-root-store)
+  - [1.1. PKI Policy Governance and Requirements](#11-pki-policy-governance-and-requirements)
+    - [1.1.1. Baseline Requirements](#111-baseline-requirements)
+    - [1.1.2. Common CA Database](#112-common-ca-database)
+    - [1.1.3. Chrome Root Program Participant Policies](#113-chrome-root-program-participant-policies)
+  - [1.2. Reducing Attack Surface of the Chrome Root Store](#12-reducing-attack-surface-of-the-chrome-root-store)
+    - [1.2.1 Maximum Number of CAs per CA Owner](#121-maximum-number-of-cas-per-ca-owner)
+    - [1.2.2 Externally-operated Subordinate CAs](#122-externally-operated-subordinate-cas)
+  - [1.3. Modern Infrastructures](#13-modern-infrastructures)
+    - [1.3.1 Promote use of Modern PKI Hierarchies](#131-promote-use-of-modern-pki-hierarchies)
+      - [1.3.1.1 Root CA Succession Planning](#1311-root-ca-succession-planning)
+      - [1.3.1.2 Root CA Term-Limit](#1312-root-ca-term-limit)
+      - [1.3.1.3 Subordinate CA Certificate Lifecycle Management](#1313-subordinate-ca-certificate-lifecycle-management)
+    - [1.3.2 Promote use of Dedicated TLS Server Authentication PKI Hierarchies](#132-promote-use-of-dedicated-tls-server-authentication-pki-hierarchies)
+    - [1.3.3 Promote Cryptographic Agility and Resilience](#133-promote-cryptographic-agility-and-resilience)
+      - [1.3.3.1 Automation Support](#1331-automation-support)
+        - [1.3.3.1.1 ACME Solutions](#13311-acme-solutions)
+        - [1.3.3.1.2 Non-ACME Solutions](#13312-non-acme-solutions)
+      - [1.3.3.2 Encouraging use of Automation Solutions](#1332-encouraging-use-of-automation-solutions)
+    - [1.3.4. Promote Increased Transparency](#134-promote-increased-transparency)
+    - [1.3.5. Recommended Practices](#135-recommended-practices)
+  - [1.4. Audits](#14-audits)
+    - [1.4.1. Annual Audits](#141-annual-audits)
+    - [1.4.2. Ad-Hoc Audits](#142-ad-hoc-audits)
+  - [1.5. Reporting and Responding to Incidents](#15-reporting-and-responding-to-incidents)
+    - [1.5.1. Incident Reports](#151-incident-reports)
+    - [1.5.2. Communicating with Chrome During Incidents](#152-communicating-with-chrome-during-incidents)
+  - [1.6. Timely and Transparent Communications](#16-timely-and-transparent-communications)
+    - [1.6.1. Notification of CA Certificate Issuance](#161-notification-of-ca-certificate-issuance)
+    - [1.6.2. Notification of Procurement, Sale, or other Change Control Events](#162-notification-of-procurement-sale-or-other-change-control-events)
+- [2. Minimum Requirements for Applicant CAs Requesting Inclusion into the Chrome Root Store](#2-minimum-requirements-for-applicant-cas-requesting-inclusion-into-the-chrome-root-store)
+  - [2.1. PKI Policy Governance and Requirements](#21-pki-policy-governance-and-requirements)
+  - [2.2 Root CA Key Material Freshness](#22-root-ca-key-material-freshness)
+  - [2.3 Dedicated TLS Server Authentication PKI Hierarchies](#23-dedicated-tls-server-authentication-pki-hierarchies)
+  - [2.4. Promote Cryptographic Agility and Resilience](#24-promote-cryptographic-agility-and-resilience)
+    - [2.4.1. ACME Solutions](#241-acme-solutions)
+    - [2.4.2 Non-ACME Solutions](#242-non-acme-solutions)
+  - [2.5. Encouraging use of Automation Solutions](#25-encouraging-use-of-automation-solutions)
+  - [2.6 Promote Increased Transparency](#26-promote-increased-transparency)
 
 ## Introduction
 
@@ -35,7 +87,7 @@ CA Owners that satisfy the requirements defined in the policy below may apply fo
 
 The Chrome Root Program continuously evolves this policy to enhance the security and resilience of the Internet ecosystem, consistent with Google's ongoing [commitment](#chromes-ongoing-commitment-to-transport-security) to secure and reliable network connections in Chrome. This involves establishing and periodically strengthening minimum requirements for CAs. New requirements, sometimes only for applicants, are introduced to progressively raise the baseline of trust and drive the adoption of modern, agile, and secure PKI practices. This phased approach allows the program to integrate advancements and best practices, ensuring that certificates included in the Chrome Root Store consistently provide value to Chrome end users that exceeds the risk of their continued inclusion, while accounting for the practicalities of protecting users at scale.
 
-Therefore, applicants are expected to continuously adhere to the policies outlined herein, irrespective of their inclusion request submission date. All applicants must satisfy the criteria set forth in both the ["Minimum Requirements for CAs included in the Chrome Root Store"](#minimum-requirements-for-cas-included-in-the-chrome-root-store) and [Minimum Requirements for Applicant CAs Requesting Inclusion into the Chrome Root Store](#minimum-requirements-for-applicant-cas-requesting-inclusion-into-the-chrome-root-store) Sections. Where requirements in these sections differ, the applicant-specific requirements shall take precedence.
+Therefore, applicants are expected to continuously adhere to the policies outlined herein, irrespective of their inclusion request submission date. All applicants must satisfy the criteria set forth in both the ["Minimum Requirements for CAs included in the Chrome Root Store"](#minimum-requirements-for-cas-included-in-the-chrome-root-store) and ["Minimum Requirements for Applicant CAs Requesting Inclusion into the Chrome Root Store"](#minimum-requirements-for-applicant-cas-requesting-inclusion-into-the-chrome-root-store) Sections. Where requirements in these sections differ, the applicant-specific requirements shall take precedence.
 
 ### Chrome's Ongoing Commitment to Transport Security
 
