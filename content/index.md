@@ -577,6 +577,14 @@ In cases where the above requirements cannot be met, CA Owners are encouraged to
 
 ### 2.6 Promote Increased Transparency
 
-Unless an Applicant operates a CT log that is ["listed"](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json) as Usable in Chrome, it MUST reliably operate a Test CT log. This Test CT log MUST minimally log all pre-certificates and final certificates the Applicant PKI hiearchy issues until the conclusion of the inclusion request process. The location (e.g., URL) of this Test CT log MUST be disclosed to the CCADB at the time of submitting a  "Root Inclusion Request" to Google Chrome in the CCADB.
+Applicants MUST operate at least one Certificate Transparency Log that:
+- (1) is [listed](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json) as Usable in Chrome, OR
+- (2) minimally logs all pre-certificates and final certificates the Applicant PKI hierarchy issues.
 
-These Test CT logs SHOULD adhere to the requirements located [here](https://googlechrome.github.io/CertificateTransparency/log_policy.html), with the understanding that certain operational requirements applicable to production CT logs may not fully apply to test environments (specifically, requirements within the "Application Process", "Incident Detection and Response", and "Policy Violations" sections of the CT Log Policy).
+In the case of (2):
+- There is no expectation the this ever becomes Usable in Chrome, though Applicants capable of reliably operating a log are encouraged to [apply](https://googlechrome.github.io/CertificateTransparency/log_policy.html#application-process).
+- The location (e.g., URL) of this CT log MUST be disclosed to the CCADB at the time of submitting a  "Root Inclusion Request" to Google Chrome in the CCADB.
+- The CT log(s) SHOULD adhere to the requirements located [here](https://googlechrome.github.io/CertificateTransparency/log_policy.html), with the understanding that certain operational requirements applicable to "Usable" CT logs may not fully apply (specifically, requirements within the "Application Process", "Incident Detection and Response", and "Policy Violations" sections of the CT Log Policy).
+- The log MUST continue to be operated if the Applicant's hierarchy is accepted into the Chrome Root Store.
+
+Running a log that fails to reliably meet this criteria may not be grounds for immediate inclusion rejection, however, it would raise concern regarding the CA Owner's operational maturity during the evaluation process.
