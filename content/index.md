@@ -368,7 +368,12 @@ Chrome Root Program Participants SHOULD contribute to the health and diversity o
 - hosting or mirroring CT logs for redundancy and geographical diversity.
 - actively participating in CT standardization and policy development efforts.
 
-#### 1.4. Audits
+#### 1.3.5. Recommended Practices
+- When performing IP Address Control Validation, CA Owners SHOULD leverage an Internet Service Provider using RPKI (Resource Public Key Infrastructure) with invalid route filtering for route origin validation to strengthen the security of their validation processes.
+- CA Owners SHOULD randomize the use of Subordinate CAs for issuing TLS server authentication certificates, particularly when multiple such CAs share the same technical and policy characteristics. Doing so helps reduce often harmful practices like [Key Pinning](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning).
+- CA Owners SHOULD operate a publicly-accessible test infrastructure that closely mirrors their production environment. This test infrastructure should include all components relevant to certificate issuance, validation, and lifecycle management, except for any future changes that are currently being prepared to land in production and are not yet fully stable. CA Owners SHOULD also publicly describe a clear process for community members (e.g., browser vendors, security researchers, relying parties) to gain access to and utilize this test infrastructure and disclose this location to the CCADB. This practice facilitates proactive testing of new features, policy changes, and client behaviors, ultimately contributing to a more resilient and interoperable ecosystem.
+
+### 1.4. Audits
 
 Chrome Root Program Participant CAs MUST be audited in accordance with the table below.
 
