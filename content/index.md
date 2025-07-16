@@ -536,11 +536,11 @@ PKI hierarchies SHOULD support the Automatic Certificate Management Environment 
 
 -  The CA Owner MUST disclose to the CCADB an ACME endpoint (i.e., directory URL) accessible to the Chrome Root Program for each Baseline Requirements certificate policy OID the corresponding CA issues (i.e., IV, DV, OV, EV).
 - Each endpoint MUST support the following capabilities, as specified in [RFC 8555](https://www.rfc-editor.org/rfc/rfc8555):
-    - keyChange
-    - newAccount
-    - newNonce
-    - newOrder
-    - revokeCert
+    - keyChange,
+    - newAccount,
+    - newNonce,
+    - newOrder, and
+    - revokeCert.
 - Each endpoint's corresponding issuing CA(s) MUST support Certification Authority Authorization (CAA) Record Extensions for Account URI and ACME Method Binding, as specified in [RFC 8657](https://www.rfc-editor.org/rfc/rfc8657).
 - PKI hierarchies supporting the ACME protocol MUST support ACME Renewal Information (ARI, [RFC 9773](https://datatracker.ietf.org/doc/rfc9773/)).
 - ACME endpoints SHOULD be publicly accessible.
@@ -571,13 +571,13 @@ The following requirements are intended to promote use of automation solutions t
 - TLS server authentication certificates SHOULD NOT exceed 90 calendar days.
 - The period for domain control validation data reuse SHOULD NOT exceed 90 calendar days.
 - Due to (1) limitations in offering support for automation and (2) these methods offering a weak binding between request authorization and the demonstrated control over the domain(s) appearing in the requested certificate, TLS server authentication certificates SHOULD NOT rely on the following domain validation methods as defined by the Baseline Requirements:
-    - 3.2.2.4.4 Constructed Email to Domain Contact
-    - 3.2.2.4.13 Email to DNS CAA Contact
-    - 3.2.2.4.14 Email to DNS TXT Contact
-    - 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact
-    - 3.2.2.4.17 Phone Contact with DNS CAA Phone Contact
-    - 3.2.2.5.2 Email, Fax, SMS, or Postal Mail to IP Address Contact
-    - 3.2.2.5.5 Phone Contact with IP Address Contact
+    - 3.2.2.4.4 Constructed Email to Domain Contact,
+    - 3.2.2.4.13 Email to DNS CAA Contact,
+    - 3.2.2.4.14 Email to DNS TXT Contact,
+    - 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact,
+    - 3.2.2.4.17 Phone Contact with DNS CAA Phone Contact,
+    - 3.2.2.5.2 Email, Fax, SMS, or Postal Mail to IP Address Contact, and
+    - 3.2.2.5.5 Phone Contact with IP Address Contact.
 
 In cases where the above requirements cannot be met, CA Owners are encouraged to collect and share the corresponding subscriber use cases and affected technologies with chrome-root-program [at] google [dot] com on a quarterly basis in a format of their choosing to support the Chrome Root Program in better understanding blockers and opportunities for ecosystem improvement.
 
