@@ -579,10 +579,10 @@ In cases where the above requirements cannot be met, CA Owners are encouraged to
 
 Applicants MUST operate at least one Certificate Transparency Log that:
 - (1) is [listed](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json) as Usable in Chrome, OR
-- (2) minimally logs all pre-certificates and final certificates the Applicant PKI hierarchy issues.
+- (2) is NOT listed as Usable in Chrome but minimally logs all pre-certificates and final certificates the Applicant PKI hierarchy issues.
 
 In the case of (2):
-- There is no expectation the this ever becomes Usable in Chrome, though Applicants capable of reliably operating a log are encouraged to [apply](https://googlechrome.github.io/CertificateTransparency/log_policy.html#application-process).
+- There is no expectation that this log log ever becomes Usable in Chrome, though Applicants capable of reliably operating a log are encouraged to [apply](https://googlechrome.github.io/CertificateTransparency/log_policy.html#application-process).
 - The location (e.g., URL) of this CT log MUST be disclosed to the CCADB at the time of submitting a  "Root Inclusion Request" to Google Chrome in the CCADB.
 - The CT log(s) SHOULD adhere to the requirements located [here](https://googlechrome.github.io/CertificateTransparency/log_policy.html), with the understanding that certain operational requirements applicable to "Usable" CT logs may not fully apply (specifically, requirements within the "Application Process", "Incident Detection and Response", and "Policy Violations" sections of the CT Log Policy).
 - The log MUST continue to be operated if the Applicant's hierarchy is accepted into the Chrome Root Store.
