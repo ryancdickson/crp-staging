@@ -63,9 +63,9 @@ Google Chrome relies on Certification Authority systems (herein referred to as "
 
 When making HTTPS connections, Chrome refers to a list of self-signed root certificates from CAs that have demonstrated why continued trust in them is justified. This list is known as a "Root Store." CA certificates included in the [Chrome Root Store](https://g.co/chrome/root-store) are selected on the basis of publicly available and verified information, such as that within the Common CA Database ([CCADB](https://ccadb.org/)), and ongoing reviews by the Chrome Root Program.
 
-The Chrome Root Program Policy below establishes the minimum requirements for CA certificates to be included as trusted in a default installation of Chrome.
+The Chrome Root Program Policy below establishes the minimum requirements for CA certificates to be included as trusted in a default installation of Chrome. 
 
-Chrome Root Program Participants MUST satisfy the requirements defined in this policy, including taking responsibility for ensuring the continued compliance of all corresponding subordinate CAs and delegated third parties participating in the PKI.
+Chrome Root Program Participants MUST satisfy the requirements defined in this policy, including taking responsibility for ensuring the continued compliance of all corresponding subordinate CAs and delegated third parties participating in the PKI. Except in the case of CAs applying for inclusion, this policy makes no stipulation on the characteristics or PKI use cases served by CAs not included in the current version of the Chrome Root Store.
 
 The requirements included in this policy are effective immediately, unless explicitly stated as otherwise.
 
@@ -164,9 +164,9 @@ In some cases, this policy strengthens requirements described in the CCADB Polic
 
 #### 1.1.3. Chrome Root Program Participant Policies
 
-Until [FUTURE DATED: MONTH, DD, YYYY], CA Owners with either (1) a certificate included in the Chrome Root Store or (2) a CA certificate that validates to a certificate included in the Chrome Root Store MUST minimally adhere to [Section 4 ("Policy Disclosures")](https://www.ccadb.org/policy#4-policy-disclosures) of the CCADB Policy and MAY adhere to the future dated requirements immediately below.
+Until [FUTURE DATE: MONTH, DD, YYYY], CA Owners with either (1) a certificate included in the Chrome Root Store or (2) a CA certificate that validates to a certificate included in the Chrome Root Store MUST minimally adhere to [Section 4 ("Policy Disclosures")](https://www.ccadb.org/policy#4-policy-disclosures) of the CCADB Policy and MAY adhere to the FUTURE DATE requirements immediately below.
 
-Effective [FUTURE DATED: MONTH, DD, YYYY], Chrome Root Program Participants MUST accurately describe the policies and practices of their CA(s) within a single CA policy document that is:
+Effective [FUTURE DATE: MONTH, DD, YYYY], Chrome Root Program Participants MUST accurately describe the policies and practices of their CA(s) within a single CA policy document that is:
 
 - in the form of a combined CP/CPS.
 - freely publicly available for examination.
@@ -186,15 +186,17 @@ The consolidated policy:
 
 #### 1.2.1 Maximum Number of CAs per CA Owner
 
-Effective [SOONER FUTURE DATED: MONTH, DD, YYYY], CA Owners with more than two (2) self-signed root CA certificates included in the Chrome Root Store MUST submit a plan to the Chrome Root Program describing a future consolidation of their PKI hierarchies, including the identification of certificates planned for graceful removal using the SCTNotAfter feature.
+Effective [SOONER FUTURE DATE: MONTH, DD, YYYY], CA Owners with more than two (2) self-signed root CA certificates included in the Chrome Root Store MUST submit a plan to the Chrome Root Program describing a future consolidation of their PKI hierarchies, including the identification of certificates planned for graceful removal from the Chrome Root Store using the SCTNotAfter feature.
 
-Effective [FUTURE DATED: MONTH, DD, YYYY], except during temporary periods of transition, the Chrome Root Store will only include a maximum of two self-signed root CA certificates per CA Owner. 
+Effective [FUTURE DATE: MONTH, DD, YYYY], except during temporary periods of transition, the Chrome Root Store will only include a maximum of two self-signed root CA certificates per CA Owner. 
 
 To further reduce negative impact to the ecosystem, the Chrome Root Store may temporarily continue to include more than two root CA certificates past the specified consolidation timeline on a case-by-case basis.
 
 #### 1.2.2 Externally-operated Subordinate CAs
 
-**TODO:** Write
+Effective [FUTURE DATE: MONTH, DD, YYYY], CA Owners MUST NOT issue new Externally-operated CA certificates that validate to a certificate included in the Chrome Root Store, except in the case of CA Owners (1) with an open root inclusion request that has passed the initial completeness check OR a CA included in the Chrome Root Store without constraint.
+
+Time-valid externally-operated CAs that validate to a certificate included in the Chrome Root Store and do not meet the above criteria MUST be revoked by [EVEN MORE DISTANT FUTURE DATE: MONTH, DD, YYYY].
 
 ### 1.3. Modern Infrastructures
 
@@ -277,9 +279,9 @@ To reduce negative impact to the ecosystem, the Chrome Root Store may temporaril
 
 ##### 1.3.3.1 Automation Support
 
-Until [FUTURE DATED: MONTH, DD, YYYY], all CAs that validate to a certificate included in the Chrome Root Store SHOULD satisfy the following requirements.
+Until [FUTURE DATE: MONTH, DD, YYYY], all CAs that validate to a certificate included in the Chrome Root Store SHOULD satisfy the following requirements.
 
-Effective [FUTURE DATED: MONTH, DD, YYYY], all CA certificates that validate to a certificate included in the Chrome Root Store responsible for issuing TLS server authentication Certificates MUST satisfy the following requirements.
+Effective [FUTURE DATE: MONTH, DD, YYYY], all CA certificates that validate to a certificate included in the Chrome Root Store responsible for issuing TLS server authentication Certificates MUST satisfy the following requirements.
 
 Certificate lifecycle management automation solutions ("automation solutions") increase agility and improve the [security](https://zanema.com/papers/imc23_stale_certs.pdf) and resilience of the Internet ecosystem. The following requirements set an expectation that every CA capable of issuing TLS server authentication certificates trusted by default in Chrome supports at least one automation solution.
 
@@ -291,7 +293,7 @@ Automation solutions minimize "hands-on" input required from humans during certi
 
 For each Baseline Requirements certificate policy OID appearing in a TLS server authentication certificate directly issued by the CA, the CA Owner MUST use its automation solution to issue a valid test TLS server authentication certificate (i.e., "Automation Test Certificate") intended to demonstrate its automation capabilities to the Chrome Root Program. Valid Automation Test Certificates MUST be renewed at least once every 30 calendar days, however, at any point, the Chrome Root Program may request more frequent renewal. Automation Test Certificates must be served by a publicly accessible website whose URL is disclosed to the CCADB on the corresponding intermediate certificate record. CA Owners are encouraged to issue "Short-lived Subscriber Certificates," as [introduced](https://cabforum.org/2023/07/14/ballot-sc-063-v4make-ocsp-optional-require-crls-and-incentivize-automation/) in Version 2.0.1 of the Baseline Requirements, for the Automation Test Certificates.
 
-Beginning [FUTURE DATED: MONTH, DD, YYYY], the Chrome Root Program will set an SCTNotAfter constraint on root CA certificates included in the Chrome Root Store for any PKI hierarchy lacking sufficient automation solutions for CAs repsonsible for issuing unexpired and unrevoked TLS server authentication certificates. Once the constraint is applied, Chrome will no longer trust any certificate chaining to the root by default if it is issued more than 90 calendar days following the violation's detection.
+Beginning [FUTURE DATE: MONTH, DD, YYYY], the Chrome Root Program will set an SCTNotAfter constraint on root CA certificates included in the Chrome Root Store for any PKI hierarchy lacking sufficient automation solutions for CAs repsonsible for issuing unexpired and unrevoked TLS server authentication certificates. Once the constraint is applied, Chrome will no longer trust any certificate chaining to the root by default if it is issued more than 90 calendar days following the violation's detection.
 
 ###### 1.3.3.1.1 ACME Solutions
 
@@ -331,7 +333,7 @@ While ACME support is encouraged, PKI hierarchies MAY support other automated so
 
 The following requirements are intended to promote use of automation solutions to increase agility and improve the [security](https://zanema.com/papers/imc23_stale_certs.pdf) and resilience of the Internet ecosystem, while recognizing that at the moment, not all subscriber use cases can be addressed using automation.
 
-Beginning [FUTURE DATED: MONTH, DD, YYYY]:
+Beginning [FUTURE DATE: MONTH, DD, YYYY]:
 
 - TLS server authentication certificates SHOULD NOT exceed 90 calendar days.
 - The period for domain control validation data reuse SHOULD NOT exceed 90 calendar days.
@@ -374,6 +376,10 @@ Audits MUST NOT rely on a version of the accepted audit criteria below if it has
 
 \*\*\* accepted on a discretionary basis
 
+To uphold a consistent baseline regardless of a CA Owner's geographic location, CAs SHOULD be assessed against the WebTrust scheme.
+
+To improve transparency and increase confidence in a CA Owner's reliability and adherance to ecosystem expectations, they SHOULD publicly disclose a detailed controls mapping (sometimes referred to as a "Long-form Report").
+
 #### 1.4.1. Annual Audits
 All Chrome Root Program Participant CAs MUST retain an unbroken, contiguous audit coverage.
 
@@ -386,6 +392,8 @@ For Applicant PKI hierarchies subject of a CCADB Root Inclusion Request submitte
 -  Except for Externally-operated CAs, when CAs in the hierarchy are assessed against:
     -  **only a single audit scheme** (e.g., all CAs in the hierarchy are only assessed against the WebTrust scheme), they MUST fall under a single audit scope (i.e., represented in a single WebTrust Assurance Report) for the assessed criteria (e.g., (1) WebTrust Principles and Criteria for Certification Authorities, (2) WebTrust Principles and Criteria for Certification Authorities - Network Security, (3) WebTrust Principles and Criteria for Certification Authorities - SSL Baseline, or (4) WebTrust for CA - Extended Validation - SSL).
     -  **multiple audit schemes** (e.g., some CAs are assessed against the WebTrust scheme and others are assessed against the ETSI scheme), all CAs assessed against each respective scheme MUST fall under a single audit scope for that scheme (i.e., all ETSI-assessed CAs are represented in a single ETSI Audit Attestation Letter, and all WebTrust CAs are represented in a single WebTrust Assurance Report) for the assessed criteria.
+ 
+For each incident reported in an ETSI Audit Attestation Letter or WebTrust Assurance Report, auditors SHOULD opine that (1) the scope, impact, and root cause of incidents are accurately and fairly stated in the publicly-disclosed incident reports, and (2) that the corresponding actions taken by the CA Owner (a) satisfactorily address those root causes and (b) meaningfully reduce likelihood of the issue’s recurrence.
 
 #### 1.4.2. Ad-Hoc Audits
 
@@ -503,7 +511,7 @@ To qualify as a dedicated TLS server authentication PKI hierarchy under this pol
 
 For each Baseline Requirements certificate policy OID an Applicant intends to issue, the CA Owner MUST use its automation solution to issue a valid test TLS server authentication certificate (i.e., "Automation Test Certificate") intended to demonstrate its automation capabilities to the Chrome Root Program. Valid Automation Test Certificates MUST be renewed at least once every 30 calendar days, however, at any point, the Chrome Root Program may request more frequent renewal. Automation Test Certificates must be served by a publicly accessible website whose URL is disclosed to the CCADB on the corresponding intermediate certificate record. CA Owners are encouraged to issue "Short-lived Subscriber Certificates," as [introduced](https://cabforum.org/2023/07/14/ballot-sc-063-v4make-ocsp-optional-require-crls-and-incentivize-automation/) in Version 2.0.1 of the Baseline Requirements, for the Automation Test Certificates.
 
-Beginning [FUTURE DATED: MONTH, DD, YYYY], the Chrome Root Program will set an SCTNotAfter constraint on root CA certificates included in the Chrome Root Store for any PKI hierarchy found in violation of the above requirements. Once the constraint is applied, Chrome will no longer trust any certificate chaining to the root by default if it is issued more than 90 calendar days following the violation's detection.
+Beginning [FUTURE DATE: MONTH, DD, YYYY], the Chrome Root Program will set an SCTNotAfter constraint on root CA certificates included in the Chrome Root Store for any PKI hierarchy found in violation of the above requirements. Once the constraint is applied, Chrome will no longer trust any certificate chaining to the root by default if it is issued more than 90 calendar days following the violation's detection.
 
 #### 2.4.1. ACME Solutions
 
