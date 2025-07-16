@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap">
+    <link rel="stylesheet" href="{{ '/static/crp.css' | absolute_url }}">
+</head>
+<body>
+  <header>
+    <h4>Policy</h4>
+    <nav>
+      <ul>
+        <li><a href="{{ '/' | absolute_url }}">Chrome Root Program Policy</a></li>
+      </ul>
+    </nav>
+    <h4>Resources</h4>
+    <nav>
+      <ul>
+        <li><a href="{{ '/apply-for-inclusion' | absolute_url }}">Apply for Inclusion</a></li>
+        <li><a href="{{ '/moving-forward-together' | absolute_url }}">Moving Forward, Together</a></li>
+      </ul>
+    </nav>
+    <h4>Policy Archive</h4>
+    <nav>
+      <ul>
+      {% for v in versions[:-1] %}
+        <li><a href="{{ v.path | absolute_url }}">Version {{ v.version }}</a></li>
+      {% endfor %}
+      </ul>
+    </nav>
+  </header>
+  <section>
+    {{ content | safe }}
+  </section>
+</body>
+</html>
