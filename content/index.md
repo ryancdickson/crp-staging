@@ -75,11 +75,11 @@ Any questions regarding this policy can be directed to chrome-root-program [at] 
 
 ### Apply for Inclusion
 
-CA Owners that satisfy the requirements defined in the policy below may apply for self-signed root CA certificate inclusion in the Chrome Root Store using [these]((apply-for-inclusion.md)) instructions.
+CA Owners that satisfy the requirements defined in the policy below may apply for self-signed root CA certificate inclusion in the Chrome Root Store using [these](apply-for-inclusion.md) instructions.
 
 Applicants are expected to continuously adhere to the policies outlined herein, irrespective of their inclusion request submission date. All applicants must satisfy the requirements set forth in both the ["Minimum Requirements for CAs included in the Chrome Root Store"](#minimum-requirements-for-cas-included-in-the-chrome-root-store) and ["Minimum Requirements for Applicant CAs Requesting Inclusion into the Chrome Root Store"](#minimum-requirements-for-applicant-cas-requesting-inclusion-into-the-chrome-root-store) Sections. Where requirements in these sections differ, the applicant-specific requirements shall take precedence.
 
-If, during an ongoing Root Inclusion Request in the CCADB, this policy is updatede, the status of the Root Inclusion Request case will be reverted to 'CA Providing Data'. Applicants are expected to review and ensure compliance with the updated policy expectations before resubmitting their Root Inclusion Request for the Chrome Root Program's review.
+If, during an ongoing Root Inclusion Request in the CCADB, this policy is updated, the status of the Root Inclusion Request will be set to 'CA Providing Data'. Applicants are expected to review and ensure compliance with the updated policy expectations before resubmitting their Root Inclusion Request for the Chrome Root Program's review.
 
 ### Chrome's Ongoing Commitment to Transport Security
 
@@ -250,7 +250,7 @@ The lifecycle management of Subordinate CA Certificates plays a crucial role in 
 To achieve these goals, all Subordinate CA Certificates that validate to a certificate included in the Chrome Root Store SHOULD satisfy the following requirements:
 
 - Subordinate CA Certificates SHOULD have a maximum validity period of three (3) years.
-- CA Owners SHOULD create and deploy new Subordinate CA Certifictates at least once every six (6) months. CA Owners SHOULD actively transition subscriber certificate issuance to these newly deployed CAs.
+- CA Owners SHOULD create and deploy new Subordinate CA Certificates at least once every six (6) months. CA Owners SHOULD actively transition subscriber certificate issuance to these newly deployed CAs.
 
 #### 1.3.2 Promote use of Dedicated TLS Server Authentication PKI Hierarchies
 
@@ -306,11 +306,11 @@ PKI hierarchies SHOULD support the Automatic Certificate Management Environment 
 
 -  The CA Owner MUST disclose to the CCADB an ACME endpoint (i.e., directory URL) accessible to the Chrome Root Program for each Baseline Requirements certificate policy OID the corresponding CA issues (i.e., IV, DV, OV, EV).
 - Each endpoint MUST support the following capabilities, as specified in [RFC 8555](https://www.rfc-editor.org/rfc/rfc8555):
-    - keyChange
-    - newAccount
-    - newNonce
-    - newOrder
-    - revokeCert
+    - keyChange,
+    - newAccount,
+    - newNonce,
+    - newOrder, and
+    - revokeCert.
 - Each endpoint's corresponding issuing CA(s) MUST support Certification Authority Authorization (CAA) Record Extensions for Account URI and ACME Method Binding, as specified in [RFC 8657](https://www.rfc-editor.org/rfc/rfc8657).
 - PKI hierarchies supporting the ACME protocol MUST support ACME Renewal Information (ARI, [RFC 9773](https://datatracker.ietf.org/doc/rfc9773/)).
 - ACME endpoints SHOULD support the Profiles extension [[RFC TBD](https://datatracker.ietf.org/doc/draft-aaron-acme-profiles/)).
@@ -373,7 +373,7 @@ Chrome Root Program Participants SHOULD contribute to the health and diversity o
 #### 1.3.5. Additional Recommended Practices
 - When performing IP Address Control Validation, CA Owners SHOULD leverage an Internet Service Provider using RPKI (Resource Public Key Infrastructure) with invalid route filtering for route origin validation to strengthen the security of their validation processes.
 - CA Owners SHOULD randomize the use of Subordinate CAs for issuing TLS server authentication certificates, particularly when multiple such CAs share the same technical and policy characteristics. Doing so helps reduce often harmful practices like [Key Pinning](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning).
-- CA Owners SHOULD operate a publicly-accessible test infrastructure that closely mirrors their production environment. This test infrastructure should include all components relevant to certificate issuance, validation, and lifecycle management, except for any future changes that are currently being prepared to land in production and are not yet fully stable. CA Owners SHOULD also publicly describe a clear process for community members (e.g., browser vendors, security researchers, relying parties) to gain access to and utilize this test infrastructure and disclose this location to the CCADB. This practice facilitates proactive testing of new features, policy changes, and client behaviors, ultimately contributing to a more resilient and interoperable ecosystem.
+- CA Owners SHOULD operate a publicly accessible test infrastructure that closely mirrors their production environment. This test infrastructure should include all components relevant to certificate issuance, validation, and lifecycle management, except for any future changes that are currently being prepared to land in production and are not yet fully stable. CA Owners SHOULD also publicly describe a clear process for community members (e.g., browser vendors, security researchers, relying parties) to gain access to and utilize this test infrastructure and disclose this location to the CCADB. This practice facilitates proactive testing of new features, policy changes, and client behaviors, ultimately contributing to a more resilient and interoperable ecosystem.
 
 ### 1.4. Audits
 
