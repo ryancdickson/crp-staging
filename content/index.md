@@ -47,6 +47,7 @@ Bookmark this page as [https://g.co/chrome/root-policy](https://g.co/chrome/root
   - [1.6. Timely and Transparent Communications](#16-timely-and-transparent-communications)
     - [1.6.1. Notification of CA Certificate Issuance](#161-notification-of-ca-certificate-issuance)
     - [1.6.2. Notification of Procurement, Sale, or other Change Control Events](#162-notification-of-procurement-sale-or-other-change-control-events)
+    - [1.6.3. Industry and Community Forum Engagement](#163-industry-and-community-forum-engagement)
 - [2. Minimum Requirements for Applicant CAs Requesting Inclusion into the Chrome Root Store](#2-minimum-requirements-for-applicant-cas-requesting-inclusion-into-the-chrome-root-store)
   - [2.1. PKI Policy Governance and Requirements](#21-pki-policy-governance-and-requirements)
   - [2.2 Root CA Key Material Freshness](#22-root-ca-key-material-freshness)
