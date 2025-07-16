@@ -355,7 +355,15 @@ In cases where the above requirements cannot be met, CA Owners are encouraged to
 
 Within 24 hours of issuance, Chrome Root Program Participants SHOULD log final certificates to at least one CT log [usable](https://googlechrome.github.io/CertificateTransparency/log_list.html) in Chrome at the time of issuance.
 
-**TODO:** Something about supporting or running logs.
+Chrome Root Program Participants SHOULD contribute to the health and diversity of the CT ecosystem. Such contributions may include, but are not limited to:
+
+- reliably operating CT logs usable in Chrome.
+- offering financial support to log operators whose services the CA Owner relies on.
+- providing engineering resources or expertise to assist CT log operators or related projects.
+- developing and open-sourcing CT-related tools (e.g., for log operations, monitoring, auditing, or client-side integration).
+- sponsoring research and development focused on improving CT scalability, security, privacy, or new log designs.
+- hosting or mirroring CT logs for redundancy and geographical diversity.
+- actively participating in CT standardization and policy development efforts.
 
 ##### 1.3.5. Recommended Practices
 
@@ -569,4 +577,6 @@ In cases where the above requirements cannot be met, CA Owners are encouraged to
 
 ### 2.6 Promote Increased Transparency
 
-Applicants MUST log pre-certificates and final certificates to at least one "Test" CT log disclosed [here](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json) (i.e., log type = "test") until eligible for logging in logs usable in Chrome at the time of issuance (e.g., due to being accepted by a publicly-trusted root store operator or due to the existence of a cross-certificate issued from a publicly-trusted root CA).
+Unless an Applicant operates a CT log that is ["listed"](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json) as Usable in Chrome, it MUST reliably operate a Test CT log. This Test CT log MUST minimally log all pre-certificates and final certificates the Applicant PKI hiearchy issues until the conclusion of the inclusion request process. The location (e.g., URL) of this Test CT log MUST be disclosed to the CCADB at the time of submitting the root inclusion request.
+
+These Test CT logs SHOULD adhere to the requirements located [here](https://googlechrome.github.io/CertificateTransparency/log_policy.html), with the understanding that certain operational requirements applicable to production CT logs may not fully apply to test environments (specifically, requirements within the "Application Process", "Incident Detection and Response", and "Policy Violations" sections of the CT Log Policy).
