@@ -186,17 +186,20 @@ The consolidated policy:
 
 #### 1.2.1 Maximum Number of CAs per CA Owner
 
-Effective [SOONER FUTURE DATE: MONTH, DD, YYYY], CA Owners with more than two (2) self-signed root CA certificates included in the Chrome Root Store MUST submit a plan to the Chrome Root Program describing a future consolidation of their PKI hierarchies, including the identification of certificates planned for graceful removal from the Chrome Root Store using the SCTNotAfter feature.
-
 Effective [FUTURE DATE: MONTH, DD, YYYY], except during temporary periods of transition, the Chrome Root Store will only include a maximum of two self-signed root CA certificates per CA Owner. 
+
+Effective [SOONER FUTURE DATE: MONTH, DD, YYYY], CA Owners with more than two (2) self-signed root CA certificates included in the Chrome Root Store MUST submit a plan to the Chrome Root Program describing a future consolidation of their PKI hierarchies, including the identification of certificates planned for graceful removal from the Chrome Root Store using the SCTNotAfter feature. All TLS server authentication certificates issued prior to the SCTNotAfter metadata added to the Chrome Root Store will be trusted by default in Chrome until their expiry. 
 
 To further reduce negative impact to the ecosystem, the Chrome Root Store may temporarily continue to include more than two root CA certificates past the specified consolidation timeline on a case-by-case basis.
 
 #### 1.2.2 Externally-operated Subordinate CAs
 
-Effective [FUTURE DATE: MONTH, DD, YYYY], CA Owners MUST NOT issue new Externally-operated CA certificates that validate to a certificate included in the Chrome Root Store, except in the case of CA Owners (1) with an open root inclusion request that has passed the initial completeness check OR a CA included in the Chrome Root Store without constraint.
+Effective [FUTURE DATE: MONTH, DD, YYYY], CA Owners MUST NOT issue new Externally-operated CA certificates that validate to a certificate included in the Chrome Root Store, unless the Subject (i.e,. CA) of the new Externally-operated CA certificate meets one of the following conditions:
 
-Time-valid externally-operated CAs that validate to a certificate included in the Chrome Root Store and do not meet the above criteria MUST be revoked by [EVEN MORE DISTANT FUTURE DATE: MONTH, DD, YYYY].
+- it is represented in a self-signed root CA certificate included in the current version of the Chrome Root Store without any active constraints (e.g., SCTNotAfter).
+- it has an active CCADB Root Inclusion Request that has successfully passed the (1) Chrome Root Program's initial completeness check and (2) the request has undergone the CCADB [Public Discussion](https://www.ccadb.org/cas/public-group#root-inclusion-public-discussion) process.
+
+Time-valid Externally-operated CAs that validate to a certificate included in the Chrome Root Store and do not meet the criteria in (1) or (2) above MUST be revoked by [EVEN MORE DISTANT FUTURE DATE: MONTH, DD, YYYY].
 
 ### 1.3. Modern Infrastructures
 
