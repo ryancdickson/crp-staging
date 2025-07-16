@@ -482,6 +482,17 @@ Where permissible by law, Chrome Root Program Participants MUST notify chrome-ro
 
 Not limited to the circumstances above, the Chrome Root Program reserves the right to require re-application to the Chrome Root Store.
 
+#### 1.6.3. Industry and Community Forum Engagement
+
+Chrome Root Program Participants MUST maintain awareness of, and where relevant, actively engage in public discussions concerning CA practices, policy developments, and incidents, within minimally the following public forums:
+- [CCADB Public](https://groups.google.com/a/ccadb.org/g/public),
+- the CA/Browser Forum [Server Certificate Working Group](https://groups.google.com/a/groups.cabforum.org/g/servercert-wg), [Validation Subcommittee](https://groups.google.com/a/groups.cabforum.org/g/validation), and [Network Security](https://lists.cabforum.org/mailman/listinfo/netsec) Working Group mailing lists, 
+- the Bugzilla [CA Certificate Compliance]([about:blank](https://bugzilla.mozilla.org/buglist.cgi?product=CA%20Program&component=CA%20Certificate%20Compliance&bug_status=__open__&list_id=17629668)) component, 
+- the [Certificate Transparency Policy](https://groups.google.com/a/chromium.org/g/ct-policy) mailing list, and
+- the [Certificate Transparency](https://groups.google.com/g/certificate-transparency) mailing list.
+
+Awareness of, and participation in, other key industry and community forums is encouraged.
+
 ## 2. Minimum Requirements for Applicant CAs Requesting Inclusion into the Chrome Root Store
 
 ### 2.1. PKI Policy Governance and Requirements
