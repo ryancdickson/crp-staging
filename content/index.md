@@ -379,11 +379,19 @@ Upon detection of a violation of the above requirements or in the instance of an
 OPTION B
 --------------
 
+##### 1.3.4.2 Reliably Operating a Certificate Transparency Log
+
+To enhance the security and resilience of the internet ecosystem, and as a critical component of the Chrome Root Program's commitment to CT, CA Owners included in the Chrome Root Store SHOULD operate at least one CT Log [listed](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json) as either "Usable" or "Qualified."
+
+--------------
+OPTION C
+--------------
+
 ##### 1.3.4.2 Contributing to a healthy CT ecosystem
 
 Chrome Root Program Participants SHOULD contribute to the health and diversity of the CT ecosystem. Such contributions may include, but are not limited to:
 
-- reliably operating CT logs [Usable](https://googlechrome.github.io/CertificateTransparency/log_states.html#usable) in Chrome.
+- reliably operating CT logs [Usable](https://googlechrome.github.io/CertificateTransparency/log_states.html#usable) in Chrome. [REMOVE DEPENDING ON WHAT LANDS ABOVE]
 - offering financial support to log operators whose services the CA Owner relies on.
 - providing engineering resources or expertise to assist CT log operators or related projects.
 - developing and open-sourcing CT-related tools (e.g., for log operations, monitoring, auditing, or client-side integration).
@@ -615,7 +623,11 @@ In cases where the above requirements cannot be met, CA Owners are encouraged to
 
 ### 2.6 Promote Increased Transparency
 
-[future log requirements apply to everybody now.]
+To enhance the security and resilience of the internet ecosystem, and as a critical component of the Chrome Root Program's commitment to CT, Applicants MUST reliably operate at least one CT Log. This log MUST operate in accordance with the requirements defined in the [Chrome CT Log Policy](https://googlechrome.github.io/CertificateTransparency/log_policy.html), and MUST be [listed](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json) as either "Usable" or "Qualified."
+
+If the self-operated log limits the set of [Accepted Root Certificates](https://googlechrome.github.io/CertificateTransparency/log_policy.html#accepted-root-certificates) permissible for logging to only those where the CA Owner has direct operational control or ownership, then CT Compliant certificates issued by the CA Owner MUST have an additional SCT from a distinctly operated, Qualified, Usable, or ReadOnly CT Log Operator at the time of check than the expectations defined [here](https://googlechrome.github.io/CertificateTransparency/ct_policy.html#ct-compliant-certificates). 
+
+Upon detection of a violation of the above requirements or in the instance of an existing log's failure, the Chrome Root Program will notify the affected CA Owner. The CA Owner will have 90 calendar days to demonstrate remediation before Chrome will enforce a 180-day SCTNotAfter constraint on the CA Owners root's included in the Chrome Root Store (if applicable). Repeated or sustained non-compliance after such enforcement MAY, at the Chrome Root Program's discretion, lead to the eventual removal of the CA Owner's roots from the Chrome Root Store.
 
 
 
