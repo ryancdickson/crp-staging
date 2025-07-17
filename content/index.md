@@ -167,7 +167,7 @@ In some cases, this policy strengthens requirements described in the CCADB Polic
 
 #### 1.1.3. Chrome Root Program Participant Policies
 
-Until **[FUTURE DATE: MONTH DD, YYYY]**, CA Owners with either (1) a certificate included in the Chrome Root Store or (2) a CA certificate that validates to a certificate included in the Chrome Root Store MUST minimally adhere to [Section 4 ("Policy Disclosures")](https://www.ccadb.org/policy#4-policy-disclosures) of the CCADB Policy and MAY adhere to the FUTURE DATE requirements immediately below.
+Until **[FUTURE DATE: MONTH DD, YYYY]**, CA Owners with either (1) a certificate included in the Chrome Root Store or (2) a CA certificate that validates to a certificate included in the Chrome Root Store MUST minimally adhere to [Section 4 ("Policy Disclosures")](https://www.ccadb.org/policy#4-policy-disclosures) of the CCADB Policy and MAY adhere to the future dated requirements immediately below.
 
 Effective **[FUTURE DATE: MONTH DD, YYYY]**, Chrome Root Program Participants MUST accurately describe the policies and practices of their CA(s) within a single CA policy document that is:
 
@@ -202,7 +202,7 @@ Effective **[FUTURE DATE: MONTH DD, YYYY]**, CA Owners MUST NOT issue new Extern
 - it is represented in a self-signed root CA certificate included in the current version of the Chrome Root Store without any active constraints (e.g., SCTNotAfter).
 - it has an active CCADB Root Inclusion Request that has successfully passed the (1) Chrome Root Program's initial completeness check and (2) the request has undergone the CCADB [Public Discussion](https://www.ccadb.org/cas/public-group#root-inclusion-public-discussion) process.
 
-Time-valid Externally-operated CAs that validate to a certificate included in the Chrome Root Store and do not meet the criteria in (1) or (2) above MUST be revoked by [EVEN MORE DISTANT FUTURE DATE: MONTH DD, YYYY].
+Time-valid Externally-operated CAs that validate to a certificate included in the Chrome Root Store and do not meet the criteria in (1) or (2) above MUST be revoked by **[EVEN MORE DISTANT FUTURE DATE: MONTH DD, YYYY]**.
 
 ### 1.3. Modern Infrastructures
 
@@ -359,7 +359,23 @@ In cases where the above requirements cannot be met, CA Owners are encouraged to
 
 #### 1.3.4. Promote Increased Transparency
 
-Within 24 hours of issuance, Chrome Root Program Participants SHOULD log final certificates to at least one CT log [usable](https://googlechrome.github.io/CertificateTransparency/log_list.html) in Chrome at the time of issuance.
+##### 1.3.4.1 Logging Final Certificates 
+
+Within 24 hours of issuance, Chrome Root Program Participants SHOULD log final certificates to at least one CT log [usable or qualified](https://googlechrome.github.io/CertificateTransparency/log_list.html) in Chrome at the time of issuance.
+
+##### OPTION A
+
+**1.3.4.2 Reliably Operating a Certificate Transparency Log** 
+
+Effective **[FUTURE DATE: MONTH DD, YYYY]**, to enhance the security and resilience of the internet ecosystem, and as a critical component of the Chrome Root Program's commitment to CT, CA Owners included in the Chrome Root Store MUST reliably operate at least one CT Log. This log MUST operate in accordance with the requirements defined the [Chrome CT Log Policy](https://googlechrome.github.io/CertificateTransparency/log_policy.html), and MUST be [listed](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json) as either "Usable" or "Qualified."
+
+If the self-operated log limits the set of [Accepted Root Certificates](https://googlechrome.github.io/CertificateTransparency/log_policy.html#accepted-root-certificates) permissible for logging to only those where the CA Owner has direct operational control or ownership, then CT Compliant certificates issued by the CA Owner MUST have an additional SCT from a distinctly operated, Qualified, Usable, or ReadOnly CT Log Operator at the time of check than the expectations defined [here](https://googlechrome.github.io/CertificateTransparency/ct_policy.html#ct-compliant-certificates). 
+
+Upon detection of a violation of the above requirements or in the instance of an existing log's failure, the Chrome Root Program will notify the affected CA Owner. The CA Owner will have 90 calendar days to demonstrate remediation before Chrome will enforce a 180-day SCTNotAfter constraint on the CA Owners roots included in the Chrome Root Store. Repeated or sustained non-compliance after such enforcement may, at the Chrome Root Program's discretion, lead to the eventual removal of the CA Owner's roots from the Chrome Root Store.
+
+##### OPTION B
+
+**Contributing to a healthy CT ecosystem**
 
 Chrome Root Program Participants SHOULD contribute to the health and diversity of the CT ecosystem. Such contributions may include, but are not limited to:
 
@@ -595,14 +611,7 @@ In cases where the above requirements cannot be met, CA Owners are encouraged to
 
 ### 2.6 Promote Increased Transparency
 
-Applicants MUST operate at least one Certificate Transparency Log that:
-- (1) is [listed](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json) as Usable in Chrome, OR
-- (2) is NOT listed as Usable in Chrome but minimally logs all pre-certificates and final certificates (i.e., TLS server authentication certificates) issued by the CA Owner.
+[future log requirements apply to everybody now.]
 
-In the case of (2):
-- There is no expectation that this log ever becomes Usable in Chrome, though Applicants capable of reliably operating a log at scale are encouraged to [apply](https://googlechrome.github.io/CertificateTransparency/log_policy.html#application-process).
-- The location of this CT log MUST be disclosed to the CCADB at the time of submitting a  "Root Inclusion Request" to Google Chrome in the CCADB.
-- The CT log(s) SHOULD adhere to the requirements located [here](https://googlechrome.github.io/CertificateTransparency/log_policy.html), with the understanding that certain operational requirements applicable to "Usable" CT logs may not fully apply (specifically, requirements within the "Application Process", "Incident Detection and Response", and "Policy Violations" sections of the CT Log Policy).
-- The log MUST continue to be operated if the Applicant's hierarchy is accepted into the Chrome Root Store.
 
-Running a log that fails to reliably meet this criteria may not be grounds for immediate inclusion rejection or subsequent removal of default trust; however, it would raise concern regarding the CA Owner's operational maturity, reflecting on their technical competence, resource allocation, and overall commitment to fulfilling the responsibilities of a privileged and trusted position on the web, made possible by default trust in Chrome.
+
