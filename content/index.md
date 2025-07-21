@@ -197,10 +197,7 @@ To further reduce negative impact to the ecosystem, the Chrome Root Store may te
 
 #### 1.2.2 Externally-operated Subordinate CAs
 
-Effective **[FUTURE DATE: MONTH DD, YYYY]**, CA Owners MUST NOT issue new Externally-operated CA certificates that validate to a certificate included in the Chrome Root Store, unless the Subject (i.e,. CA) of the new Externally-operated CA certificate meets one of the following conditions:
-
-- it is represented in a self-signed root CA certificate included in the current version of the Chrome Root Store without any active constraints (e.g., SCTNotAfter).
-- it has an active CCADB Root Inclusion Request that has successfully passed the (1) Chrome Root Program's initial completeness check and (2) the request has undergone the CCADB [Public Discussion](https://www.ccadb.org/cas/public-group#root-inclusion-public-discussion) process.
+Effective **[FUTURE DATE: MONTH DD, YYYY]**, CA Owners MUST NOT issue new Externally-operated CA certificates that validate to a certificate included in the Chrome Root Store, unless the Subject (i.e,. CA) is represented in a self-signed root CA certificate included in the current version of the Chrome Root Store.
 
 Time-valid Externally-operated CAs that validate to a certificate included in the Chrome Root Store and do not meet the criteria in (1) or (2) above MUST be revoked by **[EVEN MORE DISTANT FUTURE DATE: MONTH DD, YYYY]**.
 
