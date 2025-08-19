@@ -122,6 +122,8 @@ This policy considers a PKI hierarchy as "dedicated" if it is intended to serve 
 
 Chrome Root Program Participants MUST satisfy the requirements defined in this policy, including taking responsibility for ensuring the continued compliance of all corresponding subordinate CAs and delegated third parties participating in the PKI.
 
+The Chrome Root Program maintains an expectation that Chrome Root Program Participants will adhere to any subsequent version(s) of this policy as new versions take effect.
+
 The requirements included in this policy are effective immediately, unless explicitly stated as otherwise.
 
 Any questions regarding this policy can be directed to chrome-root-program [at] google [dot] com.
