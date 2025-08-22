@@ -167,23 +167,7 @@ In some cases, this policy strengthens requirements described in the CCADB Polic
 
 #### 1.1.3. Chrome Root Program Participant Policies
 
-Until **[FUTURE DATE: MONTH DD, YYYY]**, CA Owners with either (1) a certificate included in the Chrome Root Store or (2) a CA certificate that validates to a certificate included in the Chrome Root Store MUST minimally adhere to [Section 4 ("Policy Disclosures")](https://www.ccadb.org/policy#4-policy-disclosures) of the CCADB Policy and MAY adhere to the future dated requirements immediately below.
-
-Effective **[FUTURE DATE: MONTH DD, YYYY]**, Chrome Root Program Participants MUST accurately describe the policies and practices of their CA(s) within a single CA policy document that is:
-
-- in the form of a combined CP/CPS.
-- freely publicly available for examination.
-- available in an authoritative English language version.
-- available in either Markdown or AsciiDoc at a location disclosed to the CCADB ([GitHub-Flavored Markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/about-writing-and-formatting-on-github) is preferred).
-- except for Externally-operated CAs, authoritative for all CAs included in the corresponding PKI hierarchy.
-- focused only on the specific PKI use case of issuing TLS server authentication certificates to websites.
-- sufficiently detailed to assess the operations of the CA(s) and the compliance with these expectations and those of the Baseline Requirements, and MUST NOT conflict with either of these requirements.
-
-These requirements do not prohibit CA Owners from maintaining additional policy documents, which may also be considered authoritative by other stakeholders. However, the consolidated policy document made available to the Chrome Root Program MUST NOT conflict with any additional policy documents that might exist for the corresponding PKI hierarchy.
-
-The consolidated policy:
-- MUST explicitly state adherence to the latest published version of the TLS BRs, the CCADB Policy, and this policy.
-- MAY explicitly state adherence to other policies.
+Effective XXXX-XX-XX, a Chrome Root Program Participant's CP or combined CP/CPS MUST explicitly state adherence to the latest published version of this policy and the CCADB Policy. This attestation SHOULD be made in Section 1.1 ("Overview").
 
 ### 1.2. Reducing Attack Surface of the Chrome Root Store
 
