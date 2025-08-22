@@ -197,9 +197,7 @@ To further reduce negative impact to the ecosystem, the Chrome Root Store may te
 
 #### 1.2.2 Externally-operated Subordinate CAs
 
-Effective **[FUTURE DATE: MONTH DD, YYYY]**, CA Owners MUST NOT issue new Externally-operated CA certificates that validate to a certificate included in the Chrome Root Store, unless the Subject (i.e,. CA) is represented in a self-signed root CA certificate included in the current version of the Chrome Root Store.
-
-Time-valid Externally-operated CAs that validate to a certificate included in the Chrome Root Store and do not meet the above criteria above MUST be revoked by **[EVEN MORE DISTANT FUTURE DATE: MONTH DD, YYYY]**.
+CA Owners SHOULD NOT issue new Externally-operated CA certificates that validate to a certificate included in the Chrome Root Store, unless the Subject CA Owner is represented in a self-signed root CA certificate included in the current version of the Chrome Root Store.
 
 ### 1.3. Modern Infrastructures
 
