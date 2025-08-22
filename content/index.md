@@ -167,15 +167,15 @@ In some cases, this policy strengthens requirements described in the CCADB Polic
 
 #### 1.1.3. Chrome Root Program Participant Policies
 
-Effective 2026-06-15, a Chrome Root Program Participant's CP or combined CP/CPS MUST explicitly state adherence to the latest published version of this policy and the CCADB Policy. This attestation SHOULD be made in Section 1.1 ("Overview").
+Effective **June 15, 2026**, a Chrome Root Program Participant's CP or combined CP/CPS MUST explicitly state adherence to the latest published version of this policy and the CCADB Policy. This attestation SHOULD be made in Section 1.1 ("Overview").
 
 ### 1.2. Reducing Attack Surface of the Chrome Root Store
 
 #### 1.2.1 Maximum Number of CAs per CA Owner
 
-Effective **2027-06-15**, except during temporary periods of transition, the Chrome Root Store will only include a maximum of two self-signed root CA certificates per CA Owner. 
+CA Owners with more than two (2) self-signed root CA certificates included in the Chrome Root Store MUST submit a plan to the Chrome Root Program no later than **June 15, 2026**, describing a future consolidation of their PKI hierarchies, including the identification of certificates planned for graceful removal from the Chrome Root Store using the SCTNotAfter feature. All TLS server authentication certificates issued prior to the SCTNotAfter metadata added to the Chrome Root Store will be trusted by default in Chrome until their expiry. 
 
-Effective **2026-06-15**, CA Owners with more than two (2) self-signed root CA certificates included in the Chrome Root Store MUST submit a plan to the Chrome Root Program describing a future consolidation of their PKI hierarchies, including the identification of certificates planned for graceful removal from the Chrome Root Store using the SCTNotAfter feature. All TLS server authentication certificates issued prior to the SCTNotAfter metadata added to the Chrome Root Store will be trusted by default in Chrome until their expiry. 
+Effective **September 15, 2027**, except during temporary periods of transition, the Chrome Root Store will only include a maximum of two self-signed root CA certificates per CA Owner.
 
 To further reduce negative impact to the ecosystem, the Chrome Root Store may temporarily continue to include more than two root CA certificates past the specified consolidation timeline on a case-by-case basis.
 
