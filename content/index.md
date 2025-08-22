@@ -179,10 +179,6 @@ Effective **[SOONER FUTURE DATE: MONTH DD, YYYY]**, CA Owners with more than two
 
 To further reduce negative impact to the ecosystem, the Chrome Root Store may temporarily continue to include more than two root CA certificates past the specified consolidation timeline on a case-by-case basis.
 
-#### 1.2.2 Externally-operated Subordinate CAs
-
-CA Owners SHOULD NOT issue new Externally-operated CA certificates that validate to a certificate included in the Chrome Root Store, unless the Subject CA Owner is represented in a self-signed root CA certificate included in the current version of the Chrome Root Store.
-
 ### 1.3. Modern Infrastructures
 
 #### 1.3.1 Promote use of Modern PKI Hierarchies
