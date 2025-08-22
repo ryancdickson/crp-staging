@@ -57,6 +57,7 @@ Bookmark this page as [https://g.co/chrome/root-policy](https://g.co/chrome/root
     - [2.4.2 Non-ACME Solutions](#242-non-acme-solutions)
   - [2.5. Encouraging use of Automation Solutions](#25-encouraging-use-of-automation-solutions)
   - [2.6 Promote Increased Transparency](#26-promote-increased-transparency)
+  - [2.7 Annual Audits](#27-annual-audits)
 
 ## Introduction
 
@@ -391,14 +392,6 @@ All Chrome Root Program Participant CAs MUST retain an unbroken, contiguous audi
 
 Recurring "complete" (i.e., "full", "full system", or "full re-assessment") audits MUST occur at least once every 365 calendar days (or 366 calendar days in a leap year). These audits MUST begin once a CA's key material has been generated and MUST continue until the corresponding root CA's key material has been destroyed or is no longer included in the Chrome Root Store.
 
-Applicant PKI hierarchies MUST provide evidence of at least one complete audit by disclosing the applicable ETSI Audit Attestation Letter(s) or WebTrust Assurance Report(s) to the CCADB prior to submitting a CCADB Root Inclusion Request to Google Chrome. The initial complete audit SHOULD cover a period of at least 180 calendar days.
-
-For Applicant PKI hierarchies subject of a CCADB Root Inclusion Request submitted to Google Chrome **on or after September 15, 2025**:
-
--  Except for Externally-operated CAs, when CAs in the hierarchy are assessed against:
-    -  **only a single audit scheme** (e.g., all CAs in the hierarchy are only assessed against the WebTrust scheme), they MUST fall under a single audit scope (i.e., represented in a single WebTrust Assurance Report) for the assessed criteria (e.g., (1) WebTrust Principles and Criteria for Certification Authorities, (2) WebTrust Principles and Criteria for Certification Authorities - Network Security, (3) WebTrust Principles and Criteria for Certification Authorities - SSL Baseline, or (4) WebTrust for CA - Extended Validation - SSL).
-    -  **multiple audit schemes** (e.g., some CAs are assessed against the WebTrust scheme and others are assessed against the ETSI scheme), all CAs assessed against each respective scheme MUST fall under a single audit scope for that scheme (i.e., all ETSI-assessed CAs are represented in a single ETSI Audit Attestation Letter, and all WebTrust CAs are represented in a single WebTrust Assurance Report) for the assessed criteria.
- 
 For each incident reported in an ETSI Audit Attestation Letter or WebTrust Assurance Report, auditors SHOULD opine that (1) the scope, impact, and root cause of incidents are accurately and fairly stated in the publicly-disclosed incident reports, and (2) that the corresponding actions taken by the CA Owner (a) satisfactorily address those root causes and (b) meaningfully reduce likelihood of the issue’s recurrence.
 
 #### 1.4.2. Ad-Hoc Audits
@@ -591,5 +584,15 @@ If the self-operated log limits the set of [Accepted Root Certificates](https://
 
 Upon detection of a violation of the above requirements or in the instance of a log's suspected failure, the Chrome Root Program will notify the affected CA Owner. The CA Owner will have 90 calendar days to demonstrate remediation before Chrome will enforce a 180-day SCTNotAfter constraint on the CA Owners root's included in the Chrome Root Store (if applicable). Repeated or sustained non-compliance after such enforcement MAY, at the Chrome Root Program's discretion, lead to the eventual removal of the CA Owner's roots from the Chrome Root Store.
 
+### 2.7 Annual Audits
+
+Applicant PKI hierarchies MUST provide evidence of at least one complete audit by disclosing the applicable ETSI Audit Attestation Letter(s) or WebTrust Assurance Report(s) to the CCADB prior to submitting a CCADB Root Inclusion Request to Google Chrome. The initial complete audit SHOULD cover a period of at least 180 calendar days.
+
+For Applicant PKI hierarchies subject of a CCADB Root Inclusion Request submitted to Google Chrome **on or after September 15, 2025**:
+
+-  Except for Externally-operated CAs, when CAs in the hierarchy are assessed against:
+    -  **only a single audit scheme** (e.g., all CAs in the hierarchy are only assessed against the WebTrust scheme), they MUST fall under a single audit scope (i.e., represented in a single WebTrust Assurance Report) for the assessed criteria (e.g., (1) WebTrust Principles and Criteria for Certification Authorities, (2) WebTrust Principles and Criteria for Certification Authorities - Network Security, (3) WebTrust Principles and Criteria for Certification Authorities - SSL Baseline, or (4) WebTrust for CA - Extended Validation - SSL).
+    -  **multiple audit schemes** (e.g., some CAs are assessed against the WebTrust scheme and others are assessed against the ETSI scheme), all CAs assessed against each respective scheme MUST fall under a single audit scope for that scheme (i.e., all ETSI-assessed CAs are represented in a single ETSI Audit Attestation Letter, and all WebTrust CAs are represented in a single WebTrust Assurance Report) for the assessed criteria.
+ 
 
 
