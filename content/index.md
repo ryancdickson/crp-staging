@@ -383,10 +383,6 @@ Audits MUST NOT rely on a version of the accepted audit criteria below if it has
 
 \*\*\* accepted on a discretionary basis
 
-To uphold a consistent baseline evaluation of operational characteristics regardless of a CA Owner's geographic location, CAs SHOULD be audited in accordance with the WebTrust audit scheme.
-
-To improve transparency and increase confidence in a CA Owner's reliability and adherence to Chrome Root Program expectations and industry best practices, they SHOULD publicly disclose a Long-form Report (sometimes referred to as a "detailed controls mapping") in their public repository and disclose this location to the CCADB.
-
 #### 1.4.1. Annual Audits
 All Chrome Root Program Participant CAs MUST retain an unbroken, contiguous audit coverage.
 
