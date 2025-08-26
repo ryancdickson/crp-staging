@@ -174,11 +174,11 @@ Effective **June 15, 2026**, a Chrome Root Program Participant's CP or combined 
 
 #### 1.2.1 Maximum Number of CAs per CA Owner
 
-Effective immediately, the Chrome Root Program will no longer accept Root Inclusion Requests from CA Owners with more than two (2) self-signed root CA certificates included in the Chrome Root Store, except for requests that initiate a replacement process for an existing certificate (i.e., 'one in, one out'). 
+If a CA Owner already has two or more self-signed root CA certificates included in the Chrome Root Store, the Chrome Root Program will only accept a new Root Inclusion Request to replace an existing certificate (i.e., 'one in, one out').
 
-No later than **June 15, 2026**, CA Owners with more than two (2) self-signed root CA certificates included in the Chrome Root Store MUST submit a plan to the Chrome Root Program, describing a future consolidation of their PKI hierarchies, including the identification of certificates planned for graceful removal from the Chrome Root Store using the SCTNotAfter feature. 
+No later than **June 15, 2026**, CA Owners with more than two self-signed root CA certificates in the Chrome Root Store MUST submit a written consolidation plan to the Chrome Root Program. This plan MUST identify the two certificates that will remain in the Chrome Root Store and outline a timeline for gracefully removing the others using the SCTNotAfter constraint, with all SCTNotAfter dates occurring on or before **September 15, 2027**.
 
-Effective **September 15, 2027**, except during temporary periods of transition, the Chrome Root Store will only include a maximum of two self-signed root CA certificates per CA Owner. Certificates logged to CT before September 15, 2027 (00:00 UTC) that chain up only to a root certificate being removed from the Chrome Root Store will continue to be trusted until they expire.
+Effective **September 15, 2027**, the Chrome Root Store will only include a maximum of two self-signed root CA certificates per CA Owner that do not have SCTNotAfter metadata. TLS server authentication certificates logged to CT before September 15, 2027 (00:00 UTC) that chain up only to a root certificate being gracefully removed from the Chrome Root Store due to CA Owner consolidation will continue to be trusted until they expire.
 
 To further reduce negative impact to the ecosystem, the Chrome Root Store may temporarily continue to include more than two root CA certificates past the specified consolidation timeline on a case-by-case basis.
 
