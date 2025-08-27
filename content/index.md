@@ -365,7 +365,7 @@ Upon detection of a violation of the above requirements or in the instance of an
 - When performing Domain and IP Address Control Validation, CA Owners SHOULD leverage an Internet Service Provider using RPKI (Resource Public Key Infrastructure) with invalid route filtering for route origin validation to strengthen the security of their validation processes.
 - CA Owners SHOULD randomize the use of Subordinate CAs for issuing TLS server authentication certificates, particularly when multiple such CAs share the same technical and policy characteristics. Doing so helps reduce often harmful practices like [Key Pinning](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning).
 - CA Owners SHOULD operate a publicly accessible test infrastructure that closely mirrors their production environment. This test infrastructure SHOULD include all components relevant to certificate issuance, validation, and lifecycle management, except for any future changes that are currently being prepared to land in production and are not yet fully stable. CA Owners SHOULD also publicly describe a clear process for community members (e.g., browser vendors, security researchers, relying parties) to gain access to and utilize this test infrastructure and disclose this location to the CCADB. This practice facilitates proactive testing of new features, policy changes, and client behaviors, ultimately contributing to a more resilient and interoperable ecosystem.
-- CA Owners SHOULD use partitioned CRLs.
+- CA Owners SHOULD use partitioned CRLs for serving TLS server authentication certificate status information.
 
 ### 1.4. Audits
 
