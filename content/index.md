@@ -174,13 +174,13 @@ Effective **June 15, 2026**, a Chrome Root Program Participant's CP or combined 
 
 #### 1.2.1 Maximum Number of CAs per CA Owner
 
-If a CA Owner already has two or more self-signed root CA certificates included in the Chrome Root Store, the Chrome Root Program will only accept a new Root Inclusion Request to replace an existing certificate (i.e., 'one in, one out').
+If a CA Owner already has two (2) or more self-signed root CA certificates included in the Chrome Root Store, the Chrome Root Program will only accept a new Root Inclusion Request to replace an existing certificate (i.e., 'one in, one out').
 
-No later than **June 15, 2026**, CA Owners with more than two self-signed root CA certificates in the Chrome Root Store MUST submit a written consolidation plan to the Chrome Root Program. This plan MUST identify the two certificates that will remain in the Chrome Root Store and outline a timeline for gracefully removing the others using the SCTNotAfter constraint, with all SCTNotAfter dates occurring before **September 15, 2027** (00:00 UTC).
+No later than **June 15, 2026**, CA Owners with more than two (2) self-signed root CA certificates in the Chrome Root Store MUST submit a written consolidation plan to the Chrome Root Program. This plan MUST identify the two (2) certificates that will remain in the Chrome Root Store and MUST define a date before **September 15, 2027** (00:00 UTC) for when a SCTNotAfter constraint will take effect for all of their other certificates. 
 
-Effective **September 15, 2027**, the Chrome Root Store will only include a maximum of two self-signed root CA certificates per CA Owner that do not have SCTNotAfter metadata. TLS server authentication certificates logged to CT before September 15, 2027 (00:00 UTC) that chain up only to a root certificate being gracefully removed from the Chrome Root Store due to CA Owner consolidation will continue to be trusted until they expire.
+Effective **September 15, 2027**, the Chrome Root Store will only include a maximum of two (2) self-signed root CA certificates per CA Owner that do not have SCTNotAfter constraint metadata. TLS server authentication certificates logged to Certificate Transparency (CT) before September 15, 2027 (00:00 UTC) that only validate to a root CA certificate being gracefully removed from the Chrome Root Store due to CA Owner consolidation will continue to be trusted until they expire.
 
-To further reduce negative impact to the ecosystem, the Chrome Root Store may temporarily continue to include more than two root CA certificates past the specified consolidation timeline on a case-by-case basis.
+To further reduce negative impact to the ecosystem, the Chrome Root Store may temporarily continue to include more than two (2) self-signed root CA certificates past the specified consolidation timeline on a case-by-case basis.
 
 ### 1.3. Modern Infrastructures
 
@@ -195,7 +195,7 @@ Within no more than 90 calendar days after an Applicant CA (i.e., replacement) b
 1. Issued a cross-certificate from the CA being replaced to the replacement CA; and
 2. Transitioned all TLS server authentication certificate issuance from the cross-signing PKI hierarchy to the replacement PKI hierarchy.
 
-The CA certificate being replaced will be removed from the Chrome Root Store upon the absence of unexpired and unrevoked TLS server authentication certificates (excluding test certificates like those disclosed to the CCADB) disclosed to Certificate Transparency (CT) before the date of the Applicant CA (i.e., replacement) being first distributed by the Chrome Root Store.
+The CA certificate being replaced will be removed from the Chrome Root Store upon the absence of unexpired and unrevoked TLS server authentication certificates (excluding test certificates like those disclosed to the CCADB) disclosed to CT before the date of the Applicant CA (i.e., replacement) being first distributed by the Chrome Root Store.
 
 Due to the existence of the cross-certificate, TLS server authentication certificates issued by the replacement PKI hierarchy will be trusted by default in versions of Chrome relying on the Chrome Root Store, regardless of whether they are capable of receiving updates to the Chrome Root Store.
 
