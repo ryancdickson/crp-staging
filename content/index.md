@@ -226,12 +226,12 @@ Other circumstances may lead to the removal of a root CA certificate included in
 
 ##### 1.3.1.3 Subordinate CA Certificate Lifecycle Management
 
-The lifecycle management of Subordinate CA Certificates plays a crucial role in promoting agility and resilience within the PKI ecosystem. By setting clear expectations for their validity and renewal, the Chrome Root Program aims to encourage more robust operational practices, align certificate profiles with modern best practices, reduce reliance on specific subordinate CA certificates that could be single points of failure, and discourage potentially harmful practices. This approach allows the ecosystem to benefit from continuous improvement efforts.
+The lifecycle management of subordinate CA certificates plays a crucial role in promoting agility and resilience within the ecosystem. By setting clear expectations for their validity and renewal, the Chrome Root Program aims to align certificate profiles with modern best practices, reduce reliance on specific subordinate CA certificates that could be single points of failure, and discourage potentially harmful practices. This approach allows the ecosystem to benefit from continuous improvement efforts.
 
-To achieve these goals, all Subordinate CA Certificates that validate to a certificate included in the Chrome Root Store SHOULD satisfy the following requirements:
+To achieve these goals, all subordinate CA certificates that validate to a certificate included in the Chrome Root Store SHOULD satisfy the following requirements:
 
-- Subordinate CA Certificates SHOULD have a maximum validity period of three (3) years.
-- CA Owners SHOULD create and deploy new Subordinate CA Certificates at least once every six (6) months. CA Owners SHOULD actively transition subscriber certificate issuance to these newly deployed CAs.
+- Subordinate CA certificates SHOULD have a maximum validity period of three (3) years.
+- CA Owners SHOULD create and deploy new subordinate CA certificates at least once every six (6) months. CA Owners SHOULD actively transition subscriber certificate issuance to these newly deployed CAs.
 
 #### 1.3.2 Promote use of Dedicated TLS Server Authentication PKI Hierarchies
 
