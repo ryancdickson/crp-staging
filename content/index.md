@@ -35,7 +35,6 @@ Bookmark this page as [https://g.co/chrome/root-policy](https://g.co/chrome/root
       - [1.3.3.1 Automation Support](#1331-automation-support)
         - [1.3.3.1.1 ACME Solutions](#13311-acme-solutions)
         - [1.3.3.1.2 Non-ACME Solutions](#13312-non-acme-solutions)
-      - [1.3.3.2 Encouraging use of Automation Solutions](#1332-encouraging-use-of-automation-solutions)
     - [1.3.4. Promote Increased Transparency](#134-promote-increased-transparency)
     - [1.3.5. Additional Recommended Practices](#135-recommended-practices)
   - [1.4. Audits](#14-audits)
@@ -314,25 +313,6 @@ While ACME support is encouraged, PKI hierarchies MAY support other automation s
 - The automation solution SHOULD:
     - support automated deployment (i.e., installation and configuration) of the issued certificate without "hands-on" input from humans (comparable to how ACME clients function).
     - support comparable features as described by the ACME Profiles extension [[RFC TBD](https://datatracker.ietf.org/doc/draft-aaron-acme-profiles/)).
-
-##### 1.3.3.2 Encouraging use of Automation Solutions
-
-The following requirements are intended to promote use of automation solutions to increase agility and improve the [security](https://zanema.com/papers/imc23_stale_certs.pdf) and resilience of the Internet ecosystem, while recognizing that at the moment, not all subscriber use cases can be addressed using automation.
-
-**Beginning [FUTURE DATE: MONTH DD, YYYY]**:
-
-- TLS server authentication certificates SHOULD NOT exceed 90 calendar days.
-- The period for domain control validation data reuse SHOULD NOT exceed 90 calendar days.
-- Due to (1) limitations in offering support for automation and (2) these methods offering a weak binding between request authorization and the demonstrated control over the domain(s) appearing in the requested certificate, TLS server authentication certificates SHOULD NOT rely on the following domain validation methods as defined by the Baseline Requirements:
-    - 3.2.2.4.4 Constructed Email to Domain Contact
-    - 3.2.2.4.13 Email to DNS CAA Contact
-    - 3.2.2.4.14 Email to DNS TXT Contact
-    - 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact
-    - 3.2.2.4.17 Phone Contact with DNS CAA Phone Contact
-    - 3.2.2.5.2 Email, Fax, SMS, or Postal Mail to IP Address Contact
-    - 3.2.2.5.5 Phone Contact with IP Address Contact
-
-In cases where the above requirements cannot be met, CA Owners are encouraged to collect and share the corresponding subscriber use cases and affected technologies with chrome-root-program [at] google [dot] com on a quarterly basis in a format of their choosing to support the Chrome Root Program in better understanding blockers and opportunities for ecosystem improvement.
 
 #### 1.3.4. Promote Increased Transparency
 
