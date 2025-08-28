@@ -265,27 +265,24 @@ To reduce negative impact to the ecosystem, the Chrome Root Store may temporaril
 
 ##### 1.3.3.1 Automation Support
 
-**Until [FUTURE DATE: MONTH DD, YYYY]**, all CA certificates that validate to a certificate included in the Chrome Root Store SHOULD satisfy the following requirements.
+Certificate lifecycle management automation solutions ("automation solutions") increase agility and improve the [security](https://zanema.com/papers/imc23_stale_certs.pdf) and resilience of the Internet ecosystem. Automation solutions minimize "hands-on" input required from humans during certificate issuance and renewal. Acceptable "hands-on" input from humans includes initial software installation and configuration, applying software updates, and updating subscriber account information as needed. Routine certificate issuance and renewal SHOULD NOT involve human input except as needed for identity or business document verification related to IV, OV, or EV certificate issuance.
 
-**Effective [FUTURE DATE: MONTH DD, YYYY]**, all CA certificates that validate to a certificate included in the Chrome Root Store responsible for issuing TLS server authentication Certificates MUST satisfy the following requirements.
+**Effective September 15, 2026**, all CA certificates that validate to a certificate included in the Chrome Root Store responsible for issuing TLS server authentication Certificates MUST satisfy the following requirements. 
 
-Certificate lifecycle management automation solutions ("automation solutions") increase agility and improve the [security](https://zanema.com/papers/imc23_stale_certs.pdf) and resilience of the Internet ecosystem. The following requirements set an expectation that every CA capable of issuing TLS server authentication certificates trusted by default in Chrome supports at least one automation solution.
+- For each Baseline Requirements certificate policy OID appearing in a TLS server authentication certificate directly issued by the CA, the CA Owner MUST use its automation solution to issue a valid test TLS server authentication certificate (i.e., "Automation Test Certificate") intended to demonstrate its automation capabilities to the Chrome Root Program.
+- Valid Automation Test Certificates MUST be renewed at least once every 30 calendar days, however, at any point, the Chrome Root Program may request more frequent renewal. Automation Test Certificates intend to be served by a publicly accessible website whose URL is disclosed to the CCADB on the corresponding certificate record. CA Owners are encouraged to issue "Short-lived Subscriber Certificates," as [introduced](https://cabforum.org/2023/07/14/ballot-sc-063-v4make-ocsp-optional-require-crls-and-incentivize-automation/) in Version 2.0.1 of the Baseline Requirements, for the Automation Test Certificates.
 
 These requirements do not:
-- Prohibit Applicant PKI hierarchies from supporting "non-automated" methods of certificate issuance and renewal.
+- Prohibit PKI hierarchies from also supporting other "non-automated" methods of certificate issuance and renewal.
 - Require website operators to rely on the automation solution(s) for certificate issuance and renewal.
 
-Automation solutions minimize "hands-on" input required from humans during certificate issuance and renewal. Acceptable "hands-on" input from humans includes initial software installation and configuration, applying software updates, and updating subscriber account information as needed. Routine certificate issuance and renewal SHOULD NOT involve human input except as needed for identity or business document verification related to IV, OV, or EV certificate issuance.
-
-For each Baseline Requirements certificate policy OID appearing in a TLS server authentication certificate directly issued by the CA, the CA Owner MUST use its automation solution to issue a valid test TLS server authentication certificate (i.e., "Automation Test Certificate") intended to demonstrate its automation capabilities to the Chrome Root Program. Valid Automation Test Certificates MUST be renewed at least once every 30 calendar days, however, at any point, the Chrome Root Program may request more frequent renewal. Automation Test Certificates intend to be served by a publicly accessible website whose URL is disclosed to the CCADB on the corresponding certificate record. CA Owners are encouraged to issue "Short-lived Subscriber Certificates," as [introduced](https://cabforum.org/2023/07/14/ballot-sc-063-v4make-ocsp-optional-require-crls-and-incentivize-automation/) in Version 2.0.1 of the Baseline Requirements, for the Automation Test Certificates.
-
-**Beginning [FUTURE DATE: MONTH DD, YYYY]**, the Chrome Root Program will set an SCTNotAfter constraint on root CA certificates included in the Chrome Root Store for any PKI hierarchy lacking sufficient automation solutions for CAs responsible for issuing unexpired and unrevoked TLS server authentication certificates. Once the constraint is applied, Chrome will no longer trust any certificate chaining to the root by default if it is issued more than 90 calendar days following the violation's detection.
+The Chrome Root Program will set an SCTNotAfter constraint on root CA certificates included in the Chrome Root Store for any PKI hierarchy lacking sufficient automation solutions for CAs responsible for issuing unexpired and unrevoked TLS server authentication certificates. Once the constraint is applied, Chrome will no longer trust any certificate chaining to the root by default if it is issued more than 90 calendar days following the violation's detection.
 
 ###### 1.3.3.1.1 ACME Solutions
 
 PKI hierarchies SHOULD support the Automatic Certificate Management Environment (ACME) protocol. If ACME is supported:
 
--  The CA Owner MUST disclose to the CCADB an ACME endpoint (i.e., directory URL) accessible to the Chrome Root Program for each Baseline Requirements certificate policy OID the corresponding CA issues (i.e., IV, DV, OV, EV).
+- The CA Owner MUST disclose to the CCADB an ACME endpoint (i.e., directory URL) accessible to the Chrome Root Program for each Baseline Requirements certificate policy OID the corresponding CA issues (i.e., IV, DV, OV, EV).
 - Each endpoint MUST support the following capabilities, as specified in [RFC 8555](https://www.rfc-editor.org/rfc/rfc8555):
     - keyChange,
     - newAccount,
