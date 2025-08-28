@@ -265,7 +265,7 @@ To reduce negative impact to the ecosystem, the Chrome Root Store may temporaril
 
 ##### 1.3.3.1 Automation Support
 
-**Until [FUTURE DATE: MONTH DD, YYYY]**, all CAs that validate to a certificate included in the Chrome Root Store SHOULD satisfy the following requirements.
+**Until [FUTURE DATE: MONTH DD, YYYY]**, all CA certificates that validate to a certificate included in the Chrome Root Store SHOULD satisfy the following requirements.
 
 **Effective [FUTURE DATE: MONTH DD, YYYY]**, all CA certificates that validate to a certificate included in the Chrome Root Store responsible for issuing TLS server authentication Certificates MUST satisfy the following requirements.
 
