@@ -67,11 +67,9 @@ When making HTTPS connections, Chrome refers to a list of self-signed root certi
 
 The Chrome Root Program Policy below establishes the minimum requirements for CA certificates to be included as trusted in a default installation of Chrome. 
 
-The Chrome Root Program continuously evolves this policy to enhance the security and resilience of the Internet ecosystem, consistent with Google's ongoing [commitment](#chromes-ongoing-commitment-to-transport-security) to secure and reliable network connections in Chrome. This involves establishing and periodically strengthening minimum requirements for CAs. New requirements, sometimes only for applicants, are introduced to progressively raise the baseline of trust and drive the adoption of modern, agile, and secure PKI practices. This phased approach allows the program to integrate advancements and best practices, ensuring that certificates included in the Chrome Root Store consistently provide value to Chrome end users that exceeds the risk of their continued inclusion, while accounting for the practicalities of protecting users at scale. Aspects of value are principally demonstrated through the real-world use of the corresponding root CA certificate. This includes active TLS server authentication certificate issuance, observability of time-valid and unrevoked TLS server authentication certificates acroess the Internet, and direct reliance on those certificates by the Chrome Certificate Verifier when securing Chrome user connections.
+The Chrome Root Program continuously evolves this policy to enhance the security and resilience of the Internet ecosystem, consistent with Google's ongoing [commitment](#chromes-ongoing-commitment-to-transport-security) to secure and reliable network connections in Chrome. This involves establishing and periodically strengthening minimum requirements for CAs. New requirements, sometimes only for Applicants, are introduced to progressively raise the baseline of trust and drive the adoption of modern, agile, and secure PKI practices. This phased approach allows the program to integrate advancements and best practices, ensuring that certificates included in the Chrome Root Store consistently provide value to Chrome end users that exceeds the risk of their continued inclusion, while accounting for the practicalities of protecting users at scale. Aspects of value are principally demonstrated through the real-world use of the corresponding root CA certificate. This includes active TLS server authentication certificate issuance, observability of time-valid and unrevoked TLS server authentication certificates acroess the Internet, and direct reliance on those certificates by the Chrome Certificate Verifier when securing Chrome user connections.
 
-Chrome Root Program Participants MUST satisfy the requirements defined in this policy, including taking responsibility for ensuring the continued compliance of all corresponding subordinate CAs and delegated third parties participating in the PKI. Except in the case of CAs applying for inclusion, this policy makes no stipulation on the characteristics or PKI use cases served by CAs not included in the current version of the Chrome Root Store.
-
-The requirements included in this policy are effective immediately, unless explicitly stated as otherwise.
+Except in the case of CAs applying for inclusion, this policy makes no stipulation on the characteristics or PKI use cases served by CAs not included in the current version of the Chrome Root Store.
 
 Any questions regarding this policy can be directed to chrome-root-program [at] google [dot] com.
 
@@ -151,6 +149,10 @@ This policy considers a PKI hierarchy as "dedicated" if it is intended to serve 
 ## 1. Minimum Requirements for CAs included in the Chrome Root Store
 
 ### 1.1. PKI Policy Governance and Requirements
+
+The requirements included in this policy are effective immediately, unless explicitly stated as otherwise.
+
+Chrome Root Program Participants MUST satisfy the requirements defined in this policy, including taking responsibility for ensuring the continued compliance of all corresponding subordinate CAs and delegated third parties participating in the PKI.
 
 #### 1.1.1. Baseline Requirements
 
