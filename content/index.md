@@ -324,7 +324,7 @@ Within 24 hours of issuance, Chrome Root Program Participants SHOULD log final c
 
 Chrome Root Program Participants SHOULD contribute to the health and diversity of the CT ecosystem. Such contributions may include, but are not limited to:
 
-- reliably operating CT logs [Usable](https://googlechrome.github.io/CertificateTransparency/log_states.html#usable) in Chrome. [REMOVE DEPENDING ON WHAT LANDS ABOVE]
+- reliably operating CT logs [Usable](https://googlechrome.github.io/CertificateTransparency/log_states.html#usable) in Chrome.
 - offering financial support to log operators whose services the CA Owner relies on.
 - providing engineering resources or expertise to assist CT log operators or related projects.
 - developing and open-sourcing CT-related tools (e.g., for log operations, monitoring, auditing, or client-side integration).
