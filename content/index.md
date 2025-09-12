@@ -547,7 +547,7 @@ In cases where the above requirements cannot be met, CA Owners are encouraged to
 
 Applicants MUST ensure their Applicant PKI hierarchies log all TLS server authentication precertificates and final certificates to at least one Certificate Transparency (CT) log. The specific log type required depends on the eligibility of the Applicant PKI Hierarchy:
 
-1.  **Applicant PKI hierarchies eligible for "Usable" logs:** An Applicant PKI Hierarchy is considered eligible to log in a CT log '[usable](https://googlechrome.github.io/CertificateTransparency/log_states.html#usable)' in Chrome if its root CA is cross-certified by any root CA already included in the Chrome Root Store. This applies to:
+1.  **Applicant PKI hierarchies eligible for "Usable" logs:** An Applicant PKI hierarchy is considered eligible to log in a CT log '[usable](https://googlechrome.github.io/CertificateTransparency/log_states.html#usable)' in Chrome if its root CA is cross-certified by any root CA already included in the Chrome Root Store. This applies to:
     - Any Applicant PKI Hierarchy belonging to a CA Owner already included in the Chrome Root Store, where it is expected that an existing CA included in the Chrome Root Store will cross-certify the Applicant PKI hierarchy; and
     - Applicant PKI hierarchies cross-certified by a different CA Owner already included in the Chrome Root Store.
 
