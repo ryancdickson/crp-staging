@@ -550,6 +550,7 @@ Applicants MUST log all Subscriber precertificates and final certificates to at 
 1. **Applicants eligible for "Usable" logs**: An Applicant is considered eligible to log in a CT log 'usable' in Chrome if their Applicant root CA is cross-certified by any root CA already included in the Chrome Root Store. This includes both:
 
      a. Applicants whose CA Owner already operates a trusted root (which is expected to issue a cross-certificate); and
+   
      b. Applicants who receive a cross-certificate from a different participating CA Owner.
 
 Applicants eligible for "usable" logs MUST satisfy the logging requirement using such a log.
