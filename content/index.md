@@ -545,7 +545,13 @@ In cases where the above requirements cannot be met, CA Owners are encouraged to
 
 ### 2.6 Promote Increased Transparency
 
-Applicants MUST log pre-certificates and final certificates to at least one Certificate Transparency (CT) log. Until an applicant is eligible to log in a CT log '[usable](https://googlechrome.github.io/CertificateTransparency/log_states.html#usable)' in Chrome (e.g., because their root certificate is accepted by a usable log, or a cross-certificate from an accepted root CA exists), they MUST fulfill this logging requirement using at least one "Test" CT log as disclosed [here](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json) (i.e., logs with log type = "test"). Once eligible, applicants MUST satisfy the logging requirements using a usable CT log. 
+Applicants MUST log all Subscriber precertificates and final certificates to at least one Certificate Transparency (CT) log. The specific log type required depends on the Applicant's eligibility:
+
+- Applicants directly eligible for "Usable" logs: An Applicant is considered directly eligible to log in a CT log 'usable' in Chrome if they operate a root CA already included in the Chrome Root Store. It is expected that an existing CA Owner root CA cross-certifies the Applicant root CA. Applicants eligible for "usable" logs MUST satisfy the logging requirement using such a log. 
+
+- Applicants indirectly eligible for "Usable" logs: An Applicant is considered indirectly eligble to log in a CT log 'usable' in Chrome if their Applicant root CA has been cross-certified by a different CA included in the Chrome Root Store. Applicants indirectly eligible for "usable" logs MUST satisfy the logging requirement using such a log. 
+
+- Applicants not eligible for "Usable" logs: Applicants who are not eligible for "usable" logs (typically new CA Owners) MUST fulfill the logging requirement using at least one "Test" CT log (i.e., logs with log type = "test" as disclosed [here](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json)). Many "Test" CT logs automatically ingest CCADB data to determine their set of accepted roots. Therefore, upon submission of their Root Inclusion Request via the CCADB, new Applicants should expect their root to be included automatically by some "Test" logs and should not need to file separate acceptance requests to them. These Applicants MUST use a "Test" CT log until they become eligible to log in a "usable" CT log.
 
 To enhance the security and resilience of the internet ecosystem, and as a critical component of the Chrome Root Program's commitment to CT, Applicants SHOULD reliably operate at least one CT Log. This log MUST operate in accordance with the requirements defined in the [Chrome CT Log Policy](https://googlechrome.github.io/CertificateTransparency/log_policy.html), and MUST be [listed](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json) as either "Usable" or "Qualified."
 
