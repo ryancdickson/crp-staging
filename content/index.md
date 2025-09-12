@@ -545,19 +545,18 @@ In cases where the above requirements cannot be met, CA Owners are encouraged to
 
 ### 2.6 Promote Increased Transparency
 
-Applicants MUST log all Subscriber precertificates and final certificates to at least one Certificate Transparency (CT) log. The specific log type required depends on the Applicant's eligibility:
+Applicants MUST ensure their Applicant PKI Hierarchies log all Subscriber precertificates and final certificates to at least one Certificate Transparency (CT) log. The specific log type required depends on the eligibility of the Applicant PKI Hierarchy:
 
-1. **Applicants eligible for "Usable" logs**: An Applicant is considered eligible to log in a CT log 'usable' in Chrome if their Applicant root CA is cross-certified by any root CA already included in the Chrome Root Store. This includes both:
+1.  **Applicants whose PKI Hierarchy is Eligible for "Usable" Logs:** An Applicant PKI Hierarchy is considered eligible to log in a CT log '[usable](https://googlechrome.github.io/CertificateTransparency/log_states.html#usable)' in Chrome if its root CA is cross-certified by any root CA already included in the Chrome Root Store. This applies to:
+    * Applicants whose CA Owner already operates a trusted root (which is expected to issue a cross-certificate); and
+    * Applicants who receive a cross-certificate from a different participating CA Owner.
 
-     a. Applicants whose CA Owner already operates a trusted root (which is expected to issue a cross-certificate); and
-   
-     b. Applicants who receive a cross-certificate from a different participating CA Owner.
+    Applicants whose hierarchies are eligible for "usable" logs MUST satisfy the logging requirement using such a log.
 
-Applicants eligible for "usable" logs MUST satisfy the logging requirement using such a log.
+2.  **Applicants whose PKI Hierarchy is Not Eligible for "Usable" Logs:** Applicants whose hierarchies are not eligible for "usable" logs (typically new CA Owners without an existing cross-certificate from a trusted root) MUST fulfill the logging requirement using at least one "Test" CT log (i.e., logs with log type = "test" as disclosed [here](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json)).
+    * Many "Test" CT logs automatically ingest CCADB data to determine their set of accepted roots. Therefore, upon submission of their Root Inclusion Request via the CCADB, new Applicants should expect their Applicant PKI Hierarchy's root to be included automatically by these "Test" logs and should not need to file separate acceptance requests to them.
 
-2. **Applicants not eligible for "Usable" logs**: Applicants who are not eligible for "usable" logs (typically new CA Owners without an existing cross-certificate from a trusted root) MUST fulfill the logging requirement using at least one "Test" CT log (i.e., logs with log type = "test" as disclosed [here](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json)). Many "Test" CT logs automatically ingest CCADB data to determine their set of accepted roots. Therefore, upon submission of their Root Inclusion Request via the CCADB, new Applicants should expect their root to be included automatically by these "Test" logs and should not need to request log inclusion.
-
-These Applicants MUST use a "Test" CT log until they become eligible to log in a "usable" CT log.
+These Applicants MUST use a "Test" CT log until their Applicant PKI Hierarchy becomes eligible to log in a "usable" CT log.
 
 To enhance the security and resilience of the internet ecosystem, and as a critical component of the Chrome Root Program's commitment to CT, Applicants SHOULD reliably operate at least one CT Log. This log MUST operate in accordance with the requirements defined in the [Chrome CT Log Policy](https://googlechrome.github.io/CertificateTransparency/log_policy.html), and MUST be [listed](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json) as either "Usable" or "Qualified."
 
