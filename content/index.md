@@ -553,7 +553,7 @@ Applicants MUST ensure their Applicant PKI hierarchies log all TLS server authen
 
     Applicants whose hierarchies are eligible for "usable" logs MUST satisfy the logging requirement using such a log.
 
-2.  **Applicant PKI hierarchies not eligible for "Usable" logs:** An Applicant PKI hierarchy that does not meet the above criteria is considered not eligible for logging to a "usable" log. Applicants whose hierarchies are not eligible MUST fulfill the logging requirement using at least one "Test" CT log (i.e., logs with log type = "test" as disclosed [here](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json)).These Applicants MUST use a "Test" CT log until their Applicant PKI Hierarchy becomes eligible to log in a "usable" CT log.
+2.  **Applicant PKI hierarchies not eligible for "Usable" logs:** An Applicant PKI hierarchy that does not meet the above criteria is considered not eligible for logging to a "usable" log. Applicants whose hierarchies are not eligible MUST fulfill the logging requirement using at least one "Test" CT log (i.e., logs with log type = "test" as disclosed [here](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json)). These Applicants MUST use a "Test" CT log until their Applicant PKI hierarchy becomes eligible to log in a "usable" CT log.
 
 Many "Test" CT logs automatically ingest CCADB data to determine their set of accepted roots. Therefore, upon submission of their Root Inclusion Request via the CCADB, new Applicants should expect their Applicant PKI hierarchy's root CA to be included automatically by "Test" logs and should not need to file separate acceptance requests to them.
 
