@@ -52,8 +52,6 @@ Bookmark this page as [https://g.co/chrome/root-policy](https://g.co/chrome/root
   - [2.2 Root CA Key Material Freshness](#22-root-ca-key-material-freshness)
   - [2.3 Dedicated TLS Server Authentication PKI Hierarchies](#23-dedicated-tls-server-authentication-pki-hierarchies)
   - [2.4. Promote Cryptographic Agility and Resilience](#24-promote-cryptographic-agility-and-resilience)
-    - [2.4.1. ACME Solutions](#241-acme-solutions)
-    - [2.4.2 Non-ACME Solutions](#242-non-acme-solutions)
   - [2.5. Encouraging use of Automation Solutions](#25-encouraging-use-of-automation-solutions)
   - [2.6 Promote Increased Transparency](#26-promote-increased-transparency)
   - [2.7 Annual Audits](#27-annual-audits)
