@@ -270,9 +270,9 @@ These requirements do not:
 - Prohibit PKI hierarchies from also supporting other "non-automated" methods of certificate issuance and renewal.
 - Require website operators to rely on the automation solution(s) for certificate issuance and renewal.
 
-The Chrome Root Program will set an SCTNotAfter constraint on root CA certificates included in the Chrome Root Store for any PKI hierarchy found issuing new certificates containing a Baseline Requirements certificate policy OID lacking sufficient automation support disclosure in the CCADB. Once the constraint is applied, Chrome will no longer trust any certificate chaining to the root by default if it is issued more than 90 calendar days following the violation's detection.
+Following the immediately above effective date, the Chrome Root Program will set an SCTNotAfter constraint on root CA certificates included in the Chrome Root Store for any PKI hierarchy found issuing new certificates containing a Baseline Requirements certificate policy OID lacking automation solution attestation disclosure in the CCADB. Once the constraint is applied, Chrome will no longer trust any certificate chaining to the root by default if it is issued more than 90 calendar days following the violation's detection.
 
-A CA Owner may avoid enforcement action for any specific, non-compliant certificate profile (as identified by its Baseline Requirements certificate policy OID) by ceasing all new issuance of certificates containing that OID until the above requirements are satisfied.
+A CA Owner may avoid the SCTNotAfter constraint for any specific, non-compliant certificate profile (as identified by its Baseline Requirements certificate policy OID) by ceasing all new issuance of certificates containing that OID until the above requirements are satisfied.
 
 ###### 1.3.3.1.1 ACME Solutions
 
