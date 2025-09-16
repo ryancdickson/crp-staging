@@ -485,43 +485,9 @@ To qualify as a dedicated TLS server authentication PKI hierarchy under this pol
 
 ### 2.4. Promote Cryptographic Agility and Resilience
 
-all unexpired and unrevoked subordinate CAs beneath a root CA included in the Chrome Root Store issuing TLS server authentication certificates MUST be integrated with an automation solution (see Sections [1.3.3.1.1 ("ACME Solutions")](#13311-acme-solutions) and [1.3.3.1.2 ("Non-ACME Solutions")](#13312-non-acme-solutions)). Functionally, this means that every TLS server authentication certificate profile offered by a subordinate CA trusted in Chrome MUST be technically capable of being issued and renewed using an automation solution. CAs MUST attest that this requirement is met via a disclosure on the CCADB Root Record of each CA included in the Chrome Root Store.
+All unexpired and unrevoked subordinate CA certificates included in an Applicant PKI hierarchy MUST be integrated with an automation solution (see Sections [1.3.3.1.1 ("ACME Solutions")](#13311-acme-solutions) and [1.3.3.1.2 ("Non-ACME Solutions")](#13312-non-acme-solutions)). Functionally, this means that every TLS server authentication certificate profile offered by the PKI hierarchy MUST be capable of being issued and renewed using an automation solution. CA Owners MUST attest that this requirement is met via a disclosure in the CCADB on the root record of each CA included in the Chrome Root Store.
 
-For each Baseline Requirements certificate policy OID an Applicant intends to issue, the CA Owner MUST use its automation solution to issue a valid test TLS server authentication certificate (i.e., "Automation Test Certificate") intended to demonstrate its automation capabilities to the Chrome Root Program. Valid Automation Test Certificates MUST be renewed at least once every 30 calendar days, however, at any point, the Chrome Root Program may request more frequent renewal. Automation Test Certificates must be served by a publicly accessible website whose URL is disclosed to the CCADB on the corresponding intermediate certificate record. CA Owners are encouraged to issue "Short-lived Subscriber Certificates," as [introduced](https://cabforum.org/2023/07/14/ballot-sc-063-v4make-ocsp-optional-require-crls-and-incentivize-automation/) in Version 2.0.1 of the Baseline Requirements, for the Automation Test Certificates.
-
-#### 2.4.1. ACME Solutions
-
-PKI hierarchies SHOULD support the Automatic Certificate Management Environment (ACME) protocol. If ACME is supported:
-
-- The CA Owner MUST disclose to the CCADB an ACME endpoint (i.e., directory URL) accessible to the Chrome Root Program for each Baseline Requirements certificate policy OID the corresponding CA issues (i.e., IV, DV, OV, EV).
-- Each endpoint MUST support the following capabilities, as specified in [RFC 8555](https://www.rfc-editor.org/rfc/rfc8555):
-    - keyChange,
-    - newAccount,
-    - newNonce,
-    - newOrder, and
-    - revokeCert.
-- Each endpoint's corresponding issuing CA(s) MUST support Certification Authority Authorization (CAA) Record Extensions for Account URI and ACME Method Binding, as specified in [RFC 8657](https://www.rfc-editor.org/rfc/rfc8657).
-- PKI hierarchies supporting the ACME protocol MUST support ACME Renewal Information (ARI, [RFC 9773](https://datatracker.ietf.org/doc/rfc9773/)).
-- ACME endpoints SHOULD be publicly accessible.
-- Each endpoint SHOULD be hosted using an appropriate and readily accessible online means that is available on a 24x7 basis.
-
-##### 2.4.2 Non-ACME Solutions
-
-While ACME support is encouraged, PKI hierarchies MAY support other automated solutions so long as the following characteristics are verifiably demonstrated to the Chrome Root Program. The CA Owner MUST disclose to the CCADB publicly available information that describes the other automated solution capability for each Baseline Requirements certificate policy OID that the corresponding CA issues and how a Subscriber can leverage its benefits.
-
-- The automated solution MUST:
-    - generate a new key pair for each certificate request by default.
-    - generate and submit a Certificate Signing Request (CSR).
-    - support automated domain control validation (i.e., the automated solution automatically places the Request Token or Random Value in the appropriate location without "hands-on" input from humans, comparable to how ACME clients function), using at least one of the following methods from the Baseline Requirements:
-        - DNS Change (Section 3.2.2.4.7)
-        - Agreed‑Upon Change to Website v2 (Section 3.2.2.4.18)
-    - support automated retrieval of the issued certificate (i.e., the automated solution downloads a copy of the certificate to a well-known location without "hands-on" input from humans, comparable to how ACME clients function).
-    - be sufficiently detailed in a completed "Automated Solution Assessment" form by requesting a copy from chrome-root-program [at] google [dot] com.
-    - support comparable features as described in [RFC 8657](https://www.rfc-editor.org/rfc/rfc8657) to restrict issuance capabilities to a specific CA account(s) using the "accounturi" CAA parameter and to restrict permitted domain validation methods using the "validationmethods" CAA parameter.
-    - support and/or request certificate revocation.
-    - support comparable features as described by ACME Renewal Information (ARI, [RFC 9773](https://datatracker.ietf.org/doc/rfc9773/)).
-- The automated solution SHOULD:
-    - support automated deployment (i.e., installation and configuration) of the issued certificate without "hands-on" input from humans (comparable to how ACME clients function).
+For each Baseline Requirements certificate policy OID an Applicant intends to issue, the CA Owner MUST use an automation solution to issue a valid test TLS server authentication certificate (i.e., "Automation Test Certificate") intended to demonstrate its automation capabilities to the Chrome Root Program. Valid Automation Test Certificates MUST be renewed at least once every 30 calendar days, however, at any point, the Chrome Root Program may request more frequent renewal. Automation Test Certificates must be served by a publicly accessible website whose URL is disclosed to the CCADB on the corresponding intermediate certificate record. CA Owners are encouraged to issue "Short-lived Subscriber Certificates," as [introduced](https://cabforum.org/2023/07/14/ballot-sc-063-v4make-ocsp-optional-require-crls-and-incentivize-automation/) in Version 2.0.1 of the Baseline Requirements, for the Automation Test Certificates.
 
 ### 2.5. Encouraging use of Automation Solutions
 
