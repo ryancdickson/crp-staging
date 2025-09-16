@@ -19,13 +19,13 @@ The Chrome Root Program and corresponding Root Store processes inclusion request
 
 The application process includes:
 
-1.  A CA Owner [requests](https://www.ccadb.org/cas/request-access) and gains access to CCADB (if not already granted access).
-2.  A CA Owner adds a root CA certificate to CCADB and completes one or more “[Add/Update Root Request](https://www.ccadb.org/cas/updates)” cases in the CCADB to populate all tabs (i.e., CA Owner, Audits, Non-Audit Documents, Root Information, and Test Websites) with information.
-3.  A CA Owner submits a “[Root Inclusion Request](https://www.ccadb.org/cas/inclusion)” in CCADB.
-4.  The Chrome Root Program performs an initial review of the information included in CCADB to ensure completeness and compliance with the minimum requirements.
-5.  A [CCADB public discussion](https://www.ccadb.org/cas/public-group) period ensues.
-6.  The Chrome Root Program performs a detailed review of all information provided in CCADB and publicly available (to include output from the CCADB public discussion).
-7.  The Chrome Root Program makes a final determination and communicates it to the CA Owner.
+1. A CA Owner [requests](https://www.ccadb.org/cas/request-access) and gains access to CCADB (if not already granted access).
+2. A CA Owner adds a root CA certificate to CCADB and completes one or more “[Add/Update Root Request](https://www.ccadb.org/cas/updates)” cases in the CCADB to populate all tabs (i.e., CA Owner, Audits, Non-Audit Documents, Root Information, and Test Websites) with information.
+3. A CA Owner submits a “[Root Inclusion Request](https://www.ccadb.org/cas/inclusion)” in CCADB.
+4. The Chrome Root Program performs an initial review of the information included in CCADB to ensure completeness and compliance with the minimum requirements.
+5. A [CCADB public discussion](https://www.ccadb.org/cas/public-group) period ensues.
+6. The Chrome Root Program performs a detailed review of all information provided in CCADB and publicly available (to include output from the CCADB public discussion).
+7. The Chrome Root Program makes a final determination and communicates it to the CA Owner.
 
 Typically, applications are processed on a first-in, first-out basis, with priority given to those:
 
