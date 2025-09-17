@@ -293,7 +293,7 @@ PKI hierarchies SHOULD support the Automatic Certificate Management Environment 
 
 ###### 1.3.3.1.2 Non-ACME Solutions
 
-While ACME support is encouraged, PKI hierarchies MAY support other automation solutions so long as the following characteristics are verifiably demonstrated to the Chrome Root Program. The CA Owner MUST disclose to the CCADB publicly available information that describes the other automation solution capability for each Baseline Requirements certificate policy OID that the corresponding CA issues and how a Subscriber can leverage its benefits.
+While ACME support is encouraged, PKI hierarchies MAY support other automation solutions so long as the following characteristics are verifiably demonstrated to the Chrome Root Program. The CA Owner MUST disclose to the CCADB publicly available information that describes the other automation solution capability for each Baseline Requirements certificate policy OID that the corresponding CA issues and how a subscriber can leverage its benefits.
 
 - The automation solution MUST:
     - generate a new key pair for each certificate request by default.
