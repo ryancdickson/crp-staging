@@ -247,10 +247,10 @@ To align all PKI hierarchies included in the Chrome Root Store on the principle 
      -  the extendedKeyUsage extension and only assert an extendedKeyUsage purpose of id-kp-serverAuth.
      -  the certificatePolicies extension and only assert the appropriate [CA/Browser Forum Reserved Certificate Policy Identifiers](https://cabforum.org/working-groups/server/baseline-requirements/requirements/#7161-reserved-certificate-policy-identifiers).
        
-**Before** **June 15, 2026**, CA Owners with a CA included in the Chrome Root Store whose corresponding PKI hierarchy does not adhere to the above requirements MAY, at their own discretion:
+**Before** **June 15, 2026**, CA Owners with a CA certificate included in the Chrome Root Store whose corresponding PKI hierarchy does not adhere to the above requirements MAY, at their own discretion:
 
 1. Apply with a new dedicated TLS server authentication PKI hierarchy (recommended to be completed **before** **September 15, 2025**).
-2. Convert a "multi-purpose" root included in the Chrome Root Store to be dedicated to TLS server authentication by either revoking and/or re-issuing certificates that do not satisfy the above requirements.
+2. Convert a "multi-purpose" root CA certificate included in the Chrome Root Store to be dedicated to TLS server authentication by either revoking and/or re-issuing certificates that do not satisfy the above requirements.
 3. Request for the removal of non-TLS server authentication hierarchies from the Chrome Root Store.
 4. Pursue other solutions as they deem appropriate and compliant with this policy.
 
