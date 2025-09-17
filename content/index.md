@@ -217,7 +217,7 @@ To phase-in these requirements in a manner that reduces negative impact to the e
 | Between January 1, 2012 and April 14, 2014 (inclusive) | April 15, 2029 |
 | After April 15, 2014 | 15 years from generation |
 
-To further reduce negative impact to the ecosystem, the Chrome Root Store may temporarily continue to include a root CA certificate past its defined term-limit on a case-by-case basis, if the corresponding CA Owner has submitted a Root Inclusion Request to the CCADB for a replacement root CA certificate at least one year in advance of the approximate removal date.
+To further reduce negative impact to the ecosystem, the Chrome Root Store may temporarily continue to include a root CA certificate past its defined term-limit on a case-by-case basis, if the corresponding CA Owner has submitted a Root Inclusion Request to the CCADB for a replacement root CA certificate at least one (1) year in advance of the approximate removal date.
 
 Other circumstances may lead to the removal of a root CA certificate included in the Chrome Root Store before the completion of its term.
 
