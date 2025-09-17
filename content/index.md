@@ -334,6 +334,7 @@ Chrome Root Program Participants SHOULD contribute to the health and diversity o
 - CA Owners SHOULD randomize the use of subordinate CAs for issuing TLS server authentication certificates, particularly when multiple such CAs share the same technical and policy characteristics. Doing so helps reduce often harmful practices like [Key Pinning](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning).
 - CA Owners SHOULD operate a publicly accessible test infrastructure that mirrors their production environment. This test infrastructure SHOULD include all components relevant to certificate issuance, validation, and lifecycle management. CA Owners SHOULD also publicly describe a clear process for relying parties to gain access to and utilize this test infrastructure. This practice facilitates proactive testing of new features, policy changes, and client behaviors, ultimately contributing to a more resilient and interoperable ecosystem.
 - CA Owners SHOULD use partitioned CRLs for serving TLS server authentication certificate status information.
+- CA Owners SHOULD proactively implement security controls and operational practices that exceed the minimum requirements established in the CA/Browser Forum TLS Baseline Requirements. Examples include, but are not limited to, implementing shorter domain validation reuse periods than the maximum allowed. Such proactive measures are critical to improving the overall resilience of the ecosystem.
 
 ### 1.4. Audits
 
