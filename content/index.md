@@ -74,7 +74,7 @@ Any questions regarding this policy can be directed to chrome-root-program [at] 
 
 CA Owners that satisfy the requirements defined in the policy below may apply for self-signed root CA certificate inclusion in the Chrome Root Store using [these](apply-for-inclusion.md) instructions.
 
-Applicants are expected to continuously adhere to the policies outlined herein, irrespective of their inclusion request submission date. All Applicants are expected to satisfy the requirements set forth in both the ["Minimum Requirements for CAs included in the Chrome Root Store"](#minimum-requirements-for-cas-included-in-the-chrome-root-store) and ["Minimum Requirements for Applicant CAs Requesting Inclusion into the Chrome Root Store"](#minimum-requirements-for-applicant-cas-requesting-inclusion-into-the-chrome-root-store) Sections. Where requirements in these sections differ, the applicant-specific requirements take precedence.
+Applicants are expected to continuously adhere to the policies outlined herein, irrespective of their inclusion request submission date. All Applicants are expected to satisfy the requirements set forth in both the ["Minimum Requirements for CAs included in the Chrome Root Store"](#minimum-requirements-for-cas-included-in-the-chrome-root-store) and ["Minimum Requirements for Applicant CAs Requesting Inclusion into the Chrome Root Store"](#minimum-requirements-for-applicant-cas-requesting-inclusion-into-the-chrome-root-store) Sections. Where requirements in these sections differ, the Applicant-specific requirements take precedence.
 
 If, during an ongoing Root Inclusion Request in the CCADB, this policy is updated, the status of the Root Inclusion Request will be set to 'CA Providing Data'. Applicants are expected to review and ensure compliance with the updated policy expectations before resubmitting their Root Inclusion Request for the Chrome Root Program's review.
 
@@ -477,7 +477,7 @@ The Chrome Root Program will only accept CCADB Root Inclusion Requests from Appl
 
 To qualify as a dedicated TLS server authentication PKI hierarchy under this policy:
 
-1. All corresponding unexpired and unrevoked subordinate CA certificates operated beneath an applicant root CA MUST:
+1. All corresponding unexpired and unrevoked subordinate CA certificates operated beneath an Applicant root CA MUST:
     - when disclosed to the CCADB…
         - **prior to June 15, 2025,** include the extendedKeyUsage extension and (1) only assert an extendedKeyUsage purpose of id-kp-serverAuth OR (2) only assert extendedKeyUsage purposes of id-kp-serverAuth and id-kp-clientAuth.
         -  **on or after June 15, 2025,** include the extendedKeyUsage extension and only assert an extendedKeyUsage purpose of id-kp-serverAuth.
