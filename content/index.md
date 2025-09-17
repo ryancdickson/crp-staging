@@ -76,7 +76,7 @@ CA Owners that satisfy the requirements defined in the policy below may apply fo
 
 Applicants are expected to continuously adhere to the policies outlined herein, irrespective of their inclusion request submission date. All Applicants are expected to satisfy the requirements set forth in both the ["Minimum Requirements for CAs included in the Chrome Root Store"](#minimum-requirements-for-cas-included-in-the-chrome-root-store) and ["Minimum Requirements for Applicant CAs Requesting Inclusion into the Chrome Root Store"](#minimum-requirements-for-applicant-cas-requesting-inclusion-into-the-chrome-root-store) Sections. Where requirements in these sections differ, the Applicant-specific requirements take precedence.
 
-If, during an ongoing Root Inclusion Request in the CCADB, this policy is updated, the status of the Root Inclusion Request will be set to 'CA Providing Data'. Applicants are expected to review and ensure compliance with the updated policy expectations before resubmitting their Root Inclusion Request for the Chrome Root Program's review.
+If an Applicant's Root Inclusion Request is currently in the CCADB with a status of 'Verification By Root Store' and has not yet received a final determination, and this policy is updated to a new version, the Chrome Root Program will change the request's status to 'CA Providing Data.' Applicants must review and ensure compliance with the updated policy expectations before resubmitting their Root Inclusion Request for review by the Chrome Root Program.
 
 ### Chrome's Ongoing Commitment to Transport Security
 
