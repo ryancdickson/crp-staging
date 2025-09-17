@@ -173,7 +173,7 @@ In some cases, this policy strengthens requirements described in the CCADB Polic
 
 #### 1.2.1 Maximum Number of CAs per CA Owner
 
-If a CA Owner already has two (2) or more self-signed root CA certificates included in the Chrome Root Store, the Chrome Root Program will only accept a new Root Inclusion Request to replace an existing certificate (i.e., 'one in, one out').
+If a CA Owner already has two (2) or more self-signed root CA certificates included in the Chrome Root Store, the Chrome Root Program will only accept a new CCADB Root Inclusion Request to replace an existing certificate (i.e., 'one in, one out').
 
 **No later than June 15, 2026**, CA Owners with more than two (2) self-signed root CA certificates in the Chrome Root Store MUST submit a written consolidation plan to the Chrome Root Program. This plan MUST identify the two (2) root CA certificates that will remain in the Chrome Root Store and MUST define a date **before September 15, 2027**, (00:00 UTC) for when a SCTNotAfter constraint will take effect for all of their other root CA certificates. 
 
@@ -519,7 +519,7 @@ Applicants MUST ensure their Applicant PKI hierarchies log all TLS server authen
 
 2.  **Applicant PKI hierarchies not eligible for "Usable" logs:** An Applicant PKI hierarchy that does not meet the above criteria is considered not eligible for logging to a "usable" log. Applicants whose hierarchies are not eligible MUST fulfill the logging requirement using at least one "Test" CT log (i.e., logs with log type = "test" as disclosed [here](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json)). These Applicants MUST use a "Test" CT log until their Applicant PKI hierarchy becomes eligible to log in a "usable" CT log.
 
-Many "Test" CT logs automatically ingest CCADB data to determine their set of accepted roots. Therefore, upon submission of their Root Inclusion Request via the CCADB, new Applicants should expect their Applicant PKI hierarchy's root CA to be included automatically by "Test" logs and should not need to file separate acceptance requests to them.
+Many "Test" CT logs automatically ingest CCADB data to determine their set of accepted roots. Therefore, upon submission of their Root Inclusion Request in the CCADB, new Applicants should expect their Applicant PKI hierarchy's root CA to be included automatically by "Test" logs and should not need to file separate acceptance requests to them.
 
 To enhance the security and resilience of the Internet ecosystem, and as a critical component of the Chrome Root Program's commitment to CT, Applicants SHOULD reliably operate at least one CT Log. This log MUST operate in accordance with the requirements defined in the [Chrome CT Log Policy](https://googlechrome.github.io/CertificateTransparency/log_policy.html), and MUST be [listed](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json) as either "Usable" or "Qualified."
 
