@@ -189,7 +189,7 @@ To further reduce negative impact to the ecosystem, the Chrome Root Store may te
 
 CA Owners SHOULD request for the replacement of a certificate included in the Chrome Root Store no later than 5 years after the release date of the Chrome Root Store's initial inclusion of the certificate.
 
-Within no more than 90 calendar days after an Applicant CA (i.e., replacement) being first distributed by the Chrome Root Store and as disclosed in the CCADB, the CA Owner MUST have:
+Within no more than 90 calendar days after an Applicant CA certificate (i.e., replacement) being first distributed by the Chrome Root Store and as disclosed in the CCADB, the CA Owner MUST have:
 
 1. Issued a cross-certificate from the CA being replaced to the replacement CA; and
 2. Transitioned all TLS server authentication certificate issuance from the cross-signing PKI hierarchy to the replacement PKI hierarchy.
