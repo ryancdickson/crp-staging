@@ -17,7 +17,7 @@ Bookmark this page as [https://g.co/chrome/root-policy](https://g.co/chrome/root
   - [Additional Information](#additional-information)
 - [Change History](#change-history)
 - [Definitions](#definitions)
-- [1. Minimum Requirements for CAs included in the Chrome Root Store](#1-minimum-requirements-for-cas-included-in-the-chrome-root-store)
+- [1. Minimum Requirements for CAs Included in the Chrome Root Store](#1-minimum-requirements-for-cas-included-in-the-chrome-root-store)
   - [1.1. PKI Policy Governance and Requirements](#11-pki-policy-governance-and-requirements)
     - [1.1.1. Baseline Requirements](#111-baseline-requirements)
     - [1.1.2. Common CA Database](#112-common-ca-database)
@@ -143,7 +143,7 @@ This policy uses the term "Externally-operated CA" to describe a subordinate CA 
 
 This policy considers a PKI hierarchy as "dedicated" if it is intended to serve one specific use case, for example, the issuance of TLS server authentication certificates.
 
-## 1. Minimum Requirements for CAs included in the Chrome Root Store
+## 1. Minimum Requirements for CAs Included in the Chrome Root Store
 
 ### 1.1. PKI Policy Governance and Requirements
 
