@@ -137,7 +137,7 @@ This policy considers an "Applicant" to be an organization or legal entity that 
 This policy uses the term "Chrome Root Program Participants" to describe:
 
 - Applicants; and
-- CA Owners with either (1) a certificate included in the Chrome Root Store or (2) a CA certificate that validates to a certificate included in the Chrome Root Store.
+- CA Owners with either (a) a certificate included in the Chrome Root Store or (b) a CA certificate that validates to a certificate included in the Chrome Root Store.
 
 This policy uses the term "Externally-operated CA" to describe a subordinate CA certificate issued where the organization or legal entity in possession or control of the corresponding private key capable of issuing new certificates is not under the sole control of the CA Owner whose certificate is included in the Chrome Root Store.
 
@@ -175,9 +175,9 @@ In some cases, this policy strengthens requirements described in the CCADB Polic
 
 If a CA Owner already has two (2) or more self-signed root CA certificates included in the Chrome Root Store, the Chrome Root Program will only accept a new Root Inclusion Request to replace an existing certificate (i.e., 'one in, one out').
 
-**No later than June 15, 2026**, CA Owners with more than two (2) self-signed root CA certificates in the Chrome Root Store MUST submit a written consolidation plan to the Chrome Root Program. This plan MUST identify the two (2) root CA certificates that will remain in the Chrome Root Store and MUST define a date **before September 15, 2027** (00:00 UTC) for when a SCTNotAfter constraint will take effect for all of their other root CA certificates. 
+**No later than June 15, 2026**, CA Owners with more than two (2) self-signed root CA certificates in the Chrome Root Store MUST submit a written consolidation plan to the Chrome Root Program. This plan MUST identify the two (2) root CA certificates that will remain in the Chrome Root Store and MUST define a date **before September 15, 2027**, (00:00 UTC) for when a SCTNotAfter constraint will take effect for all of their other root CA certificates. 
 
-**Effective September 15, 2027**, the Chrome Root Store will only include a maximum of two (2) self-signed root CA certificates per CA Owner that do not have SCTNotAfter constraint metadata. TLS server authentication certificates logged to Certificate Transparency (CT) before September 15, 2027 (00:00 UTC) that only validate to a root CA certificate being gracefully removed from the Chrome Root Store due to CA Owner consolidation will continue to be trusted until they expire.
+**Effective September 15, 2027**, the Chrome Root Store will only include a maximum of two (2) self-signed root CA certificates per CA Owner that do not have SCTNotAfter constraint metadata. TLS server authentication certificates logged to Certificate Transparency (CT) before September 15, 2027, (00:00 UTC) that only validate to a root CA certificate being gracefully removed from the Chrome Root Store due to CA Owner consolidation will continue to be trusted until they expire.
 
 To further reduce negative impact to the ecosystem, the Chrome Root Store may temporarily continue to include more than two (2) self-signed root CA certificates past the specified consolidation timeline on a case-by-case basis.
 
@@ -240,10 +240,10 @@ To align all PKI hierarchies included in the Chrome Root Store on the principle 
 
 1. All corresponding unexpired and unrevoked subordinate CA certificates operated beneath an existing root included in the Chrome Root Store MUST:
     -  when disclosed to the CCADB…
-        -  **prior to June 15, 2026,** include the extendedKeyUsage extension and (1) only assert an extendedKeyUsage purpose of id-kp-serverAuth OR (2) only assert extendedKeyUsage purposes of id-kp-serverAuth and id-kp-clientAuth.
-        -  **on or after June 15, 2026,** include the extendedKeyUsage extension and only assert an extendedKeyUsage purpose of id-kp-serverAuth.
+        -  **prior to June 15, 2026**, include the extendedKeyUsage extension and (a) only assert an extendedKeyUsage purpose of id-kp-serverAuth OR (b) only assert extendedKeyUsage purposes of id-kp-serverAuth and id-kp-clientAuth.
+        -  **on or after June 15, 2026**, include the extendedKeyUsage extension and only assert an extendedKeyUsage purpose of id-kp-serverAuth.
     -  NOT contain a public key corresponding to any other unexpired or unrevoked certificate that asserts different extendedKeyUsage values.
-2. All corresponding unexpired and unrevoked subscriber certificates issued on or after **June 15, 2026** MUST include:
+2. All corresponding unexpired and unrevoked subscriber certificates issued on or after **June 15, 2026**, MUST include:
      -  the extendedKeyUsage extension and only assert an extendedKeyUsage purpose of id-kp-serverAuth.
      -  the certificatePolicies extension and only assert the appropriate [CA/Browser Forum Reserved Certificate Policy Identifiers](https://cabforum.org/working-groups/server/baseline-requirements/requirements/#7161-reserved-certificate-policy-identifiers).
        
@@ -359,7 +359,7 @@ All Chrome Root Program Participant CAs MUST retain an unbroken, contiguous audi
 
 Recurring "complete" (i.e., "full", "full system", or "full re-assessment") audits MUST occur at least once every 365 calendar days (or 366 calendar days in a leap year). These audits MUST begin once a CA's key material has been generated and MUST continue until the corresponding root CA's key material has been destroyed or is no longer included in the Chrome Root Store.
 
-For each incident reported in an ETSI Audit Attestation Letter or WebTrust Assurance Report, auditors SHOULD opine that (1) the scope, impact, and root cause of incidents are accurately and fairly stated in the publicly-disclosed incident reports, and (2) that the corresponding actions taken by the CA Owner (a) satisfactorily address those root causes and (b) meaningfully reduce likelihood of the issue’s recurrence.
+For each incident reported in an ETSI Audit Attestation Letter or WebTrust Assurance Report, auditors SHOULD opine that (a) the scope, impact, and root cause of incidents are accurately and fairly stated in the publicly-disclosed incident reports, and (b) that the corresponding actions taken by the CA Owner satisfactorily address those root causes and meaningfully reduce likelihood of the issue’s recurrence.
 
 #### 1.4.2. Ad-Hoc Audits
 
@@ -406,9 +406,9 @@ At any time, the Chrome Root Program may request additional information from a C
 
 #### 1.6.1. Notification of CA Certificate Issuance
 
-CA Owners included in the Chrome Root Store MUST complete the "Chrome Root Program Notification of CA Certificate Issuance" form, made available by emailing chrome-root-program [at] google [dot] com, at least 3 weeks before a CA in the corresponding hierarchy issues a CA certificate that:
+CA Owners included in the Chrome Root Store MUST complete the "Chrome Root Program Notification of CA Certificate Issuance" form, made available by emailing chrome-root-program [at] google [dot] com, at least three (3) weeks before a CA in the corresponding hierarchy issues a CA certificate that:
 
-- extends the Chrome Root Store's trust boundary (i.e., the third-party subject CA Owner is either (1) not explicitly included in the Chrome Root Store at the time of issuance, or (2) is constrained (i.e., SCTNotAfter) and planned for removal), or
+- extends the Chrome Root Store's trust boundary (i.e., the third-party subject CA Owner is either (a) not explicitly included in the Chrome Root Store at the time of issuance, or (b) is constrained (i.e., SCTNotAfter) and planned for removal), or
 - replaces an unrevoked and unexpired CA certificate whose subject certificate CA Owner is not explicitly included in the Chrome Root Store.
 
 Examples of the above use cases include cross-certificates issued to CA Owners not represented in the Chrome Root Store and Externally-operated CA certificates.
@@ -479,8 +479,8 @@ To qualify as a dedicated TLS server authentication PKI hierarchy under this pol
 
 1. All corresponding unexpired and unrevoked subordinate CA certificates operated beneath an Applicant root CA MUST:
     - when disclosed to the CCADB…
-        - **prior to June 15, 2025,** include the extendedKeyUsage extension and (1) only assert an extendedKeyUsage purpose of id-kp-serverAuth OR (2) only assert extendedKeyUsage purposes of id-kp-serverAuth and id-kp-clientAuth.
-        -  **on or after June 15, 2025,** include the extendedKeyUsage extension and only assert an extendedKeyUsage purpose of id-kp-serverAuth.
+        - **prior to June 15, 2025**, include the extendedKeyUsage extension and (a) only assert an extendedKeyUsage purpose of id-kp-serverAuth OR (b) only assert extendedKeyUsage purposes of id-kp-serverAuth and id-kp-clientAuth.
+        -  **on or after June 15, 2025**, include the extendedKeyUsage extension and only assert an extendedKeyUsage purpose of id-kp-serverAuth.
     -  NOT contain a public key corresponding to any other unexpired or unrevoked certificate that asserts different extendedKeyUsage values.
 2. All corresponding unexpired and unrevoked subscriber (i.e., TLS server authentication) certificates MUST include the extendedKeyUsage extension and only assert an extendedKeyUsage purpose of id-kp-serverAuth.
 
@@ -496,7 +496,7 @@ The following requirements are intended to promote use of automation solutions t
 
 - TLS server authentication certificates SHOULD NOT exceed 90 calendar days.
 - The period for domain control validation data reuse SHOULD NOT exceed 90 calendar days.
-- Due to (1) limitations in offering support for automation and (2) these methods offering a weak binding between request authorization and the demonstrated control over the domain(s) appearing in the requested certificate, TLS server authentication certificates SHOULD NOT rely on the following domain validation methods as defined by the Baseline Requirements:
+- Due to (a) limitations in offering support for automation and (b) these methods offering a weak binding between request authorization and the demonstrated control over the domain(s) appearing in the requested certificate, TLS server authentication certificates SHOULD NOT rely on the following domain validation methods as defined by the Baseline Requirements:
     - 3.2.2.4.4 Constructed Email to Domain Contact,
     - 3.2.2.4.13 Email to DNS CAA Contact,
     - 3.2.2.4.14 Email to DNS TXT Contact,
@@ -509,7 +509,7 @@ In cases where the above requirements cannot be met, CA Owners are encouraged to
 
 ### 2.6 Promote Increased Transparency
 
-Applicants MUST ensure their Applicant PKI hierarchies log all TLS server authentication precertificates and final certificates to at least one Certificate Transparency (CT) log. The specific log type required depends on the eligibility of the Applicant PKI hierarchy:
+Applicants MUST ensure their Applicant PKI hierarchies log all TLS server authentication precertificates and final certificates to at least one (1) CT log. The specific log type required depends on the eligibility of the Applicant PKI hierarchy:
 
 1.  **Applicant PKI hierarchies eligible for "Usable" logs:** An Applicant PKI hierarchy is considered eligible to log in a CT log '[usable](https://googlechrome.github.io/CertificateTransparency/log_states.html#usable)' in Chrome if its root CA is cross-certified by any root CA already included in the Chrome Root Store. This applies to:
     - Any Applicant PKI hierarchy belonging to a CA Owner who already has a root CA included in the Chrome Root Store, where it is expected that an existing root CA included in the Chrome Root Store will cross-certify the Applicant PKI hierarchy; and
@@ -530,5 +530,5 @@ Applicant PKI hierarchies MUST provide evidence of at least one complete audit b
 For Applicant PKI hierarchies subject of a CCADB Root Inclusion Request submitted to Google Chrome **on or after September 15, 2025**:
 
 -  Except for Externally-operated CAs, when CAs in the hierarchy are assessed against:
-    -  **only a single audit scheme** (e.g., all CAs in the hierarchy are only assessed against the WebTrust scheme), they MUST fall under a single audit scope (i.e., represented in a single WebTrust Assurance Report) for the assessed criteria (e.g., (1) WebTrust Principles and Criteria for Certification Authorities, (2) WebTrust Principles and Criteria for Certification Authorities - Network Security, (3) WebTrust Principles and Criteria for Certification Authorities - SSL Baseline, or (4) WebTrust for CA - Extended Validation - SSL).
+    -  **only a single audit scheme** (e.g., all CAs in the hierarchy are only assessed against the WebTrust scheme), they MUST fall under a single audit scope (i.e., represented in a single WebTrust Assurance Report) for the assessed criteria (e.g., (a) WebTrust Principles and Criteria for Certification Authorities, (b) WebTrust Principles and Criteria for Certification Authorities - Network Security, (c) WebTrust Principles and Criteria for Certification Authorities - SSL Baseline, or (4) WebTrust for CA - Extended Validation - SSL).
     -  **multiple audit schemes** (e.g., some CAs are assessed against the WebTrust scheme and others are assessed against the ETSI scheme), all CAs assessed against each respective scheme MUST fall under a single audit scope for that scheme (i.e., all ETSI-assessed CAs are represented in a single ETSI Audit Attestation Letter, and all WebTrust CAs are represented in a single WebTrust Assurance Report) for the assessed criteria.
