@@ -194,7 +194,7 @@ Within no more than 90 calendar days after an Applicant CA certificate (i.e., re
 1. Issued a cross-certificate from the CA being replaced to the replacement CA; and
 2. Transitioned all TLS server authentication certificate issuance from the cross-signing PKI hierarchy to the replacement PKI hierarchy.
 
-The CA certificate being replaced will be removed from the Chrome Root Store upon the absence of unexpired and unrevoked TLS server authentication certificates (excluding test certificates like those disclosed to the CCADB) disclosed to CT before the date of the Applicant CA (i.e., replacement) being first distributed by the Chrome Root Store.
+The CA certificate being replaced will be removed from the Chrome Root Store upon the absence of unexpired and unrevoked TLS server authentication certificates (excluding test certificates like those disclosed to the CCADB) disclosed to CT before the date of the Applicant CA certificate (i.e., replacement) being first distributed by the Chrome Root Store.
 
 Due to the existence of the cross-certificate, TLS server authentication certificates issued by the replacement PKI hierarchy will be trusted by default in versions of Chrome relying on the Chrome Root Store, regardless of whether they are capable of receiving updates to the Chrome Root Store.
 
