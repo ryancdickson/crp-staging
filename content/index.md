@@ -309,7 +309,7 @@ While ACME support is encouraged, PKI hierarchies MAY support other automation s
 
 - The automation solution SHOULD:
     - support automated deployment (i.e., installation and configuration) of the issued certificate without "hands-on" input from humans (comparable to how ACME clients function).
-    - support comparable features as described by the ACME Profiles extension [[RFC TBD](https://datatracker.ietf.org/doc/draft-aaron-acme-profiles/)).
+    - support comparable features as described by the ACME Profiles extension ([RFC TBD](https://datatracker.ietf.org/doc/draft-aaron-acme-profiles/)).
 
 #### 1.3.4. Promote Increased Transparency
 
