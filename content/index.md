@@ -435,7 +435,7 @@ Not limited to the circumstances above, the Chrome Root Program reserves the rig
 
 Chrome Root Program Participants are expected to maintain awareness of, and where relevant, actively engage in public discussions concerning CA practices, policy developments, and incidents, within minimally the following public forums:
 - [CCADB Public](https://groups.google.com/a/ccadb.org/g/public),
-- the CA/Browser Forum [Server Certificate Working Group](https://groups.google.com/a/groups.cabforum.org/g/servercert-wg), [Validation Subcommittee](https://groups.google.com/a/groups.cabforum.org/g/validation), and [Network Security](https://lists.cabforum.org/mailman/listinfo/netsec) Working Group mailing lists, 
+- the CA/Browser Forum [Server Certificate Working Group](https://groups.google.com/a/groups.cabforum.org/g/servercert-wg), [Validation Subcommittee](https://groups.google.com/a/groups.cabforum.org/g/validation), and [Network Security Working Group](https://lists.cabforum.org/mailman/listinfo/netsec) mailing lists, 
 - the Bugzilla [CA Certificate Compliance](https://bugzilla.mozilla.org/buglist.cgi?product=CA%20Program&component=CA%20Certificate%20Compliance&bug_status=__open__&list_id=17629668) component, 
 - the [Certificate Transparency Policy](https://groups.google.com/a/chromium.org/g/ct-policy) mailing list, and
 - the [Certificate Transparency](https://groups.google.com/g/certificate-transparency) mailing list.
