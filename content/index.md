@@ -521,7 +521,7 @@ Applicants MUST ensure their Applicant PKI hierarchies log all TLS server authen
 
 Many "Test" CT logs automatically ingest CCADB data to determine their set of accepted roots. Therefore, upon submission of their Root Inclusion Request via the CCADB, new Applicants should expect their Applicant PKI hierarchy's root CA to be included automatically by "Test" logs and should not need to file separate acceptance requests to them.
 
-To enhance the security and resilience of the internet ecosystem, and as a critical component of the Chrome Root Program's commitment to CT, Applicants SHOULD reliably operate at least one CT Log. This log MUST operate in accordance with the requirements defined in the [Chrome CT Log Policy](https://googlechrome.github.io/CertificateTransparency/log_policy.html), and MUST be [listed](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json) as either "Usable" or "Qualified."
+To enhance the security and resilience of the Internet ecosystem, and as a critical component of the Chrome Root Program's commitment to CT, Applicants SHOULD reliably operate at least one CT Log. This log MUST operate in accordance with the requirements defined in the [Chrome CT Log Policy](https://googlechrome.github.io/CertificateTransparency/log_policy.html), and MUST be [listed](https://www.gstatic.com/ct/log_list/v3/all_logs_list.json) as either "Usable" or "Qualified."
 
 ### 2.7 Annual Audits
 
