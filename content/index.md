@@ -264,7 +264,7 @@ To reduce negative impact to the ecosystem, the Chrome Root Store may temporaril
 
 Certificate lifecycle management automation solutions ("automation solutions") increase agility and improve the [security](https://zanema.com/papers/imc23_stale_certs.pdf) and resilience of the Internet ecosystem. Automation solutions minimize "hands-on" input required from humans during certificate issuance and renewal. Acceptable "hands-on" input from humans includes initial software installation and configuration, applying software updates, and updating subscriber account information as needed. Routine certificate issuance and renewal SHOULD NOT involve human input except as needed for identity or business document verification related to IV, OV, or EV certificate issuance.
 
-**Effective September 15, 2026**, all unexpired and unrevoked subordinate CA certificates signed by a root CA included in the Chrome Root Store MUST be integrated with an automation solution (see Sections [1.3.3.1.1 ("ACME Solutions")](#13311-acme-solutions) and [1.3.3.1.2 ("Non-ACME Solutions")](#13312-non-acme-solutions)). Functionally, this means that every TLS server authentication certificate profile offered by a subordinate CA trusted in Chrome MUST be capable of being issued and renewed using an automation solution. CA Owners MUST attest that this requirement is met for each Baseline Requirements certificate policy OID the corresponding PKI hierarchy issues through a disclosure in the CCADB on the root certificate record of each CA included in the Chrome Root Store.
+**Effective September 15, 2026**, all unexpired and unrevoked subordinate CA certificates signed by a root CA certificate included in the Chrome Root Store MUST be integrated with an automation solution (see Sections [1.3.3.1.1 ("ACME Solutions")](#13311-acme-solutions) and [1.3.3.1.2 ("Non-ACME Solutions")](#13312-non-acme-solutions)). Functionally, this means that every TLS server authentication certificate profile offered by a subordinate CA trusted in Chrome MUST be capable of being issued and renewed using an automation solution. CA Owners MUST attest that this requirement is met for each Baseline Requirements certificate policy OID the corresponding PKI hierarchy issues through a disclosure in the CCADB on the root certificate record of each CA included in the Chrome Root Store.
 
 These requirements do not:
 - Prohibit PKI hierarchies from also supporting other "non-automated" methods of certificate issuance and renewal.
@@ -477,7 +477,7 @@ The Chrome Root Program will only accept CCADB Root Inclusion Requests from Appl
 
 To qualify as a dedicated TLS server authentication PKI hierarchy under this policy:
 
-1. All corresponding unexpired and unrevoked subordinate CA certificates operated beneath an Applicant root CA MUST:
+1. All corresponding unexpired and unrevoked subordinate CA certificates operated beneath an Applicant root CA certificate MUST:
     - when disclosed to the CCADB…
         - **prior to June 15, 2025**, include the extendedKeyUsage extension and (a) only assert an extendedKeyUsage purpose of id-kp-serverAuth OR (b) only assert extendedKeyUsage purposes of id-kp-serverAuth and id-kp-clientAuth.
         -  **on or after June 15, 2025**, include the extendedKeyUsage extension and only assert an extendedKeyUsage purpose of id-kp-serverAuth.
