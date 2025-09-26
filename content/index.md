@@ -240,7 +240,7 @@ To achieve these goals, all subordinate CA certificates that validate to a certi
 
 The Chrome Root Store is solely relied upon for TLS server authentication in Chrome; it is not used for any other PKI use case (e.g., TLS client authentication, secure email, code-signing, etc.).
 
-To align all PKI hierarchies included in the Chrome Root Store on the principle of serving only TLS server authentication use cases, the Chrome Root Program will "phase-out" multi-purpose roots from the Chrome Root Store.
+To align all PKI hierarchies included in the Chrome Root Store on the principle of serving only TLS server authentication use cases, the Chrome Root Program will phase-out multi-purpose roots from the Chrome Root Store.
 
 **Beginning** **June 15, 2026**, the Chrome Root Program will phase-out PKI hierarchies found in ivolation of the below requirements. In these cases, the phase-out date will be set to 90 calendar days following the violation’s detection.
 
