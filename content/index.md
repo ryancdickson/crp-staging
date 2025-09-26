@@ -200,7 +200,7 @@ Within no more than 90 calendar days after an Applicant CA certificate (i.e., re
 
 The cross-certificate referenced in (1), immediately above, SHOULD be issued before the CA Owner has submitted a Root Inclusion Request to the CCADB.
 
-The CA certificate being replaced will be removed from the Chrome Root Store upon the absence of unexpired and unrevoked TLS server authentication certificates (excluding test certificates like those disclosed to the CCADB) disclosed to CT before the date of the Applicant CA certificate (i.e., replacement) being first distributed by the Chrome Root Store.
+The CA certificate being replaced will be removed from the Chrome Root Store upon the absence of unexpired and unrevoked TLS server authentication certificates (excluding test certificates like those disclosed to the CCADB) disclosed to Certificate Transparency (CT) before the date of the Applicant CA certificate (i.e., replacement) being first distributed by the Chrome Root Store.
 
 Due to the existence of the cross-certificate, TLS server authentication certificates issued by the replacement PKI hierarchy will be trusted by default in versions of Chrome relying on the Chrome Root Store, regardless of whether they are capable of receiving updates to the Chrome Root Store.
 
