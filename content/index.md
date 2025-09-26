@@ -143,11 +143,13 @@ This policy uses the term "Externally-operated CA" to describe a subordinate CA 
 
 This policy considers a PKI hierarchy as "dedicated" if it is intended to serve one specific use case, for example, the issuance of TLS server authentication certificates.
 
+To continually raise the baseline of trust and drive the adoption of modern, agile, and secure PKIs, this policy sometimes “phases out” practices (sometimes referred to as a “phase-out”). Unless otherwise specified, phase-outs are accomplished using an [SCTNotAfter constraint](https://source.chromium.org/chromium/chromium/src/+/main:net/cert/root_store.proto;drc=a783c3bab474ff68e675e2753f91c92ca817e072;l=15?q=f:root_store.proto&ss=chromium) on a corresponding root CA’s certificate included in the Chrome Root Store. TLS server authentication certificates issued before a practice’s or PKI hierarchy’s specified phase-out date will be trusted in Chrome until expiry, whereas certificates issued on or after will not be trusted by default.
+
 ## 1. Minimum Requirements for CAs Included in the Chrome Root Store
 
-### 1.1. PKI Policy Governance and Requirements
+The following requirements are effective immediately, unless explicitly stated as otherwise.
 
-The requirements included in this policy are effective immediately, unless explicitly stated as otherwise.
+### 1.1. PKI Policy Governance and Requirements
 
 Chrome Root Program Participants MUST satisfy the requirements defined in this policy, including taking responsibility for ensuring the continued compliance of all corresponding subordinate CAs and delegated third parties participating in the PKI.
 
@@ -175,9 +177,11 @@ In some cases, this policy strengthens requirements described in the CCADB Polic
 
 If a CA Owner already has two (2) or more self-signed root CA certificates included in the Chrome Root Store, the Chrome Root Program will only accept a new CCADB Root Inclusion Request to replace an existing certificate (i.e., 'one in, one out').
 
-**No later than June 15, 2026**, CA Owners with more than two (2) self-signed root CA certificates in the Chrome Root Store MUST submit a written consolidation plan to the Chrome Root Program. This plan MUST identify the two (2) root CA certificates that will remain in the Chrome Root Store and MUST define a date **before September 15, 2027**, (00:00 UTC) for when a SCTNotAfter constraint will take effect for all of their other root CA certificates. 
+**Before June 15, 2026**, CA Owners with more than two (2) self-signed root CA certificates in the Chrome Root Store MUST submit a written consolidation plan to the Chrome Root Program. This plan MUST:
+1. Identify the two (2) root CA certificates that will remain in the Chrome Root Store, and 
+2. Provide a phase-out date **before September 15, 2027**, (00:00 UTC) for all of their other root CA certificates. 
 
-**Effective September 15, 2027**, the Chrome Root Store will only include a maximum of two (2) self-signed root CA certificates per CA Owner that do not have SCTNotAfter constraint metadata. TLS server authentication certificates logged to Certificate Transparency (CT) before September 15, 2027, (00:00 UTC) that only validate to a root CA certificate being gracefully removed from the Chrome Root Store due to CA Owner consolidation will continue to be trusted until they expire.
+**Effective September 15, 2027**, the Chrome Root Store will only include a maximum of two (2) self-signed root CA certificates per CA Owner. PKI hierarchies being phased-out are not counted toward this limit.
 
 To further reduce negative impact to the ecosystem, the Chrome Root Store may temporarily continue to include more than two (2) self-signed root CA certificates past the specified consolidation timeline on a case-by-case basis.
 
@@ -187,12 +191,14 @@ To further reduce negative impact to the ecosystem, the Chrome Root Store may te
 
 ##### 1.3.1.1 Root CA Succession Planning
 
-CA Owners SHOULD request for the replacement of a certificate included in the Chrome Root Store no later than 5 years after the release date of the Chrome Root Store's initial inclusion of the certificate.
+CA Owners SHOULD request for the replacement of a certificate included in the Chrome Root Store no later than five (5) years after the release date of the Chrome Root Store's initial inclusion of the certificate.
 
 Within no more than 90 calendar days after an Applicant CA certificate (i.e., replacement) being first distributed by the Chrome Root Store and as disclosed in the CCADB, the CA Owner MUST have:
 
 1. Issued a cross-certificate from the CA being replaced to the replacement CA; and
 2. Transitioned all TLS server authentication certificate issuance from the cross-signing PKI hierarchy to the replacement PKI hierarchy.
+
+The cross-certificate referenced in (1), immediately above, SHOULD be issued before the CA Owner has submitted a Root Inclusion Request to the CCADB.
 
 The CA certificate being replaced will be removed from the Chrome Root Store upon the absence of unexpired and unrevoked TLS server authentication certificates (excluding test certificates like those disclosed to the CCADB) disclosed to CT before the date of the Applicant CA certificate (i.e., replacement) being first distributed by the Chrome Root Store.
 
@@ -236,11 +242,11 @@ The Chrome Root Store is solely relied upon for TLS server authentication in Chr
 
 To align all PKI hierarchies included in the Chrome Root Store on the principle of serving only TLS server authentication use cases, the Chrome Root Program will "phase-out" multi-purpose roots from the Chrome Root Store.
 
-**Beginning** **June 15, 2026**, the Chrome Root Program will set an [SCTNotAfter constraint](https://source.chromium.org/chromium/chromium/src/+/main:net/cert/root_store.proto;drc=a783c3bab474ff68e675e2753f91c92ca817e072;l=15?q=f:root_store.proto&ss=chromium) on root CA certificates included in the Chrome Root Store for any PKI hierarchy found in violation of the below requirements. Once the constraint is applied, Chrome will no longer trust any certificate chaining to the root by default if it is issued more than 90 calendar days following the violation's detection.
+**Beginning** **June 15, 2026**, the Chrome Root Program will phase-out PKI hierarchies found in ivolation of the below requirements. In these cases, the phase-out date will be set to 90 calendar days following the violation’s detection.
 
 1. All corresponding unexpired and unrevoked subordinate CA certificates operated beneath an existing root included in the Chrome Root Store MUST:
     -  when disclosed to the CCADB…
-        -  **prior to June 15, 2026**, include the extendedKeyUsage extension and (a) only assert an extendedKeyUsage purpose of id-kp-serverAuth OR (b) only assert extendedKeyUsage purposes of id-kp-serverAuth and id-kp-clientAuth.
+        -  **before June 15, 2026**, include the extendedKeyUsage extension and (a) only assert an extendedKeyUsage purpose of id-kp-serverAuth OR (b) only assert extendedKeyUsage purposes of id-kp-serverAuth and id-kp-clientAuth.
         -  **on or after June 15, 2026**, include the extendedKeyUsage extension and only assert an extendedKeyUsage purpose of id-kp-serverAuth.
     -  NOT contain a public key corresponding to any other unexpired or unrevoked certificate that asserts different extendedKeyUsage values.
 2. All corresponding unexpired and unrevoked subscriber certificates issued on or after **June 15, 2026**, MUST include:
@@ -256,7 +262,7 @@ To align all PKI hierarchies included in the Chrome Root Store on the principle 
 
 The subsequently constrained multi-purpose root CA certificate(s) will be scheduled for removal from the Chrome Root Store upon the absence of unexpired and unrevoked TLS server authentication certificates (excluding test certificates like those disclosed to the CCADB) disclosed to CT **before** **June 15, 2026**.
 
-To reduce negative impact to the ecosystem, the Chrome Root Store may temporarily continue to include a multi-purpose root CA certificate in the Chrome Root Store without an SCTNotAfter constraint on a case-by-case basis, but only if the corresponding CA Owner has submitted a Root Inclusion Request to the CCADB for a replacement root CA certificate **before June 15, 2026**.
+To reduce negative impact to the ecosystem, the Chrome Root Store may temporarily continue to include a multi-purpose root CA certificate in the Chrome Root Store on a case-by-case basis, but only if the corresponding CA Owner has submitted a Root Inclusion Request to the CCADB for a replacement root CA certificate **before June 15, 2026**.
 
 #### 1.3.3 Promote Cryptographic Agility and Resilience
 
@@ -270,9 +276,7 @@ These requirements do not:
 - Prohibit PKI hierarchies from also supporting other "non-automated" methods of certificate issuance and renewal.
 - Require website operators to rely on the automation solution(s) for certificate issuance and renewal.
 
-Following the immediately above effective date, the Chrome Root Program will set an SCTNotAfter constraint on root CA certificates included in the Chrome Root Store for any PKI hierarchy found issuing new certificates containing a Baseline Requirements certificate policy OID lacking automation solution attestation disclosure in the CCADB. Once the constraint is applied, Chrome will no longer trust any certificate chaining to the root CA certificate by default if it is issued more than 90 calendar days following the violation's detection.
-
-A CA Owner may avoid the SCTNotAfter constraint for any specific, non-compliant certificate profile (as identified by its Baseline Requirements certificate policy OID) by ceasing all new issuance of certificates containing that OID until the above requirements are satisfied.
+Beginning September 15, 2026, the Chrome Root Program will phase-out PKI hierarchies found issuing new certificates containing a Baseline Requirements certificate policy OID lacking an automation solution attestation disclosure in the CCADB. In these cases, the phase-out date will be set to 90 calendar days following the violation’s detection.
 
 ###### 1.3.3.1.1 ACME Solutions
 
@@ -444,6 +448,8 @@ Awareness of, and participation in, other key industry and community forums is e
 
 ## 2. Minimum Requirements for Applicant CAs Requesting Inclusion into the Chrome Root Store
 
+The following requirements are effective immediately, unless explicitly stated as otherwise.
+
 ### 2.1. PKI Policy Governance and Requirements
 
 Applicants MUST accurately describe the policies and practices of their CA(s) within a single CA policy document that is:
@@ -479,7 +485,7 @@ To qualify as a dedicated TLS server authentication PKI hierarchy under this pol
 
 1. All corresponding unexpired and unrevoked subordinate CA certificates operated beneath an Applicant root CA certificate MUST:
     - when disclosed to the CCADB…
-        - **prior to June 15, 2025**, include the extendedKeyUsage extension and (a) only assert an extendedKeyUsage purpose of id-kp-serverAuth OR (b) only assert extendedKeyUsage purposes of id-kp-serverAuth and id-kp-clientAuth.
+        - **before June 15, 2025**, include the extendedKeyUsage extension and (a) only assert an extendedKeyUsage purpose of id-kp-serverAuth OR (b) only assert extendedKeyUsage purposes of id-kp-serverAuth and id-kp-clientAuth.
         -  **on or after June 15, 2025**, include the extendedKeyUsage extension and only assert an extendedKeyUsage purpose of id-kp-serverAuth.
     -  NOT contain a public key corresponding to any other unexpired or unrevoked certificate that asserts different extendedKeyUsage values.
 2. All corresponding unexpired and unrevoked subscriber (i.e., TLS server authentication) certificates MUST include the extendedKeyUsage extension and only assert an extendedKeyUsage purpose of id-kp-serverAuth.
@@ -512,7 +518,7 @@ In cases where the above requirements cannot be met, CA Owners are encouraged to
 Applicants MUST ensure their Applicant PKI hierarchies log all TLS server authentication precertificates and final certificates to at least one (1) CT log. The specific log type required depends on the eligibility of the Applicant PKI hierarchy:
 
 1.  **Applicant PKI hierarchies eligible for "Usable" logs:** An Applicant PKI hierarchy is considered eligible to log in a CT log "[Usable](https://googlechrome.github.io/CertificateTransparency/log_states.html#usable)" in Chrome if its root CA certificate is cross-certified by any root CA certificate already included in the Chrome Root Store. This applies to:
-    - Any Applicant PKI hierarchy belonging to a CA Owner who already has a root CA certificate included in the Chrome Root Store, where it is expected that an existing root CA certifiate included in the Chrome Root Store will cross-certify the Applicant PKI hierarchy; and
+    - Any Applicant PKI hierarchy belonging to a CA Owner who already has a root CA certificate included in the Chrome Root Store, where it is expected that an existing root CA certificate included in the Chrome Root Store will cross-certify the Applicant PKI hierarchy; and
     - Applicant PKI hierarchies cross-certified by a different CA Owner already included in the Chrome Root Store.
 
     Applicants whose hierarchies are eligible for "Usable" logs MUST satisfy the logging requirement using such a log.
@@ -525,10 +531,12 @@ To enhance the security and resilience of the Internet ecosystem, and as a criti
 
 ### 2.7 Annual Audits
 
-Applicant PKI hierarchies MUST provide evidence of at least one (1) complete audit by disclosing the applicable ETSI Audit Attestation Letter(s) or WebTrust Assurance Report(s) to the CCADB prior to submitting a CCADB Root Inclusion Request to Google Chrome. The initial complete audit SHOULD cover a period of at least 180 calendar days.
+Applicant PKI hierarchies MUST provide evidence of at least one (1) complete audit by disclosing the applicable ETSI Audit Attestation Letter(s) or WebTrust Assurance Report(s) to the CCADB before submitting a CCADB Root Inclusion Request to Google Chrome. The initial complete audit SHOULD cover a period of at least 180 calendar days.
 
 For Applicant PKI hierarchies subject of a CCADB Root Inclusion Request submitted to Google Chrome **on or after September 15, 2025**:
 
 -  Except for Externally-operated CAs, when CAs in the hierarchy are assessed against:
     -  **only a single audit scheme** (e.g., all CAs in the hierarchy are only assessed against the WebTrust scheme), they MUST fall under a single audit scope (i.e., represented in a single WebTrust Assurance Report) for the assessed criteria (e.g., (a) WebTrust Principles and Criteria for Certification Authorities, (b) WebTrust Principles and Criteria for Certification Authorities - Network Security, (c) WebTrust Principles and Criteria for Certification Authorities - SSL Baseline, or (4) WebTrust for CA - Extended Validation - SSL).
     -  **multiple audit schemes** (e.g., some CAs are assessed against the WebTrust scheme and others are assessed against the ETSI scheme), all CAs assessed against each respective scheme MUST fall under a single audit scope for that scheme (i.e., all ETSI-assessed CAs are represented in a single ETSI Audit Attestation Letter, and all WebTrust CAs are represented in a single WebTrust Assurance Report) for the assessed criteria.
+ 
+If accepted into the Chrome Root Store, Applicant PKI hierarchies MUST continue this practice for the duration of its inclusion.
