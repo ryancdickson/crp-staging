@@ -53,7 +53,7 @@ Actions in this list are only illustrative and do not guarantee inclusion applic
 
 Root CA certificates approved for distribution will be added to the Chrome Root Store on approximately, but not limited to, a quarterly basis. However, the Chrome Root Program offers no guarantees related to the timeliness of CA certificate distribution.
 
-The burden of proof rests entirely on the Applicant to proactively and unequivocally demonstrate their qualifications. While the Chrome Root Program will clarify policy, it does not provide consultative coaching on application materials.
+CA Owners should not anticipate receiving application coaching beyond what is specified on this page and the Chrome Root Program Policy. CA Owners may seek clarification on Chrome Root Program policies or processes, and members of the Chrome Root Program will respond in a timely manner.
 
 ### Inclusion Rejection
 
