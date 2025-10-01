@@ -32,6 +32,8 @@ Typically, applications are processed on a first-in, first-out basis, with prior
 * replacing an existing root CA certificate which is already included in the Chrome Root Store and in good standing, and
 * whose disclosed and observed operational practices demonstrate the 'security-first' commitment and measurable contributions described above, thereby clearly offsetting the unavoidable risks associated with additional trusted entities.
 
+CA Owners should not anticipate receiving application coaching beyond what is specified on this page and the Chrome Root Program Policy. CA Owners may seek clarification on Chrome Root Program policies or processes, and members of the Chrome Root Program will respond in a timely manner.
+
 The Chrome Root Program takes as much time to process applications as needed to ensure user security, and makes no guarantees on application processing time. The Chrome Root Program may apply additional application review weighting criteria as it sees necessary or valuable to Chrome user security. At any point, the Chrome Root Program may contact the Applicant during its review seeking additional or clarifying information. Applicants are expected to provide the requested information in a timely manner.
 
 ### Inclusion Acceptance
@@ -52,8 +54,6 @@ Illustrative behaviors demonstrating this commitment include:
 Actions in this list are only illustrative and do not guarantee inclusion application acceptance.
 
 Root CA certificates approved for distribution will be added to the Chrome Root Store on approximately, but not limited to, a quarterly basis. However, the Chrome Root Program offers no guarantees related to the timeliness of CA certificate distribution.
-
-CA Owners should not anticipate receiving application coaching beyond what is specified on this page and the Chrome Root Program Policy. CA Owners may seek clarification on Chrome Root Program policies or processes, and members of the Chrome Root Program will respond in a timely manner.
 
 ### Inclusion Rejection
 
