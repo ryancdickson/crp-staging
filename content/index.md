@@ -101,7 +101,7 @@ If you're a Chrome user experiencing a certificate error and need help, please s
 
 If you're a website operator, you can learn more about [why HTTPS matters](https://web.dev/why-https-matters/) and how to [secure your site with HTTPS](https://support.google.com/webmasters/answer/6073543). If you've got a question about a certificate you've been issued, please contact the CA that issued it.
 
-If you're responsible for a CA that only issues certificates to your enterprise organization, sometimes called a "enterprise", "private" or "locally trusted" CA, the Chrome Root Program Policy does not apply to or impact your organization's PKI use cases. Enterprise CAs are used for issuing certificates to internal resources like Intranet sites or applications that do not directly interact with external users of the public Internet (e.g., a TLS server authentication certificate issued to a corporate Intranet site).
+If you're responsible for a CA that only issues certificates to your enterprise organization, sometimes called a "enterprise", "private" or "locally trusted" CA, the Chrome Root Program Policy does not apply to or impact your organization's PKI use cases. Enterprise CAs are used for issuing certificates to internal resources like intranet sites or applications that do not directly interact with external users of the public Internet (e.g., a TLS server authentication certificate issued to a corporate intranet site).
 
 Though uncommon, websites can also use certificates to identify clients (e.g., users) connecting to them. Besides ensuring it is well-formed, Chrome passes this type of certificate to the server, which then evaluates and enforces its chosen policy. The policies on this page do not apply to client authentication certificates.
 
