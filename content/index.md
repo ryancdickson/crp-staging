@@ -101,7 +101,7 @@ If you're a Chrome user experiencing a certificate error and need help, please s
 
 If you're a website operator, you can learn more about [why HTTPS matters](https://web.dev/why-https-matters/) and how to [secure your site with HTTPS](https://support.google.com/webmasters/answer/6073543). If you've got a question about a certificate you've been issued, please contact the CA that issued it.
 
-If you're responsible for a CA that only issues certificates to your enterprise organization, sometimes called a "enterprise", "private" or "locally trusted" CA, the Chrome Root Program Policy does not apply to or impact your organization's PKI use cases. Enterprise CAs are used for issuing certificates to internal resources like intranet sites or applications that do not directly interact with external users of the public Internet (e.g., a TLS server authentication certificate issued to a corporate intranet site).
+If you're responsible for a CA that only issues certificates to your enterprise organization, sometimes called an "enterprise", "private" or "locally trusted" CA, the Chrome Root Program Policy does not apply to or impact your organization's PKI use cases. Enterprise CAs are used for issuing certificates to internal resources like intranet sites or applications that do not directly interact with external users of the public Internet (e.g., a TLS server authentication certificate issued to a corporate intranet site).
 
 Though uncommon, websites can also use certificates to identify clients (e.g., users) connecting to them. Besides ensuring it is well-formed, Chrome passes this type of certificate to the server, which then evaluates and enforces its chosen policy. The policies on this page do not apply to client authentication certificates.
 
@@ -337,7 +337,7 @@ Chrome Root Program Participants SHOULD contribute to the health and diversity o
 - When performing Domain and IP Address Control Validation, CA Owners SHOULD leverage an Internet Service Provider using Resource Public Key Infrastructure with invalid route filtering for route origin validation to strengthen the security of their validation processes.
 - CA Owners SHOULD randomize the use of subordinate CAs for issuing TLS server authentication certificates, particularly when multiple such CAs share the same technical and policy characteristics. Doing so helps reduce often harmful practices like [Key Pinning](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning).
 - CA Owners SHOULD operate a publicly accessible test infrastructure that mirrors their production environment. This test infrastructure SHOULD include all components relevant to certificate issuance, validation, and lifecycle management. CA Owners SHOULD also publicly describe a clear process for relying parties to gain access to and utilize this test infrastructure. This practice facilitates proactive testing of new features, policy changes, and client behaviors, ultimately contributing to a more resilient and interoperable ecosystem.
-- CA Owners SHOULD use partitioned CRLs for serving TLS server authentication certificate status information.
+- CA Owners SHOULD use partitioned CRLs for serving TLS server authentication certificate status information. Partitioning CRLs makes revocation checking faster, more cost-effective, and more reliable by replacing one large, slow-to-download list with multiple small, targeted ones.
 - CA Owners SHOULD proactively implement security controls and operational practices that exceed the minimum requirements established in the CA/Browser Forum TLS Baseline Requirements. Examples include, but are not limited to, implementing shorter domain validation reuse periods than the maximum allowed. Such proactive measures are critical to improving the overall resilience of the ecosystem.
 
 ### 1.4. Audits
@@ -440,10 +440,9 @@ Not limited to the circumstances above, the Chrome Root Program reserves the rig
 Chrome Root Program Participants are expected to maintain awareness of, and where relevant, actively engage in public discussions concerning CA practices, policy developments, and incidents, within minimally the following public forums:
 - [CCADB Public](https://groups.google.com/a/ccadb.org/g/public),
 - the CA/Browser Forum [Server Certificate Working Group](https://groups.google.com/a/groups.cabforum.org/g/servercert-wg), [Validation Subcommittee](https://groups.google.com/a/groups.cabforum.org/g/validation), and [Network Security Working Group](https://lists.cabforum.org/mailman/listinfo/netsec) mailing lists, 
-- the Bugzilla [CA Certificate Compliance](https://bugzilla.mozilla.org/buglist.cgi?product=CA%20Program&component=CA%20Certificate%20Compliance&bug_status=__open__&list_id=17629668) component, 
-- the [Certificate Transparency Policy](https://groups.google.com/a/chromium.org/g/ct-policy) mailing list, and
-- the [Certificate Transparency](https://groups.google.com/g/certificate-transparency) mailing list.
-
+- the Bugzilla [CA Certificate Compliance](https://bugzilla.mozilla.org/buglist.cgi?product=CA%20Program&component=CA%20Certificate%20Compliance&bug_status=__open__&list_id=17629668) component, and
+- the [Certificate Transparency Policy](https://groups.google.com/a/chromium.org/g/ct-policy) mailing list.
+  
 Awareness of, and participation in, other key industry and community forums is encouraged.
 
 ## 2. Minimum Requirements for Applicant CAs Requesting Inclusion into the Chrome Root Store
