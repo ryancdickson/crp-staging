@@ -40,16 +40,20 @@ The Chrome Root Program takes as much time to process applications as needed to 
 
 Ultimately, in order for a CA Owner’s inclusion application to be accepted, it must clearly and unequivocally demonstrate how their organization meets the high standards defined by the Chrome Root Program. The burden of proof rests entirely on the Applicant to proactively and unequivocally demonstrate this commitment, thereby clearly offsetting the inherent and significant security risks of inclusion. Without such a compelling and verifiable demonstration, in order to uphold Chrome user security and to preserve the integrity of the Chrome Root Store, an application will not be accepted.
 
-Illustrative behaviors demonstrating this commitment include:
+While not a comprehensive list, the following behaviors can serve as positive indicators of an Applicant's commitment to promoting security, operational maturity, and serving the broad public web ecosystem:
 
+**Indicators of security best practices and technical leadership**
+* Supporting the Automatic Certificate Management Environment (ACME) protocol and the ACME Renewal Information (ARI) extension, complemented by technical controls that encourage cryptographic agility.
+* Responsibly operating [Certificate Transparency](https://googlechrome.github.io/CertificateTransparency/) log(s) qualified in Chrome.
+* Not relying on "cached" domain validation information during certificate issuance.
+* Leveraging operational practices consistent with those described in [Moving Forward, Together](moving-forward-together) at the time of application submission. For example, reliably issuing TLS server authentication certificates that are valid for a much shorter period of time than the maximum validity allowed by the Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates.
+* Proactively implementing security controls and operational practices that exceed the minimum requirements established in the CA/Browser Forum TLS Baseline Requirements.
+
+**Indicators of a public-serving mission**
 * Supporting subscribers in multiple geographic markets and in multiple native languages.
 * Freely-available guidance, help articles, or FAQs to support the user community in requesting/renewing certificates or configuring TLS.
 * Issuing certificates to a broad range of entities, beyond just the CA Owner's existing subscriber base or subscribers of its other business offerings.
 * Issuing certificates for a broad range of Top-Level Domains (TLDs), not limited to specific or restricted domains.
-* Not relying on "cached" domain validation information during certificate issuance.
-* Leveraging operational practices consistent with those described in [Moving Forward, Together](moving-forward-together) at the time of application submission. For example, reliably issuing TLS server authentication certificates that are valid for a much shorter period of time than the maximum validity allowed by the Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates.
-* Supporting the Automatic Certificate Management Environment (ACME) protocol and the ACME Renewal Information (ARI) extension, complemented by technical controls that encourage cryptographic agility.
-* Responsibly operating [Certificate Transparency](https://googlechrome.github.io/CertificateTransparency/) log(s) qualified in Chrome.
 
 Actions in this list are only illustrative and do not guarantee inclusion application acceptance.
 
