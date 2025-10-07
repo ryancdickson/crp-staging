@@ -74,7 +74,7 @@ Illustrative factors for application rejection may include:
 * A corresponding Public Key Infrastructure (PKI) certificate hierarchy where leaf certificates are not primarily intended to be used for server authentication facilitating a secure connection between a web browser and a corresponding website (e.g., client authentication certificates, Internet of Things (IoT) device certificates, smart cities, transportation, medical devices, etc.).
 * A corresponding PKI hierarchy that currently or previously allowed, facilitated, or enabled “Monster in the Middle” (MITM) attacks (either successful or attempted) where a certificate was issued for the purposes of impersonation, interception, or to alter communications.
 * Where the corresponding CA Owner has ever been determined to have acted in an untrustworthy manner or created unnecessary ecosystem risk.
-* Has an incident history that does not convey the [factors](index#51-incident-reports) significant to Chrome, including weak root cause analysis or unsatisfactory incident reporting.
+* Where the corresponding CA Owne has an incident history that does not convey the [factors](index#51-incident-reports) significant to Chrome, including weak root cause analysis or unsatisfactory incident reporting.
 * Completion of a CCADB root inclusion public discussion that casts doubt over the CA Owners security, honesty or reliability.
 * Discovery of false or misleading information provided by the CA Owner.
 * Significant delays in response from the CA Owner when seeking additional or clarifying information.
