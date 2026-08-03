@@ -9,6 +9,7 @@ import markdown
 
 from collections import namedtuple
 import urllib.parse
+import urllib.request
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -333,6 +334,19 @@ def main():
 
     # Ensure output directory exists
     os.makedirs(config.get("output_dir"), exist_ok=True)
+
+    # Fetch latest cosigners.json at build time for fallback
+    try:
+        req = urllib.request.Request("https://www.gstatic.com/mtcs/cosigners/v1/cosigners.json", headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req) as resp:
+            fallback_bytes = resp.read()
+            static_dir = os.path.join(config.get("output_dir"), "static")
+            os.makedirs(static_dir, exist_ok=True)
+            with open(os.path.join(static_dir, "cosigners_fallback.json"), "wb") as f:
+                f.write(fallback_bytes)
+            print("Successfully saved static/cosigners_fallback.json for build fallback")
+    except Exception as e:
+        print(f"Warning: Could not fetch cosigners.json at build time ({e})")
 
     # Render the markdow and copy assets
     res = render_markdown(
