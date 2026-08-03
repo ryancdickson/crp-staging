@@ -1,10 +1,10 @@
 ---
-title: Chrome Quantum-resistant Root Program - Test Root Store
+title: Chrome Quantum-resistant Root Program - CQRP Root Store
 ---
 
-# CQRP Test Root Store
+# CQRP Root Store
 
-Below is the list of **MTC CA Cosigners** and **Mirror Cosigners** included in the Chrome Quantum-resistant Test Root Store.
+Below is the list of **MTC CA Cosigners** and **Mirror Cosigners** included in the Chrome Quantum-resistant Root Store.
 
 Data is fetched directly from [`https://www.gstatic.com/mtcs/cosigners/v1/cosigners.json`](https://www.gstatic.com/mtcs/cosigners/v1/cosigners.json).
 
@@ -22,6 +22,7 @@ Data is fetched directly from [`https://www.gstatic.com/mtcs/cosigners/v1/cosign
   <table>
     <thead>
       <tr>
+        <th>Environment</th>
         <th>Friendly Name</th>
         <th>Operator</th>
         <th>Base URL</th>
@@ -37,6 +38,7 @@ Data is fetched directly from [`https://www.gstatic.com/mtcs/cosigners/v1/cosign
   <table>
     <thead>
       <tr>
+        <th>Environment</th>
         <th>Friendly Name</th>
         <th>Operator</th>
         <th>Base URL</th>
@@ -53,6 +55,22 @@ Data is fetched directly from [`https://www.gstatic.com/mtcs/cosigners/v1/cosign
 </div>
 
 <script>
+function getRealmBadge(realm) {
+  if (realm === "PUBLICLY_TRUSTED") {
+    return `<span style="background: #dafbe1; color: #1a7f37; border: 1px solid #4ac26b; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;" title="PUBLICLY_TRUSTED (Production)">PROD</span>`;
+  } else if (realm === "UNTRUSTED_VALIDATION_ONLY") {
+    return `<span style="background: #fff8c5; color: #9a6700; border: 1px solid #d4a72c; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;" title="UNTRUSTED_VALIDATION_ONLY (Testing)">TEST</span>`;
+  } else {
+    return `<span style="background: #f6f8fa; color: #57606a; border: 1px solid #d0d7de; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">${realm || "UNSET"}</span>`;
+  }
+}
+
+function formatTimestamp(ts) {
+  if (!ts) return "N/A";
+  const d = new Date(ts);
+  return d.toISOString().replace("T", " ").substring(0, 19) + " UTC";
+}
+
 async function loadCosigners() {
   const loading = document.getElementById("loading-spinner");
   const content = document.getElementById("cosigners-content");
@@ -66,9 +84,7 @@ async function loadCosigners() {
   } catch (err) {
     console.warn("Direct fetch from gstatic failed (CORS). Falling back to relative static snapshot:", err);
     try {
-      // Relative path resolution works on both localhost and subpath GitHub Pages (e.g. /crp-staging/)
       const fallbackUrl = new URL("../../static/cosigners_fallback.json", window.location.href).href;
-      console.log("Fetching fallback URL:", fallbackUrl);
       const fallbackResp = await fetch(fallbackUrl);
       if (!fallbackResp.ok) throw new Error("Fallback HTTP " + fallbackResp.status);
       data = await fallbackResp.json();
@@ -82,7 +98,7 @@ async function loadCosigners() {
 
   try {
     document.getElementById("store-version").textContent = data.version || "N/A";
-    document.getElementById("store-timestamp").textContent = data.timestamp ? new Date(data.timestamp).toLocaleString() : "N/A";
+    document.getElementById("store-timestamp").textContent = formatTimestamp(data.timestamp);
     
     // Build Issuers table
     const issuersBody = document.getElementById("issuers-body");
@@ -91,8 +107,10 @@ async function loadCosigners() {
       data.issuers.forEach(item => {
         const opName = (item.operator_history && item.operator_history.length > 0) ? item.operator_history[0].name : "Unknown";
         const lifetime = item.max_cert_lifetime_seconds ? (item.max_cert_lifetime_seconds / 86400) + " days" : "N/A";
+        const realmBadge = getRealmBadge(item.realm);
         const tr = document.createElement("tr");
         tr.innerHTML = `
+          <td>${realmBadge}</td>
           <td><strong>${item.friendly_name || ""}</strong></td>
           <td>${opName}</td>
           <td><a href="${item.base_url}" target="_blank" rel="noopener">${item.base_url}</a></td>
@@ -103,7 +121,7 @@ async function loadCosigners() {
         issuersBody.appendChild(tr);
       });
     } else {
-      issuersBody.innerHTML = '<tr><td colspan="6">No issuer cosigners currently listed.</td></tr>';
+      issuersBody.innerHTML = '<tr><td colspan="7">No issuer cosigners currently listed.</td></tr>';
     }
 
     // Build Mirrors table
@@ -113,8 +131,10 @@ async function loadCosigners() {
       data.mirrors.forEach(item => {
         const opName = (item.operator_history && item.operator_history.length > 0) ? item.operator_history[0].name : "Unknown";
         const state = (item.state_history && item.state_history.length > 0) ? item.state_history[0].state : "UNKNOWN";
+        const realmBadge = getRealmBadge(item.realm);
         const tr = document.createElement("tr");
         tr.innerHTML = `
+          <td>${realmBadge}</td>
           <td><strong>${item.friendly_name || ""}</strong></td>
           <td>${opName}</td>
           <td><a href="${item.base_url}" target="_blank" rel="noopener">${item.base_url}</a></td>
@@ -124,7 +144,7 @@ async function loadCosigners() {
         mirrorsBody.appendChild(tr);
       });
     } else {
-      mirrorsBody.innerHTML = '<tr><td colspan="5">No mirror cosigners currently listed.</td></tr>';
+      mirrorsBody.innerHTML = '<tr><td colspan="6">No mirror cosigners currently listed.</td></tr>';
     }
 
     loading.style.display = "none";

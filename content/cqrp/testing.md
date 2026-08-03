@@ -100,3 +100,6 @@ Please share your implementation experiences and challenges on [mtcs@chromium.or
 The test setup can persist at the MTC CA Operators' discretion. We will maintain Chrome's testing infrastructure until Chrome accepts the first Phase 3 eligible MTC CA Operators.
 
 Notably, cosigner keys accepted as part of the testing trust store will not be accepted for production use in Chrome. MTC CA Operators will need to generate new cosigner keys and fully adhere to the CQRP Policy to be included in Phase 2 or later launches.
+
+### How are approved test CAs and mirrors designated in `cosigners.json`?
+All cosigners approved for the testing phase are included in [`cosigners.json`](https://www.gstatic.com/mtcs/cosigners/v1/cosigners.json) with a `realm` property of `"UNTRUSTED_VALIDATION_ONLY"`. This explicitly distinguishes test cosigners from production CAs (`"PUBLICLY_TRUSTED"`), ensuring Chrome clients restrict test keys to validation testing only and never trust them for production certificate validation.
