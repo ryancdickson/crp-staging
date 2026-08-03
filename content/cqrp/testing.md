@@ -11,6 +11,8 @@ To support development and interoperability with Chrome, we are providing a mech
 
 This FAQ aims to provide clarity on the test and validation trust store.
 
+>[!NOTE] THIS IS ONLY A TEST!
+
 ## Frequently Asked Questions (FAQ)
 
 [TOC]
@@ -70,7 +72,7 @@ Though not technically enforced by the client, practices such as the use of stri
 ### Am I required to run a mirror during the testing phase?
 Yes. As Chrome will be enforcing realistic cosigner requirements (e.g., requiring mirroring cosignatures on Standalone certificates), we ask that participants in the testing phase contribute a Mirroring Cosigner usable by all CA Cosigners to ensure adequate and realistic mirroring capacity is available.
 
-The CA Cosigner issuance log should implement the API endpoints, cryptographic formats, and Merkle Tree structures defined in the MTC specification (specifically `draft-ietf-plants-merkle-tree-certs-05`) and the `tlog-tiles` specification. The Mirroring Cosigner should implement the API endpoints, cryptographic formats, and validation logic defined in the MTC specification and the `tlog-mirror` specification.
+The CA Cosigner issuance log should implement the API endpoints, cryptographic formats, and Merkle Tree structures defined in the MTC [specification](https://datatracker.ietf.org/doc/draft-ietf-plants-merkle-tree-certs/) (specifically `draft-ietf-plants-merkle-tree-certs-05`) and the `tlog-tiles` [specification](https://github.com/C2SP/C2SP/blob/main/tlog-tiles.md). The Mirroring Cosigner should implement the API endpoints, cryptographic formats, and validation logic defined in the MTC specification and the `tlog-mirror` [specification](https://github.com/C2SP/C2SP/blob/main/tlog-mirror.md).
 
 ### How many cosignatures are required for Chrome to validate my test certificate?
 Chrome clients will enforce the same cosignature requirements to validate a certificate in the testing phase as with production certificates. Standalone certificates must have at least two cosignatures. One must be from the MTC CA Operator, and one must be from a Mirroring Cosigner recognized by the Chrome test root store. Chrome's servers will similarly ensure that issuer logs are mirrored before trusting subtrees for Landmark-relative certificates.
@@ -86,7 +88,7 @@ Development on Chrome's monitoring infrastructure is ongoing, but Operators can 
 
 Operators should also expect that Chrome monitors would verify that:
 
-1. API endpoints, cryptographic formats, and validation logic all match the definitions in the MTC specification, as well as the `tlog-tiles` (for CAs) and `tlog-mirror` (for mirrors) specifications.
+1. API endpoints, cryptographic formats, and validation logic all match the definitions in the MTC [specification](https://datatracker.ietf.org/doc/draft-ietf-plants-merkle-tree-certs/), as well as the [tlog-tiles](https://github.com/C2SP/C2SP/blob/main/tlog-tiles.md) (for CAs) and [tlog-mirror](https://github.com/C2SP/C2SP/blob/main/tlog-mirror.md) (for mirrors) specifications.
 2. Merkle trees served cryptographically validate.
 3. Mirrors provide consistent, append-only views of mirrored logs.
 4. Log entries remain available for at least 35 days after the corresponding certificate's validity period ends.
