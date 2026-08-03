@@ -11,8 +11,6 @@ To support development and interoperability with Chrome, we are providing a mech
 
 This FAQ aims to provide clarity on the test and validation trust store.
 
->[!NOTE] THIS IS ONLY A TEST!
-
 ## Frequently Asked Questions (FAQ)
 
 [TOC]
