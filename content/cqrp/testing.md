@@ -32,6 +32,7 @@ Chrome will begin processing requests starting July 31, 2026, and aim to include
 The testing root store is only supported in Chrome 152 or later (currently Chrome Canary).
 
 You can enable the experimental features using `chrome://flags`:
+
 1. Open Chrome Canary and navigate to `chrome://flags`.
 2. Search for and enable the following two flags:
    - **`verify-mtcs`**
@@ -39,6 +40,7 @@ You can enable the experimental features using `chrome://flags`:
 3. Click **Relaunch** at the bottom of the page.
 
 MTC test root store anchors and cosigner metadata are updated dynamically via Chrome’s Component Updater:
+
 1. Navigate to `chrome://components`.
 2. Locate the **PKI Metadata Fastpush** component.
 3. Click **Check for update**.
@@ -47,6 +49,7 @@ MTC test root store anchors and cosigner metadata are updated dynamically via Ch
 
 ### How can I verify that my connection is using an MTC?
 To verify that your site successfully established a connection using MTCs:
+
 1. Open DevTools (`F12` or `Cmd` + `Option` + `I`).
 2. Go to the **Security** tab and refresh the page.
 3. Under **Connection Details**, confirm the negotiated algorithms:
@@ -55,6 +58,7 @@ To verify that your site successfully established a connection using MTCs:
 
 ### What can I expect `cosigners.json` to include?
 The JSON can be found at: [https://www.gstatic.com/mtcs/cosigners/v1/cosigners.json](https://www.gstatic.com/mtcs/cosigners/v1/cosigners.json).
+
 - This file respects the schema provided at: [https://www.gstatic.com/mtcs/cosigners/v1/cosigners_schema.json](https://www.gstatic.com/mtcs/cosigners/v1/cosigners_schema.json).
 - Keys referenced in the JSON are available at: [https://www.gstatic.com/mtcs/cosigners/v1/cosigners.pem](https://www.gstatic.com/mtcs/cosigners/v1/cosigners.pem).
 
@@ -75,14 +79,16 @@ Chrome clients will enforce the same cosignature requirements to validate a cert
 Chrome’s compliance monitoring infrastructure may continuously query both the test MTC CA issuance logs and Mirroring Cosigner endpoints throughout their lifetime. The monitoring would focus on uptime metrics, cryptographic integrity, and adherence to technical specifications, intending to be a feedback loop for MTC CA Operators from Chrome.
 
 Development on Chrome's monitoring infrastructure is ongoing, but Operators can expect that Chrome would monitor for availability and uptime by looking for:
+
 1. Endpoints (both issuance logs and mirrors) maintaining at least 99% uptime over a 30-day rolling window (no more than 7.2 hours of downtime per month).
 2. Endpoints not experiencing a daily uptime below 99.9% for more than 3 consecutive days.
 3. A majority of mirror checkpoints remaining within a few minutes of the current issuer checkpoint.
 
 Operators should also expect that Chrome monitors would verify that:
-1. API endpoints, cryptographic formats, and validation logic all match the definitions in the MTC specification, as well as the `tlog-tiles` (for CAs) and `tlog-mirror` (for mirrors) specifications,
-2. Merkle trees served cryptographically validate,
-3. Mirrors provide consistent, append-only views of mirrored logs, and that
+
+1. API endpoints, cryptographic formats, and validation logic all match the definitions in the MTC specification, as well as the `tlog-tiles` (for CAs) and `tlog-mirror` (for mirrors) specifications.
+2. Merkle trees served cryptographically validate.
+3. Mirrors provide consistent, append-only views of mirrored logs.
 4. Log entries remain available for at least 35 days after the corresponding certificate's validity period ends.
 
 Chrome may send notifications to the Operator when availability and correctness failures are observed. During the testing phase, these notifications are purely to support Operators in developing robust implementations, and we encourage (but do not require) sharing postmortems and development challenges or milestones to [mtcs@chromium.org](mailto:mtcs@chromium.org) so that everyone can benefit from lessons learned.
