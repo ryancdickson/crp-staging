@@ -1,17 +1,12 @@
+---
+title: Google Chrome Root Programs
+---
 # Google Chrome Root Programs
 
-Google is committed to advancing transport security and ensuring that the connections made on behalf of Chrome users are robustly secured. We accomplish this through two specialized root programs:
+Google Chrome uses certificates issued by Certification Authorities (CAs) to secure connections across the web. When Chrome connects to a website, it verifies the site's certificate against a list of trusted CAs, known as a Root Store, to ensure the connection is private and safe.
 
-## Chrome Root Program
-The standard Chrome Root Program oversees the traditional Web PKI. Chrome uses these certificates to help ensure connections are properly secured, verifying that CA certificates included in the Chrome Root Store meet baseline public policies.
+To secure the web today and prepare for the post-quantum future, Chrome operates two distinct root programs:
 
-* [Current Policy](crp/policy.md)
-* [Policy Archive](policy-archive/index.md)
+* **[The Chrome Root Program](crp/policy.md)**: [Launched in 2022](https://blog.chromium.org/2022/09/announcing-launch-of-chrome-root-program.html), this program determines which website certificates Chrome trusts by default, providing consistent and reliable security for HTTPS connections.
 
-## Chrome Quantum-resistant Root Program (Planned)
-To future-proof transport security against emerging cryptographic threats, the planned Quantum-resistant Root Program focuses on bringing the use of Merkle Tree Certificates (MTCs) to Chrome.
-
-* [Draft Policy](cqrp/draft-policy.md)
-* [Testing Instructions](cqrp/testing.md)
-* [Apply for Inclusion](cqrp/apply.md)
-* [Additional Resources](cqrp/resources.md)
+* **[The Chrome Quantum-resistant Root Program](cqrp/draft-policy.md)**: Designed for the post-quantum era, this program uses Merkle Tree Certificates (MTCs) to deliver quantum-safe security without slowing down page connections. Learn more about Google's planned adoption of MTCs on the [Google Security Blog](https://blog.google/security/cultivating-a-robust-and-efficient-quantum-safe-https/).

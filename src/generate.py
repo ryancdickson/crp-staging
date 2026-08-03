@@ -138,6 +138,11 @@ def render_file(input_path, output_path, env, page_context={}):
                 page_context.get("base_url"), page_context.get("dir_path")
             ),
         ],
+        extension_configs={
+            "toc": {
+                "toc_depth": "3-3",
+            }
+        },
     )
 
     # Wrap with a template
