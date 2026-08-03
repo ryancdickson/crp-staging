@@ -6,7 +6,7 @@ title: Chrome Quantum-resistant Root Program - Test Root Store
 
 Below is the list of **MTC CA Cosigners** and **Mirror Cosigners** included in the Chrome Quantum-resistant Test Root Store.
 
-Data is fetched from [`https://www.gstatic.com/mtcs/cosigners/v1/cosigners.json`](https://www.gstatic.com/mtcs/cosigners/v1/cosigners.json).
+Data is fetched directly from [`https://www.gstatic.com/mtcs/cosigners/v1/cosigners.json`](https://www.gstatic.com/mtcs/cosigners/v1/cosigners.json).
 
 <div id="loading-spinner" style="padding: 1.5em; font-weight: bold; color: #57606a; background: #f6f8fa; border-radius: 6px; margin: 1em 0;">
   ⏳ Loading cosigners data...
@@ -64,10 +64,11 @@ async function loadCosigners() {
     if (!response.ok) throw new Error("HTTP " + response.status);
     data = await response.json();
   } catch (err) {
-    console.warn("Direct fetch from gstatic failed (likely CORS). Falling back to local static snapshot:", err);
+    console.warn("Direct fetch from gstatic failed (CORS). Falling back to relative static snapshot:", err);
     try {
-      // Relative path to fallback JSON saved at build time
-      const fallbackUrl = window.location.origin + "/static/cosigners_fallback.json";
+      // Relative path resolution works on both localhost and subpath GitHub Pages (e.g. /crp-staging/)
+      const fallbackUrl = new URL("../../static/cosigners_fallback.json", window.location.href).href;
+      console.log("Fetching fallback URL:", fallbackUrl);
       const fallbackResp = await fetch(fallbackUrl);
       if (!fallbackResp.ok) throw new Error("Fallback HTTP " + fallbackResp.status);
       data = await fallbackResp.json();
